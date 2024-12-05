@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane fx:id="loginPage" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fitsync.controller.LoginPageController">
+         <top>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+                    <!-- Top Bar with Buttons (Language, Notifications, Settings) -->
+                    <HBox alignment="CENTER_RIGHT" prefHeight="25.0" prefWidth="592.0" spacing="10.0">
+               <HBox alignment="CENTER" prefHeight="49.0" prefWidth="140.0">
+                  <children>
+                           <Label prefHeight="23.0" prefWidth="78.0" text="FitSync" textFill="#ef4040">
+                              <font>
+                                 <Font name="Arial Bold" size="20.0" />
+                              </font>
+                           </Label>
+                           <ImageView fx:id="logo" fitHeight="51.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                 <Image url="@../../../FitSync_Logo.png" />
+                              </image>
+                           </ImageView>
+                  </children>
+               </HBox>
+                        <Button fx:id="languageButton" onAction="#changeLanguage" text="Language" />
+                        <Button fx:id="notificationButton" onAction="#showNotifications" text="Notifications" />
+                        <Button fx:id="settingsButton" onAction="#openSettings" text="Settings">
+                        <HBox.margin>
+                           <Insets />
+                        </HBox.margin>
+                     </Button>
+                     <padding>
+                        <Insets left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                    </HBox>
+                  <Separator prefHeight="0.0" prefWidth="593.0" />
+         </children>
+      </VBox>
+         </top>
+         <center>
+
+              <!-- Email and Password Fields -->
+              <VBox alignment="CENTER" prefWidth="570.0" spacing="10.0" BorderPane.alignment="CENTER">
+               <HBox alignment="CENTER" prefHeight="49.0" prefWidth="200.0">
+                  <children>
+                     <ImageView fx:id="logo1" fitHeight="51.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                           <Image url="@../../../FitSync_Logo.png" />
+                        </image>
+                     </ImageView>
+                     <Label prefHeight="48.0" prefWidth="149.0" text="FitSync" textFill="#ef4040">
+                        <font>
+                           <Font name="Arial Bold" size="41.0" />
+                        </font>
+                     </Label>
+                  </children>
+               </HBox>
+               <Label alignment="CENTER" text="Hey there," textAlignment="CENTER">
+                  <font>
+                     <Font name="Arial" size="16.0" />
+                  </font>
+                  <VBox.margin>
+                     <Insets bottom="-10.0" />
+                  </VBox.margin>
+               </Label>
+               <Label alignment="CENTER" text="Welcome Back" textAlignment="CENTER">
+                  <font>
+                     <Font name="Arial Bold" size="20.0" />
+                  </font>
+               </Label>
+                  <TextField fx:id="emailField" promptText="Enter Email" VBox.vgrow="ALWAYS">
+            <VBox.margin>
+               <Insets />
+            </VBox.margin></TextField>
+                  <PasswordField fx:id="passwordField" promptText="Enter Password" />
+
+                 <!-- Buttons for Login, Forgot Password, Register -->
+                 <VBox alignment="CENTER" spacing="5.0">
+                     <Button fx:id="loginButton" onAction="#handleLogin" text="Login" />
+                     <Button fx:id="forgotPasswordButton" onAction="#handleForgotPassword" text="Forgot Password" />
+                     <Button fx:id="registerButton" onAction="#handleRegister" text="Register" />
+                 </VBox>
+               <HBox prefHeight="25.0" prefWidth="258.0" spacing="5.0">
+                  <children>
+                        <Button fx:id="facebookSignInButton" onAction="#handleFacebookSignIn" text="Sign in with Facebook" />
+                        <Button fx:id="googleSignInButton" onAction="#handleGoogleSignIn" text="Sign in with Google" />
+                  </children>
+               </HBox>
+              </VBox>
+         </center>
+
+        <!-- Placeholder for Notifications Popup -->
+        <VBox fx:id="notificationPopup" layoutX="500" layoutY="50" spacing="10" style="-fx-background-color: lightgrey; -fx-padding: 10;" visible="false">
+            <Label text="Notification 1" />
+            <Label text="Notification 2" />
+            <Button onAction="#closeNotifications" text="Close" />
+        </VBox>
+</BorderPane>
