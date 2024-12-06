@@ -21,7 +21,7 @@
                            </Label>
                            <ImageView fx:id="logo" fitHeight="51.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
                               <image>
-                                 <Image url="@../../../FitSync_Logo.png" />
+                                 <Image url="@../../../WorkoutImages/FitSync_Logo.png" />
                               </image>
                            </ImageView>
                   </children>
@@ -49,7 +49,7 @@
                   <children>
                      <ImageView fx:id="logo1" fitHeight="51.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
                         <image>
-                           <Image url="@../../../FitSync_Logo.png" />
+                           <Image url="@../../../WorkoutImages/FitSync_Logo.png" />
                         </image>
                      </ImageView>
                      <Label prefHeight="48.0" prefWidth="149.0" text="FitSync" textFill="#ef4040">
