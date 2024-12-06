@@ -26,14 +26,9 @@ public class UserDAO {
         return true;
     }
 
-    public void authenticate(String email, String password) {
-        try {
-            if (isValidUser(email, password)) {
-                System.out.println("User authenticated successfully.");
-            }
-        } catch (AuthenticationException e) {
-            System.err.println("Authentication failed: " + e.getMessage());
-        }
+    // Authenticate user and throw exception if fails
+    public boolean authenticate(String email, String password) throws AuthenticationException {
+        return isValidUser(email, password);
     }
 
     // Check if email exists
@@ -50,6 +45,5 @@ public class UserDAO {
         }
         return false;
     }
-
 }
 

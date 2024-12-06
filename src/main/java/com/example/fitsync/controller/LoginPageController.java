@@ -33,31 +33,40 @@ public class LoginPageController {
     private Button googleSignInButton;
     @FXML
     private Button facebookSignInButton;
+  
 
     private UserDAO userDAO = new UserDAO();
 
+
     @FXML
-    public void handleLogin(ActionEvent event) throws UserDAO.AuthenticationException {
+    public void handleLogin(ActionEvent event) {
         String email = emailField.getText();
         String password = passwordField.getText();
 
-        if (userDAO.isValidUser(email, password)) {
-            System.out.println("Login successful. Navigate to Dashboard.");
-        } else {
-            errorMessage.setText("No user account found. Please register an account.");
+        try {
+            if (userDAO.authenticate(email, password)) {
+                System.out.println("Login successful. Navigate to Dashboard.");
+                errorMessage.setText(""); // Clear any previous error message
+            }
+        } catch (UserDAO.AuthenticationException ex) {
+            String errorMsg = "Authentication failed: " + ex.getMessage();
+            errorMessage.setText(errorMsg);
             errorMessage.setVisible(true);
+
+            // Display the error message in the main console
+            System.out.println(errorMsg);
         }
     }
 
     @FXML
     public void handleForgotPassword(ActionEvent event) {
         String email = emailField.getText();
-        if (userDAO.emailExists(email)) {
-            System.out.println("Password reset link sent to " + email);
-        } else {
-            errorMessage.setText("Email not found. Please register.");
-            errorMessage.setVisible(true);
-        }
+            if (userDAO.emailExists(email)) {
+                System.out.println("Password reset link sent to " + email);
+            } else {
+                errorMessage.setText("Email not found. Please register.");
+                errorMessage.setVisible(true);
+            }
     }
 
     @FXML

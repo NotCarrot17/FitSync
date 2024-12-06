@@ -8,6 +8,7 @@
 
 <BorderPane fx:id="loginPage" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fitsync.controller.LoginPageController">
          <top>
+             <Label fx:id="errorMessage" text="" style="-fx-text-fill: red;" />
       <VBox BorderPane.alignment="CENTER">
          <children>
                     <!-- Top Bar with Buttons (Language, Notifications, Settings) -->
