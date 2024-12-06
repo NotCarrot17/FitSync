@@ -8,20 +8,39 @@ public class UserDAO {
     // Temporary storage for user data (emulating local database)
     private Map<String, String> users = new HashMap<>();
 
-    public UserDAO() {
-        // Dummy data for testing
-        users.put("test@example.com", "password123");
+
+    public static class AuthenticationException extends Exception {
+        public AuthenticationException(String message) {
+            super(message);
+        }
     }
 
     // Check if the user credentials are valid
-    public boolean isValidUser(String email, String password) {
-        return users.containsKey(email) && users.get(email).equals(password);
+    public boolean isValidUser(String email, String password) throws AuthenticationException {
+        if (!users.containsKey(email)) {
+            throw new AuthenticationException("Email does not exist.");
+        }
+        if (!users.get(email).equals(password)) {
+            throw new AuthenticationException("Invalid password.");
+        }
+        return true;
+    }
+
+    public void authenticate(String email, String password) {
+        try {
+            if (isValidUser(email, password)) {
+                System.out.println("User authenticated successfully.");
+            }
+        } catch (AuthenticationException e) {
+            System.err.println("Authentication failed: " + e.getMessage());
+        }
     }
 
     // Check if email exists
     public boolean emailExists(String email) {
         return users.containsKey(email);
     }
+
 
     // Register new user
     public boolean registerUser(String email, String password) {
@@ -31,4 +50,6 @@ public class UserDAO {
         }
         return false;
     }
+
 }
+

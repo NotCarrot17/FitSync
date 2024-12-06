@@ -37,7 +37,7 @@ public class LoginPageController {
     private UserDAO userDAO = new UserDAO();
 
     @FXML
-    public void handleLogin(ActionEvent event) {
+    public void handleLogin(ActionEvent event) throws UserDAO.AuthenticationException {
         String email = emailField.getText();
         String password = passwordField.getText();
 
