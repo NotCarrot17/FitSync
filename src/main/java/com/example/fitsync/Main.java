@@ -53,25 +53,16 @@ public class Main extends Application {
     }
 
     private Pane createProfilePage() {
-        VBox layout = new VBox(10);
-        layout.setPadding(new Insets(10));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/fxml/ProfilePage.fxml"));
+        try {
+            return loader.load();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
 
-        Label nameLabel = new Label("Full Name:");
-        TextField nameField = new TextField();
-
-        Label phoneLabel = new Label("Phone Number:");
-        TextField phoneField = new TextField();
-
-        Label emailLabel = new Label("Email:");
-        TextField emailField = new TextField();
-
-        Label passwordLabel = new Label("Password:");
-        PasswordField passwordField = new PasswordField();
-
-        layout.getChildren().addAll(nameLabel, nameField, phoneLabel, phoneField, emailLabel, emailField, passwordLabel, passwordField);
-
-        return layout;
     }
+
 
     private Pane createDashboardPage() {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/fxml/LoginPage.fxml"));
