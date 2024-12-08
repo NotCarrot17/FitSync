@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
@@ -38,6 +39,10 @@ public class WorkoutPageController {
     private Button btnZumba;
     @FXML
     private Button btnPilates;
+    @FXML
+    private Button goBack;
+    @FXML
+    private Button buyNow;
 
     @FXML
     private void handleNavigation(ActionEvent event) {
@@ -94,6 +99,14 @@ public class WorkoutPageController {
                 fxmlFile = "/com/example/fxml/WorkoutExtraPages/Routines.fxml";
             } else if (clickedButton == btnCoachVideo) {
                 fxmlFile = "/com/example/fxml/WorkoutExtraPages/CoachVideo.fxml";
+            } else if (clickedButton == goBack) {
+                fxmlFile = "/com/example/fxml/WorkoutPage.fxml";
+            } else if (clickedButton == buyNow) {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Confirmation");
+                alert.setHeaderText("Order Confirmation");
+                alert.setContentText("Congratulations!!! Purchase Successful!!!");
+                alert.showAndWait();
             }
 
             // Load the FXML file
@@ -110,5 +123,21 @@ public class WorkoutPageController {
             e.printStackTrace();
         }
     }
+
+//    @FXML
+//    private void handleBuyNow(ActionEvent event) {
+//        Button clickedButton = (Button) event.getSource();
+//        String fxmlFile = null;
+//
+//        if (clickedButton == buyNow) {
+//            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+//            alert.setTitle("Confirmation");
+//            alert.setHeaderText("Order Confirmation");
+//            alert.setContentText("Congratulations!!! Purchase Successful!!!");
+//            alert.showAndWait();
+//        }
+//    }
+
+
 
 }
