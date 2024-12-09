@@ -5,44 +5,54 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fitsync.controller.GoalsPageController">
    <children>
-      <HBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0">
-         <children>
-            <VBox alignment="CENTER" prefHeight="400.0" prefWidth="225.0">
+      <BorderPane prefHeight="400.0" prefWidth="600.0">
+         <center>
+            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
                <children>
-                  <HBox prefHeight="23.0" prefWidth="225.0">
+                  <HBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0">
                      <children>
-                        <VBox prefHeight="215.0" prefWidth="100.0">
+                        <VBox alignment="CENTER" prefHeight="400.0" prefWidth="225.0">
                            <children>
-                              <Label text="My Goals" />
-                           </children></VBox>
+                              <HBox prefHeight="23.0" prefWidth="225.0">
+                                 <children>
+                                    <VBox prefHeight="215.0" prefWidth="100.0">
+                                       <children>
+                                          <Label text="My Goals" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <VBox prefHeight="200.0" prefWidth="100.0">
+                                       <children>
+                                          <Label text="Daily Progress" />
+                                          <Pane prefHeight="200.0" prefWidth="200.0" />
+                                       </children>
+                                    </VBox>
+                                    <VBox prefHeight="200.0" prefWidth="100.0">
+                                       <children>
+                                          <Label text="Monthly Progress" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
                      </children>
                   </HBox>
-                  <HBox prefHeight="100.0" prefWidth="200.0">
+               </children></VBox>
+         </center>
+         <right>
+            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label text="Set Goals" />
+                  <Pane prefHeight="58.0" prefWidth="100.0">
                      <children>
-                        <VBox prefHeight="200.0" prefWidth="100.0">
-                           <children>
-                              <Label text="Daily Progress" />
-                              <Pane prefHeight="200.0" prefWidth="200.0" />
-                           </children>
-                        </VBox>
-                        <VBox prefHeight="200.0" prefWidth="100.0">
-                           <children>
-                              <Label text="Monthly Progress" />
-                           </children>
-                        </VBox>
-                     </children></HBox>
+                        <Label text="Label" />
+                     </children></Pane>
                </children>
             </VBox>
-            <VBox prefHeight="400.0" prefWidth="143.0">
-               <children>
-                  <Pane prefHeight="30.0" prefWidth="143.0">
-                     <children>
-                        <Label layoutX="8.0" layoutY="8.0" text="Set Goals" />
-                        <Button layoutX="72.0" layoutY="2.0" mnemonicParsing="false" text="View All &gt;" textAlignment="RIGHT" />
-                     </children>
-                  </Pane>
-               </children></VBox>
-         </children>
-      </HBox>
+         </right></BorderPane>
    </children>
 </AnchorPane>
