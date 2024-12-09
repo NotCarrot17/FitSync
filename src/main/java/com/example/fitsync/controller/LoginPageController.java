@@ -33,7 +33,7 @@ public class LoginPageController {
     private Button googleSignInButton;
     @FXML
     private Button facebookSignInButton;
-  
+
 
     private UserDAO userDAO = new UserDAO();
 

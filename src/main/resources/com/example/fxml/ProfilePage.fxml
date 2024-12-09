@@ -44,43 +44,49 @@
          <center>
 
               <!-- Email and Password Fields -->
-              <VBox alignment="CENTER" prefWidth="570.0" spacing="10.0" BorderPane.alignment="CENTER">
+              <VBox alignment="CENTER" prefHeight="147.0" prefWidth="592.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <ImageView fitHeight="89.0" fitWidth="157.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@../../../FitSync_Logo.png" />
+            </image>
+         </ImageView>
                <Label alignment="CENTER" text="Welcome Back" textAlignment="CENTER">
                   <font>
                      <Font name="Arial Bold" size="20.0" />
                   </font>
                </Label>
-         <ImageView fitHeight="92.0" fitWidth="157.0" pickOnBounds="true" preserveRatio="true">
-            <image>
-               <Image url="@../../../FitSync_Logo.png" />
-            </image>
-         </ImageView>
-         <HBox alignment="CENTER_LEFT" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="186.0" prefWidth="592.0">
+         <HBox alignment="CENTER_LEFT" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="239.0" prefWidth="592.0">
             <children>
-               <VBox prefHeight="186.0" prefWidth="211.0">
+               <VBox prefHeight="204.0" prefWidth="239.0">
                   <children>
-                              <PasswordField fx:id="passwordField" prefHeight="26.0" prefWidth="291.0" promptText="Enter Password">
+                              <PasswordField fx:id="passwordField" prefHeight="26.0" prefWidth="291.0" promptText="Full Name">
                         <VBox.margin>
                            <Insets top="10.0" />
                         </VBox.margin></PasswordField>
-                     <PasswordField fx:id="passwordField1" prefHeight="26.0" prefWidth="291.0" promptText="Enter Password">
+                     <PasswordField fx:id="passwordField1" prefHeight="26.0" prefWidth="291.0" promptText="Phone Number">
                         <VBox.margin>
                            <Insets top="10.0" />
                         </VBox.margin></PasswordField>
-                     <PasswordField fx:id="passwordField11" layoutX="10.0" layoutY="36.0" prefHeight="26.0" prefWidth="291.0" promptText="Enter Password">
+                     <PasswordField fx:id="passwordField11" layoutX="10.0" layoutY="36.0" prefHeight="26.0" prefWidth="291.0" promptText="Email">
                         <VBox.margin>
                            <Insets top="10.0" />
                         </VBox.margin></PasswordField>
-                     <PasswordField fx:id="passwordField111" layoutX="10.0" layoutY="63.0" prefHeight="26.0" prefWidth="291.0" promptText="Enter Password">
+                     <PasswordField fx:id="passwordField111" layoutX="10.0" layoutY="63.0" prefHeight="26.0" prefWidth="291.0" promptText="Password">
                         <VBox.margin>
                            <Insets top="10.0" />
                         </VBox.margin></PasswordField>
-                     <Label text="Label" />
-                     <Label text="Label" />
+                     <Label text="What is your goal?">
+                        <font>
+                           <Font name="System Bold" size="12.0" />
+                        </font></Label>
+                     <Label prefHeight="17.0" prefWidth="262.0" text="It will help us choose the best program for you">
+                        <font>
+                           <Font size="10.0" />
+                        </font></Label>
                      <HBox prefHeight="100.0" prefWidth="200.0">
                         <children>
-                           <Button fx:id="facebookSignInButton1" onAction="#handleFacebookSignIn" text="Sign in with Facebook" />
-                                    <Button fx:id="facebookSignInButton" onAction="#handleFacebookSignIn" text="Sign in with Facebook" />
+                           <Button fx:id="facebookSignInButton1" onAction="#handleFacebookSignIn" prefHeight="64.0" prefWidth="108.0" text="Improve Shape&#10;Build Muscle &#10;&amp; Bulking" textAlignment="CENTER" />
+                                    <Button fx:id="facebookSignInButton" onAction="#handleFacebookSignIn" prefHeight="72.0" prefWidth="122.0" text="Lose Fat&#10;Lose Weight &amp; Fit" textAlignment="CENTER" />
                         </children>
                      </HBox>
                   </children>
@@ -93,29 +99,35 @@
                </VBox>
                <VBox fillWidth="false" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="186.0" prefWidth="231.0" HBox.hgrow="NEVER">
                   <children>
-                              <TextField fx:id="emailField" prefHeight="26.0" prefWidth="301.0" promptText="Enter Email">
+                              <TextField fx:id="emailField" prefHeight="26.0" prefWidth="301.0" promptText="Gender">
                         <VBox.margin>
                            <Insets top="10.0" />
                         </VBox.margin></TextField>
-                     <TextField fx:id="emailField1" prefHeight="26.0" prefWidth="301.0" promptText="Enter Email">
+                     <TextField fx:id="emailField1" prefHeight="26.0" prefWidth="301.0" promptText="Date of Birth">
                         <VBox.margin>
                            <Insets top="10.0" />
                         </VBox.margin></TextField>
-                     <TextField fx:id="emailField2" layoutX="10.0" layoutY="10.0" prefHeight="26.0" prefWidth="301.0" promptText="Enter Email">
+                     <TextField fx:id="emailField2" layoutX="10.0" layoutY="10.0" prefHeight="26.0" prefWidth="301.0" promptText="Weight">
                         <VBox.margin>
                            <Insets top="10.0" />
                         </VBox.margin></TextField>
-                     <TextField fx:id="emailField21" layoutX="10.0" layoutY="63.0" prefHeight="26.0" prefWidth="301.0" promptText="Enter Email">
+                     <TextField fx:id="emailField21" layoutX="10.0" layoutY="63.0" prefHeight="26.0" prefWidth="301.0" promptText="Height">
                         <VBox.margin>
                            <Insets top="10.0" />
                         </VBox.margin></TextField>
-                     <Label text="Label" />
-                     <Label layoutX="20.0" layoutY="157.0" text="Label" />
+                     <Label text="Link a device!">
+                        <font>
+                           <Font name="System Bold" size="12.0" />
+                        </font></Label>
+                     <Label layoutX="20.0" layoutY="157.0" text="It will help us to keep track of your activities">
+                        <font>
+                           <Font size="10.0" />
+                        </font></Label>
                      <HBox prefHeight="100.0" prefWidth="200.0">
                         <children>
-                           <Button fx:id="facebookSignInButton11" onAction="#handleFacebookSignIn" text="Sign in with Facebook" />
-                           <Button fx:id="facebookSignInButton1" onAction="#handleFacebookSignIn" text="Sign in with Facebook" />
-                           <Button fx:id="facebookSignInButton12" layoutX="110.0" layoutY="10.0" onAction="#handleFacebookSignIn" text="Sign in with Facebook" />
+                           <Button fx:id="facebookSignInButton11" onAction="#handleFacebookSignIn" prefHeight="63.0" prefWidth="78.0" text="Samsung &#10;Watch" textAlignment="CENTER" />
+                           <Button fx:id="facebookSignInButton1" onAction="#handleFacebookSignIn" prefHeight="65.0" prefWidth="69.0" text="Apple &#10;Watch" textAlignment="CENTER" />
+                           <Button fx:id="facebookSignInButton12" layoutX="110.0" layoutY="10.0" onAction="#handleFacebookSignIn" prefHeight="79.0" prefWidth="75.0" text="Google &#10;Fitbit" textAlignment="CENTER" />
                         </children>
                      </HBox>
                   </children>
@@ -128,50 +140,131 @@
                </VBox>
             </children>
          </HBox>
-         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+         <HBox alignment="CENTER" prefHeight="43.0" prefWidth="592.0">
             <children>
-                        <Button fx:id="loginButton" onAction="#handleLogin" text="Login">
+                        <Button fx:id="loginButton" onAction="#handleLogin">
                   <graphic>
-                     <ImageView fitHeight="35.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true" />
+                     <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true" />
                   </graphic></Button>
-                        <Button fx:id="forgotPasswordButton" onAction="#handleForgotPassword" text="Forgot Password">
+                        <Button fx:id="forgotPasswordButton" onAction="#handleForgotPassword" prefWidth="0.0">
                   <graphic>
-                     <ImageView fitHeight="43.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" />
+                     <ImageView fitHeight="23.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true" />
                   </graphic></Button>
-                        <Button fx:id="registerButton" onAction="#handleRegister" text="Register" />
-               <Button fx:id="registerButton1" layoutX="352.0" layoutY="48.0" onAction="#handleRegister" text="Register" />
+                        <Button fx:id="registerButton" onAction="#handleRegister">
+                  <graphic>
+                     <ImageView fitHeight="22.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" />
+                  </graphic></Button>
+               <Button fx:id="registerButton1" layoutX="352.0" layoutY="48.0" onAction="#handleRegister">
+                  <graphic>
+                     <ImageView fitHeight="23.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true" />
+                  </graphic></Button>
             </children>
          </HBox>
               </VBox>
          </center>
 
         <!-- Placeholder for Notifications Popup -->
-        <VBox fx:id="notificationPopup" layoutX="500" layoutY="50" spacing="10" style="-fx-background-color: lightgrey; -fx-padding: 10;" visible="false">
+        <VBox fx:id="notificationPopup" layoutX="500" layoutY="50" prefHeight="0.0" prefWidth="0.0" spacing="10" style="-fx-background-color: lightgrey; -fx-padding: 10;" visible="false">
             <Label text="Notification 1" />
             <Label text="Notification 2" />
             <Button onAction="#closeNotifications" text="Close" />
         </VBox>
    <right>
-      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+      <VBox prefHeight="435.0" prefWidth="147.0" BorderPane.alignment="CENTER">
          <children>
-            <Label text="Label" />
-            <Label layoutX="10.0" layoutY="10.0" text="Label" />
-            <Button mnemonicParsing="false" text="Button &gt;">
+            <Label text="Account Settings" />
+            <Label layoutX="10.0" layoutY="10.0" text="Account">
+               <font>
+                  <Font size="10.0" />
+               </font></Label>
+            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="166.0" style="-fx-alignment: left;" text="Personal Data &gt;">
+               <font>
+                  <Font size="10.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="17.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="23.0" prefWidth="152.0" style="-fx-alignment: left;" text="Close Friends &gt;">
+               <graphic>
+                  <ImageView fitHeight="17.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="13.0" prefWidth="147.0" style="-fx-alignment: left;" text="Achievement &gt;">
+               <font>
+                  <Font size="10.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="18.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic></Button>
+            <Button mnemonicParsing="false" prefHeight="0.0" prefWidth="147.0" style="-fx-alignment: left;" text="Activity History &gt;">
+               <font>
+                  <Font size="10.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="17.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="213.0" style="-fx-alignment: lefft;" text="Workout Progress &gt;">
+               <font>
+                  <Font size="10.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="16.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+            </Button>
+            <Label text="Notification">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <ToggleButton layoutX="10.0" layoutY="28.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="147.0" style="-fx-alignment: left;" text="Linked Devices">
+               <font>
+                  <Font size="10.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="17.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic></ToggleButton>
+            <ToggleButton mnemonicParsing="false" prefHeight="26.0" prefWidth="180.0" style="-fx-alignment: left;" text="Location">
+               <font>
+                  <Font size="10.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="15.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+            </ToggleButton>
+            <Label text="BIlling">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="153.0" style="-fx-alignment: left;" text="Manage Subsriptions &gt;">
+               <font>
+                  <Font size="10.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="15.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="266.0" style="-fx-alignment: left;" text="Payment Info &gt;">
+               <font>
+                  <Font size="10.0" />
+               </font>
                <graphic>
                   <ImageView fitHeight="17.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" />
                </graphic>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="73.0" prefWidth="69.0" text="Button">
+            <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="224.0" style="-fx-alignment: left;" text="Purchase Class &gt;">
+               <font>
+                  <Font size="10.0" />
+               </font>
                <graphic>
-                  <ImageView fitHeight="17.0" fitWidth="11.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="16.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" />
                </graphic>
             </Button>
-            <Button mnemonicParsing="false" text="Button" />
-            <ToggleButton mnemonicParsing="false" text="ToggleButton">
-               <graphic>
-                  <ImageView fitHeight="38.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true" />
-               </graphic></ToggleButton>
-            <ToggleButton layoutX="10.0" layoutY="28.0" mnemonicParsing="false" text="ToggleButton" />
          </children>
       </VBox>
    </right>
