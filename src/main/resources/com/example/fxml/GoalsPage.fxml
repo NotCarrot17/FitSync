@@ -34,12 +34,12 @@
                      </children>
                   </HBox>
                   <Label layoutX="10.0" layoutY="10.0" style="-fx-font-size: 20; -fx-font-weight: bold;" text="My Achievements" />
-                  <VBox prefHeight="316.0" prefWidth="348.0" style="-fx-padding: 5; -fx-background-color: #f8f8f8;">
+                  <VBox alignment="BOTTOM_LEFT" prefHeight="104.0" prefWidth="348.0" style="-fx-padding: 5; -fx-background-color: #f8f8f8;">
                      <children>
                         <Label style="-fx-padding: 3;" text="Personal Best" />
-                        <HBox prefHeight="47.0" prefWidth="338.0" style="-fx-padding: 3;">
+                        <HBox prefHeight="184.0" prefWidth="338.0" style="-fx-padding: 3;">
                            <children>
-                              <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey; -fx-background-radius: 200;" />
+                              <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: grey; -fx-background-radius: 10;" />
                               <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: yellow;" />
                               <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: pink;" />
                               <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: blue;" />
@@ -47,7 +47,7 @@
                         </HBox>
                      </children>
                   </VBox>
-                  <VBox prefHeight="333.0" prefWidth="178.0" style="-fx-padding: 5; -fx-background-color: #f8f8f8;">
+                  <VBox alignment="BOTTOM_LEFT" prefHeight="122.0" prefWidth="348.0" style="-fx-padding: 5; -fx-background-color: #f8f8f8;">
                      <children>
                         <Label style="-fx-padding: 3;" text="My Badges">
                            <opaqueInsets>
@@ -60,7 +60,7 @@
                </children></VBox>
          </center>
          <right>
-            <VBox prefHeight="366.0" prefWidth="152.0" BorderPane.alignment="CENTER">
+            <VBox prefHeight="366.0" prefWidth="152.0" style="-fx-padding: 5;" BorderPane.alignment="CENTER">
                <children>
                   <Label style="-fx-font-size: 20; -fx-font-weight: bold;" text="Set Goals" />
                   <Pane prefHeight="40.0" prefWidth="152.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 5;">
