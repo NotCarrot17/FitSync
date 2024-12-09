@@ -115,7 +115,7 @@ public class Main extends Application {
     }
 
     private Pane createGoalsPage() {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/fxml/LoginPage.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/fxml/GoalsPage.fxml"));
         try {
             return loader.load();
         } catch (Exception e) {
