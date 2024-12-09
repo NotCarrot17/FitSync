@@ -7,22 +7,31 @@
    <children>
       <HBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0">
          <children>
-            <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" />
             <VBox alignment="CENTER" prefHeight="400.0" prefWidth="225.0">
                <children>
-                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                  <HBox prefHeight="23.0" prefWidth="225.0">
+                     <children>
+                        <VBox prefHeight="215.0" prefWidth="100.0">
+                           <children>
+                              <Label text="My Goals" />
+                           </children></VBox>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
                      <children>
                         <VBox prefHeight="200.0" prefWidth="100.0">
                            <children>
-                              <TextArea prefHeight="200.0" prefWidth="200.0" promptText="huh" text="whst" />
-                              <TextField promptText="the fuck" text="what" />
-                           </children></VBox>
-                        <VBox prefHeight="200.0" prefWidth="100.0" />
-                     </children>
-                  </HBox>
+                              <Label text="Daily Progress" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label text="Monthly Progress" />
+                           </children>
+                        </VBox>
+                     </children></HBox>
                </children>
             </VBox>
-            <VBox alignment="CENTER_RIGHT" prefHeight="200.0" prefWidth="100.0" />
          </children>
       </HBox>
    </children>
