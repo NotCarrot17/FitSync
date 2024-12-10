@@ -7,6 +7,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import javafx.scene.control.Label;
 import javafx.stage.Popup;
@@ -109,8 +111,6 @@ public class WorkoutPageController {
                 fxmlFile = "/com/example/fxml/WorkoutExtraPages/StartNow.fxml";
             } else if (clickedButton == btnRoutines) {
                 fxmlFile = "/com/example/fxml/WorkoutExtraPages/Routines.fxml";
-            } else if (clickedButton == btnCoachVideo) {
-                fxmlFile = "/com/example/fxml/WorkoutExtraPages/CoachVideo.fxml";
             } else if (clickedButton == goBack) {
                 fxmlFile = "/com/example/fxml/WorkoutPage.fxml";
             } else if (clickedButton == buyNow) {
@@ -119,6 +119,22 @@ public class WorkoutPageController {
                 alert.setHeaderText("Order Confirmation");
                 alert.setContentText("Congratulations!!! Purchase Successful!!!");
                 alert.showAndWait();
+            } else if (clickedButton == btnCoachVideo) {
+                // Create a new Stage (Window)
+                Stage videoStage = new Stage();
+                videoStage.setTitle("YouTube Video");
+
+                // Create a WebView and load the YouTube video
+                WebView webView = new WebView();
+                WebEngine webEngine = webView.getEngine();
+                webEngine.load("https://www.youtube.com/watch?v=uVwNVEQS_uo");
+
+                // Create a Scene with the WebView
+                Scene scene = new Scene(webView, 800, 450);
+
+                // Set the scene on the new stage
+                videoStage.setScene(scene);
+                videoStage.show();
             } else if (clickedButton == btnStretch) {
                 // Create a popup
                 Popup popup = new Popup();
@@ -184,35 +200,27 @@ public class WorkoutPageController {
                     popup.hide();
                 });
             } else if (clickedButton == btnBackStretch) {
-                // Create a popup
                 Popup popup = new Popup();
 
-                // Create a layout for the popup content
                 TilePane popupLayout = new TilePane();
-                popupLayout.setPrefColumns(1); // Arrange items vertically
+                popupLayout.setPrefColumns(1);
                 popupLayout.setStyle("-fx-background-color: white; -fx-padding: 20; -fx-gap: 10; -fx-background-radius: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);");
 
-                // Create a label for the timer
                 Label timerLabel = new Label("Time Remaining: 05:00");
                 timerLabel.setStyle("-fx-font-size: 14px;");
 
-                // Create a Cancel button
                 Button cancelButton = new Button("Cancel");
                 cancelButton.setStyle("-fx-font-size: 14px; -fx-background-color: #ef4040; -fx-text-fill: white;");
 
-                // Add the label and button to the layout
                 popupLayout.getChildren().addAll(timerLabel, cancelButton);
 
-                // Add the layout to the popup
                 popup.getContent().add(popupLayout);
 
                 // Variables for countdown
                 int[] timeRemaining = {300}; // 5 minutes in seconds
 
-                // Declare the Timeline variable
                 Timeline timeline = new Timeline();
 
-                // Add the KeyFrame to the timeline
                 timeline.getKeyFrames().add(
                         new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
                             @Override
@@ -221,12 +229,10 @@ public class WorkoutPageController {
                                 int seconds = timeRemaining[0] % 60;
                                 timerLabel.setText(String.format("Time Remaining: %02d:%02d", minutes, seconds));
 
-                                // Decrement the time
                                 timeRemaining[0]--;
 
-                                // Stop the timer when it reaches 0
                                 if (timeRemaining[0] < 0) {
-                                    timeline.stop(); // Access timeline here without issues
+                                    timeline.stop();
                                     timerLabel.setText("Time's Up!");
                                 }
                             }
@@ -236,47 +242,37 @@ public class WorkoutPageController {
                 timeline.setCycleCount(Timeline.INDEFINITE);
                 timeline.play();
 
-                // Show the popup and start the timer
                 if (!popup.isShowing()) {
                     popup.show(clickedButton.getScene().getWindow());
                     timeline.play();
                 }
 
-                // Add action to Cancel button to close the popup and stop the timer
                 cancelButton.setOnAction(e -> {
                     timeline.stop();
                     popup.hide();
                 });
             } else if (clickedButton == btnYoga) {
-                // Create a popup
+
                 Popup popup = new Popup();
 
-                // Create a layout for the popup content
                 TilePane popupLayout = new TilePane();
-                popupLayout.setPrefColumns(1); // Arrange items vertically
+                popupLayout.setPrefColumns(1);
                 popupLayout.setStyle("-fx-background-color: white; -fx-padding: 20; -fx-gap: 10; -fx-background-radius: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);");
 
-                // Create a label for the timer
                 Label timerLabel = new Label("Time Remaining: 05:00");
                 timerLabel.setStyle("-fx-font-size: 14px;");
 
-                // Create a Cancel button
                 Button cancelButton = new Button("Cancel");
                 cancelButton.setStyle("-fx-font-size: 14px; -fx-background-color: #ef4040; -fx-text-fill: white;");
 
-                // Add the label and button to the layout
                 popupLayout.getChildren().addAll(timerLabel, cancelButton);
 
-                // Add the layout to the popup
                 popup.getContent().add(popupLayout);
 
-                // Variables for countdown
-                int[] timeRemaining = {300}; // 5 minutes in seconds
+                int[] timeRemaining = {300};
 
-                // Declare the Timeline variable
                 Timeline timeline = new Timeline();
 
-                // Add the KeyFrame to the timeline
                 timeline.getKeyFrames().add(
                         new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
                             @Override
@@ -285,12 +281,10 @@ public class WorkoutPageController {
                                 int seconds = timeRemaining[0] % 60;
                                 timerLabel.setText(String.format("Time Remaining: %02d:%02d", minutes, seconds));
 
-                                // Decrement the time
                                 timeRemaining[0]--;
 
-                                // Stop the timer when it reaches 0
                                 if (timeRemaining[0] < 0) {
-                                    timeline.stop(); // Access timeline here without issues
+                                    timeline.stop();
                                     timerLabel.setText("Time's Up!");
                                 }
                             }
@@ -300,13 +294,11 @@ public class WorkoutPageController {
                 timeline.setCycleCount(Timeline.INDEFINITE);
                 timeline.play();
 
-                // Show the popup and start the timer
                 if (!popup.isShowing()) {
                     popup.show(clickedButton.getScene().getWindow());
                     timeline.play();
                 }
 
-                // Add action to Cancel button to close the popup and stop the timer
                 cancelButton.setOnAction(e -> {
                     timeline.stop();
                     popup.hide();
@@ -328,4 +320,3 @@ public class WorkoutPageController {
         }
     }
 }
-
