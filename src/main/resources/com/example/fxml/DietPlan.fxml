@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
@@ -118,305 +119,332 @@
             </Button>
         </VBox>
     </left>
-   <right>
+    <right>
         <VBox prefHeight="548.0" prefWidth="158.0" spacing="10" BorderPane.alignment="CENTER">
-         <Label fx:id="statusLabel11" text="Week Plan">
-            <font>
-               <Font name="Gill Sans MT Bold" size="16.0" />
-            </font>
-         </Label>
-         <Pane prefHeight="54.0" prefWidth="136.0" style="-fx-background-color: white; -fx-background-radius: 10;">
-            <children>
-               <Label layoutX="14.0" layoutY="6.0" text="Monday">
-                  <font>
-                     <Font name="System Bold" size="12.0" />
-                  </font></Label>
-               <Label layoutX="14.0" layoutY="27.0" text="Egg | Breakfast" textFill="#514f4f">
-                  <font>
-                     <Font size="10.0" />
-                  </font></Label>
-               <Label layoutX="106.0" layoutY="17.0" prefHeight="20.0" prefWidth="44.0" style="-fx-background-color: pink; -fx-background-radius: 5;" text="08:00 AM">
-                  <font>
-                     <Font size="10.0" />
-                  </font></Label>
-            </children>
-         </Pane>
-         <Pane prefHeight="54.0" prefWidth="136.0" style="-fx-background-color: white; -fx-background-radius: 10;">
-            <children>
-               <Label layoutX="14.0" layoutY="6.0" text="Tuesday">
-                  <font>
-                     <Font name="System Bold" size="12.0" />
-                  </font>
-               </Label>
-               <Label layoutX="14.0" layoutY="27.0" text="Noodle | Lunch" textFill="#514f4f">
-                  <font>
-                     <Font size="10.0" />
-                  </font>
-               </Label>
-               <Label layoutX="106.0" layoutY="17.0" prefHeight="20.0" prefWidth="44.0" style="-fx-background-color: pink; -fx-background-radius: 5;" text="01:00 PM">
-                  <font>
-                     <Font size="10.0" />
-                  </font>
-               </Label>
-            </children>
-         </Pane>
-         <Pane prefHeight="54.0" prefWidth="136.0" style="-fx-background-color: white; -fx-background-radius: 10;">
-            <children>
-               <Label layoutX="14.0" layoutY="6.0" text="Wednesday">
-                  <font>
-                     <Font name="System Bold" size="12.0" />
-                  </font>
-               </Label>
-               <Label layoutX="14.0" layoutY="27.0" text="Burrito | Lunch" textFill="#514f4f">
-                  <font>
-                     <Font size="10.0" />
-                  </font>
-               </Label>
-               <Label layoutX="106.0" layoutY="17.0" prefHeight="20.0" prefWidth="44.0" style="-fx-background-color: pink; -fx-background-radius: 5;" text="12:00 PM">
-                  <font>
-                     <Font size="10.0" />
-                  </font>
-               </Label>
-            </children>
-         </Pane>
-         <Pane prefHeight="54.0" prefWidth="136.0" style="-fx-background-color: white; -fx-background-radius: 10;">
-            <children>
-               <Label layoutX="14.0" layoutY="6.0" text="Thursday">
-                  <font>
-                     <Font name="System Bold" size="12.0" />
-                  </font>
-               </Label>
-               <Label layoutX="14.0" layoutY="27.0" text="Tofu | Lunch" textFill="#514f4f">
-                  <font>
-                     <Font size="10.0" />
-                  </font>
-               </Label>
-               <Label layoutX="106.0" layoutY="17.0" prefHeight="20.0" prefWidth="44.0" style="-fx-background-color: pink; -fx-background-radius: 5;" text="01:00 PM">
-                  <font>
-                     <Font size="10.0" />
-                  </font>
-               </Label>
-            </children>
-         </Pane>
-         <Pane prefHeight="54.0" prefWidth="136.0" style="-fx-background-color: white; -fx-background-radius: 10;">
-            <children>
-               <Label layoutX="14.0" layoutY="6.0" text="Friday">
-                  <font>
-                     <Font name="System Bold" size="12.0" />
-                  </font>
-               </Label>
-               <Label layoutX="14.0" layoutY="27.0" text="Avacado | Breakfast" textFill="#514f4f">
-                  <font>
-                     <Font size="10.0" />
-                  </font>
-               </Label>
-               <Label layoutX="106.0" layoutY="17.0" prefHeight="20.0" prefWidth="44.0" style="-fx-background-color: pink; -fx-background-radius: 5;" text="08:00 AM">
-                  <font>
-                     <Font size="10.0" />
-                  </font>
-               </Label>
-            </children>
-         </Pane>
-         <Pane prefHeight="54.0" prefWidth="136.0" style="-fx-background-color: white; -fx-background-radius: 10;">
-            <children>
-               <Label layoutX="14.0" layoutY="6.0" text="Saturday">
-                  <font>
-                     <Font name="System Bold" size="12.0" />
-                  </font>
-               </Label>
-               <Label layoutX="14.0" layoutY="27.0" text="Chicken | Lunch" textFill="#514f4f">
-                  <font>
-                     <Font size="10.0" />
-                  </font>
-               </Label>
-               <Label layoutX="106.0" layoutY="17.0" prefHeight="20.0" prefWidth="44.0" style="-fx-background-color: pink; -fx-background-radius: 5;" text="1:00 PM">
-                  <font>
-                     <Font size="10.0" />
-                  </font>
-               </Label>
-            </children>
-         </Pane>
-         <Pane prefHeight="54.0" prefWidth="136.0" style="-fx-background-color: white; -fx-background-radius: 10;">
-            <children>
-               <Label layoutX="14.0" layoutY="6.0" text="Sunday">
-                  <font>
-                     <Font name="System Bold" size="12.0" />
-                  </font>
-               </Label>
-               <Label layoutX="14.0" layoutY="27.0" text="Papaya | Breakfast" textFill="#514f4f">
-                  <font>
-                     <Font size="10.0" />
-                  </font>
-               </Label>
-               <Label layoutX="106.0" layoutY="17.0" prefHeight="20.0" prefWidth="44.0" style="-fx-background-color: pink; -fx-background-radius: 5;" text="09:00 AM">
-                  <font>
-                     <Font size="10.0" />
-                  </font>
-               </Label>
-            </children>
-         </Pane>
-         <Label fx:id="statusLabel1" text="Today Records">
-            <font>
-               <Font name="Gill Sans MT Bold" size="16.0" />
-            </font>
-         </Label>
-         <HBox prefHeight="100.0" prefWidth="200.0" />
-        </VBox>
-   </right>
-   <center>
-      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
-         <children>
-            <ImageView fitHeight="150.0" fitWidth="502.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../DietPlanImages/diet plan title.png" />
-               </image>
-               <viewport>
-                  <Rectangle2D />
-               </viewport>
-            </ImageView>
-            <Text lineSpacing="0.5" strokeType="OUTSIDE" strokeWidth="0.0" text="Recent Food Log" wrappingWidth="155.34693145751953">
-               <font>
-                  <Font name="Microsoft JhengHei UI" size="16.0" />
-               </font>
-            </Text>
-               <!-- Diet Entries Display -->
-               <TextArea fx:id="dietEntriesArea" editable="false" prefHeight="146.0" prefWidth="504.0" />
-      
-               <!-- Input Section -->
-               <GridPane hgap="10" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="26.0" prefWidth="503.0" vgap="10">
-                   <TextField fx:id="foodField" prefHeight="26.0" prefWidth="65.0" promptText="Food" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-                   <ComboBox fx:id="mealTypeComboBox" prefHeight="26.0" prefWidth="102.0" promptText="Meal Type" GridPane.columnIndex="2" />
-                   <TextField fx:id="caloriesField" prefHeight="26.0" prefWidth="57.0" promptText="Calories" GridPane.columnIndex="3" />
-                   <TextField fx:id="proteinField" prefHeight="26.0" prefWidth="51.0" promptText="Protein" GridPane.columnIndex="4" />
-                   <TextField fx:id="carbsField" prefHeight="26.0" prefWidth="44.0" promptText="Carbs" GridPane.columnIndex="5" />
-                   <TextField fx:id="fatsField" prefHeight="26.0" prefWidth="43.0" promptText="Fats" GridPane.columnIndex="6" />
-                   <Button fx:id="btnLogFood" alignment="TOP_LEFT" onAction="#handleButtons" prefHeight="26.0" prefWidth="66.0" text="Log Food" GridPane.columnIndex="7" />
-               <columnConstraints>
-                  <ColumnConstraints />
-                  <ColumnConstraints />
-                  <ColumnConstraints />
-                  <ColumnConstraints />
-                  <ColumnConstraints />
-                  <ColumnConstraints />
-                  <ColumnConstraints />
-                  <ColumnConstraints />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints maxHeight="25.6" minHeight="25.6" prefHeight="25.6" />
-                  <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
-                  <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
-                  <RowConstraints />
-                  <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
-                  <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
-               </rowConstraints>
-               </GridPane>
-   
-                  <Label fx:id="statusLabel" alignment="CENTER_RIGHT">
-               <font>
-                  <Font name="Gill Sans MT Bold" size="16.0" />
-               </font>
+            <Label fx:id="statusLabel11" text="Week Plan">
+                <font>
+                    <Font name="Gill Sans MT Bold" size="16.0" />
+                </font>
             </Label>
-            <Text lineSpacing="0.5" strokeType="OUTSIDE" strokeWidth="0.0" text="Recommended Recipes" wrappingWidth="185.74695587158203">
+            <Pane prefHeight="54.0" prefWidth="136.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+                <children>
+                    <Label layoutX="14.0" layoutY="6.0" text="Monday">
+                        <font>
+                            <Font name="System Bold" size="12.0" />
+                        </font></Label>
+                    <Label layoutX="14.0" layoutY="27.0" text="Egg | Breakfast" textFill="#514f4f">
+                        <font>
+                            <Font size="10.0" />
+                        </font></Label>
+                    <Label layoutX="106.0" layoutY="17.0" prefHeight="20.0" prefWidth="44.0" style="-fx-background-color: pink; -fx-background-radius: 5;" text="08:00 AM">
+                        <font>
+                            <Font size="10.0" />
+                        </font></Label>
+                </children>
+            </Pane>
+            <Pane prefHeight="54.0" prefWidth="136.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+                <children>
+                    <Label layoutX="14.0" layoutY="6.0" text="Tuesday">
+                        <font>
+                            <Font name="System Bold" size="12.0" />
+                        </font>
+                    </Label>
+                    <Label layoutX="14.0" layoutY="27.0" text="Noodle | Lunch" textFill="#514f4f">
+                        <font>
+                            <Font size="10.0" />
+                        </font>
+                    </Label>
+                    <Label layoutX="106.0" layoutY="17.0" prefHeight="20.0" prefWidth="44.0" style="-fx-background-color: pink; -fx-background-radius: 5;" text="01:00 PM">
+                        <font>
+                            <Font size="10.0" />
+                        </font>
+                    </Label>
+                </children>
+            </Pane>
+            <Pane prefHeight="54.0" prefWidth="136.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+                <children>
+                    <Label layoutX="14.0" layoutY="6.0" text="Wednesday">
+                        <font>
+                            <Font name="System Bold" size="12.0" />
+                        </font>
+                    </Label>
+                    <Label layoutX="14.0" layoutY="27.0" text="Burrito | Lunch" textFill="#514f4f">
+                        <font>
+                            <Font size="10.0" />
+                        </font>
+                    </Label>
+                    <Label layoutX="106.0" layoutY="17.0" prefHeight="20.0" prefWidth="44.0" style="-fx-background-color: pink; -fx-background-radius: 5;" text="12:00 PM">
+                        <font>
+                            <Font size="10.0" />
+                        </font>
+                    </Label>
+                </children>
+            </Pane>
+            <Pane prefHeight="54.0" prefWidth="136.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+                <children>
+                    <Label layoutX="14.0" layoutY="6.0" text="Thursday">
+                        <font>
+                            <Font name="System Bold" size="12.0" />
+                        </font>
+                    </Label>
+                    <Label layoutX="14.0" layoutY="27.0" text="Tofu | Lunch" textFill="#514f4f">
+                        <font>
+                            <Font size="10.0" />
+                        </font>
+                    </Label>
+                    <Label layoutX="106.0" layoutY="17.0" prefHeight="20.0" prefWidth="44.0" style="-fx-background-color: pink; -fx-background-radius: 5;" text="01:00 PM">
+                        <font>
+                            <Font size="10.0" />
+                        </font>
+                    </Label>
+                </children>
+            </Pane>
+            <Pane prefHeight="54.0" prefWidth="136.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+                <children>
+                    <Label layoutX="14.0" layoutY="6.0" text="Friday">
+                        <font>
+                            <Font name="System Bold" size="12.0" />
+                        </font>
+                    </Label>
+                    <Label layoutX="14.0" layoutY="27.0" text="Avacado | Breakfast" textFill="#514f4f">
+                        <font>
+                            <Font size="10.0" />
+                        </font>
+                    </Label>
+                    <Label layoutX="106.0" layoutY="17.0" prefHeight="20.0" prefWidth="44.0" style="-fx-background-color: pink; -fx-background-radius: 5;" text="08:00 AM">
+                        <font>
+                            <Font size="10.0" />
+                        </font>
+                    </Label>
+                </children>
+            </Pane>
+            <Pane prefHeight="54.0" prefWidth="136.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+                <children>
+                    <Label layoutX="14.0" layoutY="6.0" text="Saturday">
+                        <font>
+                            <Font name="System Bold" size="12.0" />
+                        </font>
+                    </Label>
+                    <Label layoutX="14.0" layoutY="27.0" text="Chicken | Lunch" textFill="#514f4f">
+                        <font>
+                            <Font size="10.0" />
+                        </font>
+                    </Label>
+                    <Label layoutX="106.0" layoutY="17.0" prefHeight="20.0" prefWidth="44.0" style="-fx-background-color: pink; -fx-background-radius: 5;" text="1:00 PM">
+                        <font>
+                            <Font size="10.0" />
+                        </font>
+                    </Label>
+                </children>
+            </Pane>
+            <Pane prefHeight="54.0" prefWidth="136.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+                <children>
+                    <Label layoutX="14.0" layoutY="6.0" text="Sunday">
+                        <font>
+                            <Font name="System Bold" size="12.0" />
+                        </font>
+                    </Label>
+                    <Label layoutX="14.0" layoutY="27.0" text="Papaya | Breakfast" textFill="#514f4f">
+                        <font>
+                            <Font size="10.0" />
+                        </font>
+                    </Label>
+                    <Label layoutX="106.0" layoutY="17.0" prefHeight="20.0" prefWidth="44.0" style="-fx-background-color: pink; -fx-background-radius: 5;" text="09:00 AM">
+                        <font>
+                            <Font size="10.0" />
+                        </font>
+                    </Label>
+                </children>
+            </Pane>
+            <Label fx:id="statusLabel1" text="Today Records">
+                <font>
+                    <Font name="Gill Sans MT Bold" size="16.0" />
+                </font>
+            </Label>
+         <VBox alignment="CENTER" minHeight="-Infinity" prefHeight="122.0" prefWidth="158.0" style="-fx-background-color: #ffcc00; -fx-background-radius: 10;">
+            <children>
+               <ImageView fitHeight="35.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@../../../DietPlanImages/water droplet.png" />
+                  </image></ImageView>
+               <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="18.0" prefWidth="52.0" text="Water">
+                  <font>
+                     <Font name="Bell MT Bold" size="18.0" />
+                  </font></Label>
+               <ProgressBar fx:id="waterProgressBar" prefHeight="17.0" prefWidth="150.0" progress="0.1" />
+               <Label fx:id="waterAmountLabel" text="0.25 Liters">
+                  <font>
+                     <Font size="13.0" />
+                  </font></Label>
+               <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#addWater" style="-fx-background-color: white; -fx-background-radius: 20;" text="+" textFill="#362b2b">
+                  <font>
+                     <Font name="System Bold" size="14.0" />
+                  </font></Button>
+            </children></VBox>
+         <Text strokeType="OUTSIDE" strokeWidth="0.0">
+            <font>
+               <Font size="1.0" />
+            </font>
+         </Text>
+        </VBox>
+    </right>
+    <center>
+        <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+            <children>
+                <ImageView nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../DietPlanImages/diet plan title.png" />
+                    </image>
+                    <viewport>
+                        <Rectangle2D />
+                    </viewport>
+                </ImageView>
+                <Text lineSpacing="0.5" strokeType="OUTSIDE" strokeWidth="0.0" text="Recent Food Log" wrappingWidth="155.34693145751953">
+                    <font>
+                        <Font name="Microsoft JhengHei UI" size="16.0" />
+                    </font>
+                </Text>
+                <!-- Diet Entries Display -->
+                <TextArea fx:id="dietEntriesArea" editable="false" prefHeight="146.0" prefWidth="504.0">
                <font>
-                  <Font name="Microsoft JhengHei UI" size="16.0" />
-               </font>
-            </Text>
-            <Text lineSpacing="0.5" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="185.74695587158203">
-               <font>
-                  <Font name="Microsoft JhengHei UI" size="12.0" />
-               </font>
-            </Text>
-      
-                  <!-- Buttons and Status -->
-               <HBox alignment="CENTER" prefHeight="131.0" prefWidth="500.0" spacing="10">
-               <children>
-                  <Pane layoutX="250.0" layoutY="25.0" prefHeight="132.0" prefWidth="155.0" style="-fx-background-color: white; -fx-background-radius: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);">
-                     <children>
-                        <Label layoutX="88.0" layoutY="104.0" text="Protein: 17.1g">
-                           <font>
-                              <Font name="Calibri Light" size="10.0" />
-                           </font></Label>
-                        <Label layoutX="14.0" layoutY="76.0" prefHeight="20.0" prefWidth="74.0" text="Pasta Salad">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="116.0" layoutY="90.0" text="452kcal">
-                           <font>
-                              <Font name="Calibri Light" size="10.0" />
-                           </font></Label>
-                        <ImageView fitHeight="65.0" fitWidth="123.0" layoutX="20.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../DietPlanImages/Pasta Salad.jpg" />
-                           </image>
-                        </ImageView>
-                        <Label layoutX="14.0" layoutY="101.0" prefHeight="22.0" prefWidth="33.0" style="-fx-background-color: yellow; -fx-background-radius: 10;" text="  Easy">
-                           <font>
-                              <Font name="Dubai Regular" size="12.0" />
-                           </font>
-                        </Label>
-                     </children></Pane>
-                  <Pane prefHeight="132.0" prefWidth="155.0" style="-fx-background-color: white; -fx-background-radius: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);">
-                     <children>
-                        <Label layoutX="88.0" layoutY="104.0" text="Protein: 29.5g">
-                           <font>
-                              <Font name="Calibri Light" size="10.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="14.0" layoutY="76.0" prefHeight="20.0" prefWidth="100.0" text="Lemon Chicken">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="116.0" layoutY="90.0" text="226kcal">
-                           <font>
-                              <Font name="Calibri Light" size="10.0" />
-                           </font>
-                        </Label>
-                        <ImageView fitHeight="65.0" fitWidth="135.0" layoutX="20.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../DietPlanImages/Lemon Chicken.jpg" />
-                           </image>
-                        </ImageView>
-                        <Label layoutX="14.0" layoutY="101.0" prefHeight="22.0" prefWidth="43.0" style="-fx-background-color: orange; -fx-background-radius: 10;" text="Medium">
-                           <font>
-                              <Font name="Dubai Regular" size="12.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </Pane>
-                  <Pane prefHeight="132.0" prefWidth="155.0" style="-fx-background-color: white; -fx-background-radius: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);">
-                     <children>
-                        <Label layoutX="88.0" layoutY="104.0" text="Protein: 31.8g">
-                           <font>
-                              <Font name="Calibri Light" size="10.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="14.0" layoutY="76.0" prefHeight="20.0" prefWidth="74.0" text="Tacos">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Label>
-                        <Label layoutX="116.0" layoutY="90.0" text="407kcal">
-                           <font>
-                              <Font name="Calibri Light" size="10.0" />
-                           </font>
-                        </Label>
-                        <ImageView fitHeight="65.0" fitWidth="130.0" layoutX="20.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../DietPlanImages/Tacos.jpeg" />
-                           </image>
-                        </ImageView>
-                        <Label layoutX="14.0" layoutY="101.0" prefHeight="22.0" prefWidth="33.0" style="-fx-background-color: yellow; -fx-background-radius: 10;" text="  Easy">
-                           <font>
-                              <Font name="Dubai Regular" size="12.0" />
-                           </font>
-                        </Label>
-                     </children>
-                  </Pane>
-               </children>
-            </HBox>
-         </children>
-      </VBox>
-   </center>
+                  <Font size="13.0" />
+               </font></TextArea>
+
+                <!-- Input Section -->
+                <GridPane hgap="10" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="26.0" prefWidth="503.0" vgap="10">
+                    <TextField fx:id="foodField" prefHeight="26.0" prefWidth="65.0" promptText="Food" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                    <ComboBox fx:id="mealTypeComboBox" prefHeight="26.0" prefWidth="102.0" promptText="Meal Type" GridPane.columnIndex="2" />
+                    <TextField fx:id="caloriesField" prefHeight="26.0" prefWidth="57.0" promptText="Calories" GridPane.columnIndex="3" />
+                    <TextField fx:id="proteinField" prefHeight="26.0" prefWidth="51.0" promptText="Protein" GridPane.columnIndex="4" />
+                    <TextField fx:id="carbsField" prefHeight="26.0" prefWidth="44.0" promptText="Carbs" GridPane.columnIndex="5" />
+                    <TextField fx:id="fatsField" prefHeight="26.0" prefWidth="43.0" promptText="Fats" GridPane.columnIndex="6" />
+                    <Button fx:id="btnLogFood" alignment="TOP_LEFT" onAction="#handleButtons" prefHeight="26.0" prefWidth="66.0" text="Log Food" GridPane.columnIndex="7" />
+                    <columnConstraints>
+                        <ColumnConstraints />
+                        <ColumnConstraints />
+                        <ColumnConstraints />
+                        <ColumnConstraints />
+                        <ColumnConstraints />
+                        <ColumnConstraints />
+                        <ColumnConstraints />
+                        <ColumnConstraints />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints maxHeight="25.6" minHeight="25.6" prefHeight="25.6" />
+                        <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
+                        <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
+                        <RowConstraints />
+                        <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
+                        <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
+                    </rowConstraints>
+                </GridPane>
+
+                <Label fx:id="statusLabel" alignment="CENTER_RIGHT">
+                    <font>
+                        <Font name="Gill Sans MT Bold" size="16.0" />
+                    </font>
+                </Label>
+                <Text lineSpacing="0.5" strokeType="OUTSIDE" strokeWidth="0.0" text="Recommended Recipes" wrappingWidth="185.74695587158203">
+                    <font>
+                        <Font name="Microsoft JhengHei UI" size="16.0" />
+                    </font>
+                </Text>
+                <Text lineSpacing="0.5" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="185.74695587158203">
+                    <font>
+                        <Font name="Microsoft JhengHei UI" size="12.0" />
+                    </font>
+                </Text>
+
+                <!-- Buttons and Status -->
+                <HBox alignment="CENTER" prefHeight="131.0" prefWidth="500.0" spacing="10">
+                    <children>
+                        <Pane layoutX="250.0" layoutY="25.0" prefHeight="132.0" prefWidth="155.0" style="-fx-background-color: white; -fx-background-radius: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);">
+                            <children>
+                                <Label layoutX="88.0" layoutY="104.0" text="Protein: 17.1g">
+                                    <font>
+                                        <Font name="Calibri Light" size="10.0" />
+                                    </font></Label>
+                                <Label layoutX="14.0" layoutY="76.0" prefHeight="20.0" prefWidth="74.0" text="Pasta Salad">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="116.0" layoutY="90.0" text="452kcal">
+                                    <font>
+                                        <Font name="Calibri Light" size="10.0" />
+                                    </font></Label>
+                                <ImageView fitHeight="65.0" fitWidth="123.0" layoutX="20.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../../DietPlanImages/Pasta Salad.jpg" />
+                                    </image>
+                                </ImageView>
+                                <Label layoutX="14.0" layoutY="101.0" prefHeight="22.0" prefWidth="33.0" style="-fx-background-color: yellow; -fx-background-radius: 10;" text="  Easy">
+                                    <font>
+                                        <Font name="Dubai Regular" size="12.0" />
+                                    </font>
+                                </Label>
+                            </children></Pane>
+                        <Pane prefHeight="132.0" prefWidth="155.0" style="-fx-background-color: white; -fx-background-radius: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);">
+                            <children>
+                                <Label layoutX="88.0" layoutY="104.0" text="Protein: 29.5g">
+                                    <font>
+                                        <Font name="Calibri Light" size="10.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="14.0" layoutY="76.0" prefHeight="20.0" prefWidth="100.0" text="Lemon Chicken">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="116.0" layoutY="90.0" text="226kcal">
+                                    <font>
+                                        <Font name="Calibri Light" size="10.0" />
+                                    </font>
+                                </Label>
+                                <ImageView fitHeight="65.0" fitWidth="135.0" layoutX="20.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../../DietPlanImages/Lemon Chicken.jpg" />
+                                    </image>
+                                </ImageView>
+                                <Label layoutX="14.0" layoutY="101.0" prefHeight="22.0" prefWidth="43.0" style="-fx-background-color: orange; -fx-background-radius: 10;" text="Medium">
+                                    <font>
+                                        <Font name="Dubai Regular" size="12.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </Pane>
+                        <Pane prefHeight="132.0" prefWidth="155.0" style="-fx-background-color: white; -fx-background-radius: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);">
+                            <children>
+                                <Label layoutX="88.0" layoutY="104.0" text="Protein: 31.8g">
+                                    <font>
+                                        <Font name="Calibri Light" size="10.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="14.0" layoutY="76.0" prefHeight="20.0" prefWidth="74.0" text="Tacos">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="116.0" layoutY="90.0" text="407kcal">
+                                    <font>
+                                        <Font name="Calibri Light" size="10.0" />
+                                    </font>
+                                </Label>
+                                <ImageView fitHeight="65.0" fitWidth="130.0" layoutX="20.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../../DietPlanImages/Tacos.jpeg" />
+                                    </image>
+                                </ImageView>
+                                <Label layoutX="14.0" layoutY="101.0" prefHeight="22.0" prefWidth="33.0" style="-fx-background-color: yellow; -fx-background-radius: 10;" text="  Easy">
+                                    <font>
+                                        <Font name="Dubai Regular" size="12.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </Pane>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </center>
 </BorderPane>
