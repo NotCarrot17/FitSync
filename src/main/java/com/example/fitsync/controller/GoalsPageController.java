@@ -6,6 +6,7 @@ import javafx.stage.Stage;
 public class GoalsPageController extends Application {
 
     public static void main(String[] args) {
+
         launch(args);
     }
 
