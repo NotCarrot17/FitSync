@@ -8,8 +8,14 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
-
+import javafx.scene.control.Label;
+import javafx.stage.Popup;
 import java.io.IOException;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+import javafx.event.EventHandler;
+import javafx.util.Duration;
+import javafx.scene.layout.TilePane;
 
 public class WorkoutPageController {
 
@@ -43,6 +49,12 @@ public class WorkoutPageController {
     private Button goBack;
     @FXML
     private Button buyNow;
+    @FXML
+    private Button btnStretch;
+    @FXML
+    private Button btnBackStretch;
+    @FXML
+    private Button btnYoga;
 
     @FXML
     private void handleNavigation(ActionEvent event) {
@@ -107,6 +119,198 @@ public class WorkoutPageController {
                 alert.setHeaderText("Order Confirmation");
                 alert.setContentText("Congratulations!!! Purchase Successful!!!");
                 alert.showAndWait();
+            } else if (clickedButton == btnStretch) {
+                // Create a popup
+                Popup popup = new Popup();
+
+                // Create a layout for the popup content
+                TilePane popupLayout = new TilePane();
+                popupLayout.setPrefColumns(1); // Arrange items vertically
+                popupLayout.setStyle("-fx-background-color: white; -fx-padding: 20; -fx-gap: 10; -fx-background-radius: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);");
+
+                // Create a label for the timer
+                Label timerLabel = new Label("Time Remaining: 05:00");
+                timerLabel.setStyle("-fx-font-size: 14px;");
+
+                // Create a Cancel button
+                Button cancelButton = new Button("Cancel");
+                cancelButton.setStyle("-fx-font-size: 14px; -fx-background-color: #ef4040; -fx-text-fill: white;");
+
+                // Add the label and button to the layout
+                popupLayout.getChildren().addAll(timerLabel, cancelButton);
+
+                // Add the layout to the popup
+                popup.getContent().add(popupLayout);
+
+                // Variables for countdown
+                int[] timeRemaining = {300}; // 5 minutes in seconds
+
+                // Declare the Timeline variable
+                Timeline timeline = new Timeline();
+
+                // Add the KeyFrame to the timeline
+                timeline.getKeyFrames().add(
+                        new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
+                            @Override
+                            public void handle(ActionEvent event) {
+                                int minutes = timeRemaining[0] / 60;
+                                int seconds = timeRemaining[0] % 60;
+                                timerLabel.setText(String.format("Time Remaining: %02d:%02d", minutes, seconds));
+
+                                // Decrement the time
+                                timeRemaining[0]--;
+
+                                // Stop the timer when it reaches 0
+                                if (timeRemaining[0] < 0) {
+                                    timeline.stop(); // Access timeline here without issues
+                                    timerLabel.setText("Time's Up!");
+                                }
+                            }
+                        })
+                );
+
+                timeline.setCycleCount(Timeline.INDEFINITE);
+                timeline.play();
+
+                // Show the popup and start the timer
+                if (!popup.isShowing()) {
+                    popup.show(clickedButton.getScene().getWindow());
+                    timeline.play();
+                }
+
+                // Add action to Cancel button to close the popup and stop the timer
+                cancelButton.setOnAction(e -> {
+                    timeline.stop();
+                    popup.hide();
+                });
+            } else if (clickedButton == btnBackStretch) {
+                // Create a popup
+                Popup popup = new Popup();
+
+                // Create a layout for the popup content
+                TilePane popupLayout = new TilePane();
+                popupLayout.setPrefColumns(1); // Arrange items vertically
+                popupLayout.setStyle("-fx-background-color: white; -fx-padding: 20; -fx-gap: 10; -fx-background-radius: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);");
+
+                // Create a label for the timer
+                Label timerLabel = new Label("Time Remaining: 05:00");
+                timerLabel.setStyle("-fx-font-size: 14px;");
+
+                // Create a Cancel button
+                Button cancelButton = new Button("Cancel");
+                cancelButton.setStyle("-fx-font-size: 14px; -fx-background-color: #ef4040; -fx-text-fill: white;");
+
+                // Add the label and button to the layout
+                popupLayout.getChildren().addAll(timerLabel, cancelButton);
+
+                // Add the layout to the popup
+                popup.getContent().add(popupLayout);
+
+                // Variables for countdown
+                int[] timeRemaining = {300}; // 5 minutes in seconds
+
+                // Declare the Timeline variable
+                Timeline timeline = new Timeline();
+
+                // Add the KeyFrame to the timeline
+                timeline.getKeyFrames().add(
+                        new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
+                            @Override
+                            public void handle(ActionEvent event) {
+                                int minutes = timeRemaining[0] / 60;
+                                int seconds = timeRemaining[0] % 60;
+                                timerLabel.setText(String.format("Time Remaining: %02d:%02d", minutes, seconds));
+
+                                // Decrement the time
+                                timeRemaining[0]--;
+
+                                // Stop the timer when it reaches 0
+                                if (timeRemaining[0] < 0) {
+                                    timeline.stop(); // Access timeline here without issues
+                                    timerLabel.setText("Time's Up!");
+                                }
+                            }
+                        })
+                );
+
+                timeline.setCycleCount(Timeline.INDEFINITE);
+                timeline.play();
+
+                // Show the popup and start the timer
+                if (!popup.isShowing()) {
+                    popup.show(clickedButton.getScene().getWindow());
+                    timeline.play();
+                }
+
+                // Add action to Cancel button to close the popup and stop the timer
+                cancelButton.setOnAction(e -> {
+                    timeline.stop();
+                    popup.hide();
+                });
+            } else if (clickedButton == btnYoga) {
+                // Create a popup
+                Popup popup = new Popup();
+
+                // Create a layout for the popup content
+                TilePane popupLayout = new TilePane();
+                popupLayout.setPrefColumns(1); // Arrange items vertically
+                popupLayout.setStyle("-fx-background-color: white; -fx-padding: 20; -fx-gap: 10; -fx-background-radius: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);");
+
+                // Create a label for the timer
+                Label timerLabel = new Label("Time Remaining: 05:00");
+                timerLabel.setStyle("-fx-font-size: 14px;");
+
+                // Create a Cancel button
+                Button cancelButton = new Button("Cancel");
+                cancelButton.setStyle("-fx-font-size: 14px; -fx-background-color: #ef4040; -fx-text-fill: white;");
+
+                // Add the label and button to the layout
+                popupLayout.getChildren().addAll(timerLabel, cancelButton);
+
+                // Add the layout to the popup
+                popup.getContent().add(popupLayout);
+
+                // Variables for countdown
+                int[] timeRemaining = {300}; // 5 minutes in seconds
+
+                // Declare the Timeline variable
+                Timeline timeline = new Timeline();
+
+                // Add the KeyFrame to the timeline
+                timeline.getKeyFrames().add(
+                        new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
+                            @Override
+                            public void handle(ActionEvent event) {
+                                int minutes = timeRemaining[0] / 60;
+                                int seconds = timeRemaining[0] % 60;
+                                timerLabel.setText(String.format("Time Remaining: %02d:%02d", minutes, seconds));
+
+                                // Decrement the time
+                                timeRemaining[0]--;
+
+                                // Stop the timer when it reaches 0
+                                if (timeRemaining[0] < 0) {
+                                    timeline.stop(); // Access timeline here without issues
+                                    timerLabel.setText("Time's Up!");
+                                }
+                            }
+                        })
+                );
+
+                timeline.setCycleCount(Timeline.INDEFINITE);
+                timeline.play();
+
+                // Show the popup and start the timer
+                if (!popup.isShowing()) {
+                    popup.show(clickedButton.getScene().getWindow());
+                    timeline.play();
+                }
+
+                // Add action to Cancel button to close the popup and stop the timer
+                cancelButton.setOnAction(e -> {
+                    timeline.stop();
+                    popup.hide();
+                });
             }
 
             // Load the FXML file
@@ -123,21 +327,5 @@ public class WorkoutPageController {
             e.printStackTrace();
         }
     }
-
-//    @FXML
-//    private void handleBuyNow(ActionEvent event) {
-//        Button clickedButton = (Button) event.getSource();
-//        String fxmlFile = null;
-//
-//        if (clickedButton == buyNow) {
-//            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-//            alert.setTitle("Confirmation");
-//            alert.setHeaderText("Order Confirmation");
-//            alert.setContentText("Congratulations!!! Purchase Successful!!!");
-//            alert.showAndWait();
-//        }
-//    }
-
-
-
 }
+

@@ -18,7 +18,7 @@
                 </Label>
                 <ImageView fitHeight="36.0" fitWidth="34.0" layoutX="80.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@../../../WorkoutImages/FitSync_Logo.png" />
+                        <Image url="@../../../../WorkoutImages/FitSync_Logo.png" />
                     </image>
                 </ImageView>
                 <Separator layoutX="137.0" layoutY="8.0" orientation="VERTICAL" prefHeight="44.0" prefWidth="4.0" />
@@ -108,7 +108,7 @@
             <children>
                 <SplitPane prefHeight="34.0" prefWidth="463.0" style="-fx-background-color: transparent;">
                     <items>
-                        <Button fx:id="goBack" onAction="#handleButtons" mnemonicParsing="false" prefHeight="25.0" prefWidth="70.0" style="-fx-alignment: left; -fx-background-color: transparent;" text="Go Back" textFill="#ef4040">
+                        <Button fx:id="goBack" mnemonicParsing="false" onAction="#handleButtons" prefHeight="25.0" prefWidth="70.0" style="-fx-alignment: left; -fx-background-color: transparent;" text="Go Back" textFill="#ef4040">
                             <font>
                                 <Font name="System Bold" size="12.0" />
                             </font></Button>
@@ -118,27 +118,27 @@
                     <children>
                         <ImageView fitHeight="150.0" fitWidth="463.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@../../../../WorkoutImages/Upperbody.png" />
+                                <Image url="@../../../../WorkoutImages/Zumba.png" />
                             </image>
                         </ImageView>
-                        <Label layoutY="126.0" text="Upperbody Workout">
+                        <Label layoutY="126.0" text="Zumba">
                             <font>
                                 <Font name="System Bold" size="18.0" />
                             </font>
                         </Label>
-                        <Label layoutY="161.0" prefHeight="85.0" prefWidth="460.0" text="The Upper Body Workout program focuses on strengthening and toning key&#10;muscle groups, including your chest, shoulders, back, and arms. Designed to&#10;improve posture, enhance upperbody strength, and build muscle definition, it&#10;combines targeted exercises with expertguidance to help you achieve your fitness&#10;goals effectively." textAlignment="JUSTIFY" />
-                        <Label layoutY="266.0" prefHeight="20.0" prefWidth="169.0" text="32 Mins/Session" textFill="#ef4040">
+                        <Label layoutY="161.0" prefHeight="85.0" prefWidth="460.0" text="Zumba is a high-energy fitness program that combines dance and exercise in a fun,&#10;party-like atmosphere. Featuring choreographed routines set to upbeat music, &#10;Zumba helps you burn calories, improve coordination, and boost cardiovascular &#10;health. Perfect for all fitness levels, it’s a lively way to stay active and enjoy every step!" textAlignment="JUSTIFY" />
+                        <Label layoutY="266.0" prefHeight="20.0" prefWidth="169.0" text="1 Hour/Session" textFill="#ef4040">
                             <font>
                                 <Font name="System Bold Italic" size="13.0" />
                             </font>
                         </Label>
-                        <Label layoutY="294.0" prefHeight="17.0" prefWidth="147.0" text="Level: Intermediate" textFill="#ef4040">
+                        <Label layoutY="294.0" prefHeight="17.0" prefWidth="147.0" text="Level: Beginner" textFill="#ef4040">
                             <font>
                                 <Font name="System Bold Italic" size="13.0" />
                             </font>
                         </Label>
                         <Label layoutY="328.0" prefHeight="29.0" prefWidth="198.0" text="Each package includes 4 sessions." textAlignment="JUSTIFY" />
-                        <Button fx:id="buyNow" onAction="#handleButtons" layoutX="365.0" layoutY="409.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="84.0" style="-fx-background-color: #FFA726;" text="Buy Now" textFill="WHITE">
+                        <Button fx:id="buyNow" layoutX="365.0" layoutY="409.0" mnemonicParsing="false" onAction="#handleButtons" prefHeight="36.0" prefWidth="84.0" style="-fx-background-color: #FFA726;" text="Buy Now" textFill="WHITE">
                             <font>
                                 <Font name="System Bold" size="13.0" />
                             </font></Button>
@@ -165,7 +165,7 @@
                                 <children>
                                     <ImageView fitHeight="40.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
                                         <image>
-                                            <Image url="@../../../WorkoutImages/Stretch.png" />
+                                            <Image url="@../../../../WorkoutImages/Stretch.png" />
                                         </image>
                                     </ImageView>
                                     <VBox HBox.hgrow="ALWAYS">
@@ -203,7 +203,7 @@
                                 <children>
                                     <ImageView fitHeight="40.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
                                         <image>
-                                            <Image url="@../../../WorkoutImages/Stretch.png" />
+                                            <Image url="@../../../../WorkoutImages/BackStretch.png" />
                                         </image>
                                     </ImageView>
                                     <VBox prefHeight="46.0" prefWidth="96.0">
@@ -241,7 +241,7 @@
                                 <children>
                                     <ImageView fitHeight="40.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
                                         <image>
-                                            <Image url="@../../../WorkoutImages/Stretch.png" />
+                                            <Image url="@../../../../WorkoutImages/Stretch.png" />
                                         </image>
                                     </ImageView>
                                     <VBox>
@@ -279,7 +279,7 @@
                                 <children>
                                     <ImageView fitHeight="40.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
                                         <image>
-                                            <Image url="@../../../WorkoutImages/Stretch.png" />
+                                            <Image url="@../../../../WorkoutImages/Stretch.png" />
                                         </image>
                                     </ImageView>
                                     <VBox>
@@ -313,7 +313,7 @@
                         <children>
                             <ImageView fitHeight="40.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
                                 <image>
-                                    <Image url="@../../../WorkoutImages/YogaPurchasedClasses.png" />
+                                    <Image url="@../../../../WorkoutImages/YogaPurchasedClasses.png" />
                                 </image>
                             </ImageView>
                             <VBox>
@@ -342,7 +342,7 @@
                         <children>
                             <ImageView fitHeight="40.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
                                 <image>
-                                    <Image url="@../../../WorkoutImages/SwimPurchasedClasses.png" />
+                                    <Image url="@../../../../WorkoutImages/SwimPurchasedClasses.png" />
                                 </image>
                             </ImageView>
                             <VBox HBox.hgrow="ALWAYS">
