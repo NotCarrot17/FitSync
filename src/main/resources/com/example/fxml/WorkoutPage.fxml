@@ -114,7 +114,7 @@
                            <Image url="@../../../WorkoutImages/StartWorkout.png" />
                         </image>
                      </ImageView>
-                     <Label layoutX="28.0" layoutY="14.0" prefHeight="17.0" prefWidth="234.0" text="Start your workout today!">
+                     <Label layoutX="28.0" layoutY="14.0" prefHeight="17.0" prefWidth="234.0" text="Start your workout today!" textFill="WHITE">
                         <font>
                            <Font name="System Bold" size="17.0" />
                         </font>
@@ -147,7 +147,7 @@
                   <children>
                      <ImageView fitHeight="157.0" fitWidth="153.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
                         <image>
-                           <Image url="@../../../WorkoutImages/coach.png" />
+                           <Image url="@../../../WorkoutImages/Coach.png" />
                         </image>
                      </ImageView>
                      <VBox alignment="CENTER_LEFT" fillWidth="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">

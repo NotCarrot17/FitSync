@@ -107,10 +107,6 @@ public class WorkoutPageController {
                 fxmlFile = "/com/example/fxml/WorkoutExtraPages/Zumba.fxml";
             } else if (clickedButton == btnPilates) {
                 fxmlFile = "/com/example/fxml/WorkoutExtraPages/Pilates.fxml";
-            } else if (clickedButton == btnStartNow) {
-                fxmlFile = "/com/example/fxml/WorkoutExtraPages/StartNow.fxml";
-            } else if (clickedButton == btnRoutines) {
-                fxmlFile = "/com/example/fxml/WorkoutExtraPages/Routines.fxml";
             } else if (clickedButton == goBack) {
                 fxmlFile = "/com/example/fxml/WorkoutPage.fxml";
             } else if (clickedButton == buyNow) {

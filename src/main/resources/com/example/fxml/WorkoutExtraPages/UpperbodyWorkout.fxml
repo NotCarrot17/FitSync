@@ -141,13 +141,16 @@
                                   </font>
                               </Label>
                               <Label prefHeight="29.0" prefWidth="198.0" text="Each package includes 4 sessions." textAlignment="JUSTIFY" />
+                              <Button fx:id="buyNow" alignment="CENTER" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#handleButtons" prefHeight="36.0" prefWidth="84.0" style="-fx-background-color: #FFA726;" text="Buy Now" textFill="WHITE">
+                                  <font>
+                                      <Font name="System Bold" size="13.0" />
+                                  </font>
+                           <VBox.margin>
+                              <Insets left="380.0" />
+                           </VBox.margin>
+                        </Button>
                      </children>
                   </VBox>
-                        <Button fx:id="buyNow" alignment="CENTER" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#handleButtons" prefHeight="36.0" prefWidth="84.0" style="-fx-background-color: #FFA726;" text="Buy Now" textFill="WHITE">
-                            <font>
-                                <Font name="System Bold" size="13.0" />
-                            </font>
-                  </Button>
                </children>
             </VBox>
             </children></VBox>
@@ -354,35 +357,6 @@
                             <VBox HBox.hgrow="ALWAYS">
                                 <children>
                                     <Label style="-fx-background-radius: 20;" text="Swimming Class" />
-                                    <Label prefHeight="17.0" prefWidth="53.0" text="RM100" textFill="#9d9d9d">
-                                        <font>
-                                            <Font size="9.0" />
-                                        </font>
-                                    </Label>
-                                </children>
-                                <padding>
-                                    <Insets left="10.0" />
-                                </padding>
-                            </VBox>
-                        </children>
-                    </HBox>
-                </children>
-                <padding>
-                    <Insets left="5.0" right="5.0" />
-                </padding>
-            </HBox>
-            <HBox layoutX="15.0" layoutY="414.0" style="-fx-background-color: white; -fx-background-radius: 5;">
-                <children>
-                    <HBox>
-                        <children>
-                            <ImageView fitHeight="40.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
-                                <image>
-                                    <Image url="@../../../../WorkoutImages/coach.png" />
-                                </image>
-                            </ImageView>
-                            <VBox>
-                                <children>
-                                    <Label prefHeight="17.0" prefWidth="61.0" style="-fx-background-radius: 20;" text="Zumba" />
                                     <Label prefHeight="17.0" prefWidth="53.0" text="RM100" textFill="#9d9d9d">
                                         <font>
                                             <Font size="9.0" />

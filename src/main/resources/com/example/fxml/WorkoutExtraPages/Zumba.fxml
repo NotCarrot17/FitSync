@@ -27,7 +27,7 @@
                     <graphic>
                         <ImageView fitHeight="30.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@../../../WorkoutImages/Profile.png" />
+                                <Image url="@../../../../WorkoutImages/Profile.png" />
                             </image>
                         </ImageView>
                     </graphic></Button>
@@ -41,7 +41,7 @@
                 <graphic>
                     <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                         <image>
-                            <Image url="@../../../WorkoutImages/overview.png" />
+                            <Image url="@../../../../WorkoutImages/overview.png" />
                         </image>
                     </ImageView>
                 </graphic></Button>
@@ -49,7 +49,7 @@
                 <graphic>
                     <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                         <image>
-                            <Image url="@../../../WorkoutImages/workout.png" />
+                            <Image url="@../../../../WorkoutImages/workout.png" />
                         </image>
                     </ImageView>
                 </graphic>
@@ -58,7 +58,7 @@
                 <graphic>
                     <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                         <image>
-                            <Image url="@../../../WorkoutImages/dietplan.png" />
+                            <Image url="@../../../../WorkoutImages/dietplan.png" />
                         </image>
                     </ImageView>
                 </graphic>
@@ -67,7 +67,7 @@
                 <graphic>
                     <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                         <image>
-                            <Image url="@../../../WorkoutImages/goalsandachievements.png" />
+                            <Image url="@../../../../WorkoutImages/goalsandachievements.png" />
                         </image>
                     </ImageView>
                 </graphic>
@@ -76,7 +76,7 @@
                 <graphic>
                     <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                         <image>
-                            <Image url="@../../../WorkoutImages/progress.png" />
+                            <Image url="@../../../../WorkoutImages/progress.png" />
                         </image>
                     </ImageView>
                 </graphic>
@@ -85,7 +85,7 @@
                 <graphic>
                     <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                         <image>
-                            <Image url="@../../../WorkoutImages/mycommunity.png" />
+                            <Image url="@../../../../WorkoutImages/mycommunity.png" />
                         </image>
                     </ImageView>
                 </graphic>
@@ -94,7 +94,7 @@
                 <graphic>
                     <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                         <image>
-                            <Image url="@../../../WorkoutImages/logout.png" />
+                            <Image url="@../../../../WorkoutImages/logout.png" />
                         </image>
                     </ImageView>
                 </graphic>
@@ -106,50 +106,59 @@
     <center>
         <VBox alignment="TOP_CENTER" fillWidth="false" spacing="5.0" style="-fx-padding: 7;" BorderPane.alignment="TOP_CENTER">
             <children>
-                <SplitPane prefHeight="34.0" prefWidth="463.0" style="-fx-background-color: transparent;">
-                    <items>
-                        <Button fx:id="goBack" mnemonicParsing="false" onAction="#handleButtons" prefHeight="25.0" prefWidth="70.0" style="-fx-alignment: left; -fx-background-color: transparent;" text="Go Back" textFill="#ef4040">
-                            <font>
-                                <Font name="System Bold" size="12.0" />
-                            </font></Button>
-                    </items>
-                </SplitPane>
-                <Pane prefHeight="475.0" prefWidth="463.0">
+                <VBox alignment="TOP_CENTER" spacing="10.0" VBox.vgrow="ALWAYS">
                     <children>
-                        <ImageView fitHeight="150.0" fitWidth="463.0" pickOnBounds="true" preserveRatio="true">
+                        <SplitPane prefHeight="34.0" prefWidth="463.0" style="-fx-background-color: transparent;">
+                            <items>
+                                <Button fx:id="goBack" mnemonicParsing="false" onAction="#handleButtons" prefHeight="25.0" prefWidth="70.0" style="-fx-alignment: left; -fx-background-color: transparent;" text="Go Back" textFill="#ef4040">
+                                    <font>
+                                        <Font name="System Bold" size="12.0" />
+                                    </font>
+                                </Button>
+                            </items>
+                        </SplitPane>
+                        <ImageView fitHeight="150.0" fitWidth="463.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
                             <image>
                                 <Image url="@../../../../WorkoutImages/Zumba.png" />
                             </image>
                         </ImageView>
-                        <Label layoutY="126.0" text="Zumba">
-                            <font>
-                                <Font name="System Bold" size="18.0" />
-                            </font>
-                        </Label>
-                        <Label layoutY="161.0" prefHeight="85.0" prefWidth="460.0" text="Zumba is a high-energy fitness program that combines dance and exercise in a fun,&#10;party-like atmosphere. Featuring choreographed routines set to upbeat music, &#10;Zumba helps you burn calories, improve coordination, and boost cardiovascular &#10;health. Perfect for all fitness levels, it’s a lively way to stay active and enjoy every step!" textAlignment="JUSTIFY" />
-                        <Label layoutY="266.0" prefHeight="20.0" prefWidth="169.0" text="1 Hour/Session" textFill="#ef4040">
-                            <font>
-                                <Font name="System Bold Italic" size="13.0" />
-                            </font>
-                        </Label>
-                        <Label layoutY="294.0" prefHeight="17.0" prefWidth="147.0" text="Level: Beginner" textFill="#ef4040">
-                            <font>
-                                <Font name="System Bold Italic" size="13.0" />
-                            </font>
-                        </Label>
-                        <Label layoutY="328.0" prefHeight="29.0" prefWidth="198.0" text="Each package includes 4 sessions." textAlignment="JUSTIFY" />
-                        <Button fx:id="buyNow" layoutX="365.0" layoutY="409.0" mnemonicParsing="false" onAction="#handleButtons" prefHeight="36.0" prefWidth="84.0" style="-fx-background-color: #FFA726;" text="Buy Now" textFill="WHITE">
-                            <font>
-                                <Font name="System Bold" size="13.0" />
-                            </font></Button>
+                        <VBox spacing="10.0">
+                            <children>
+                                <Label text="Zumba">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font>
+                                </Label>
+                                <Label prefHeight="85.0" prefWidth="460.0" text="Zumba is a high-energy fitness program that combines dance and exercise in a fun,&#10;party-like atmosphere. Featuring choreographed routines set to upbeat music, Zumba&#10;helps you burn calories, improve coordination, and boost cardiovascular health.&#10;Perfect for all fitness levels, it’s a lively way to stay active and enjoy every step!" textAlignment="JUSTIFY" />
+                                <Label prefHeight="20.0" prefWidth="169.0" text="1 Hour/Session" textFill="#ef4040">
+                                    <font>
+                                        <Font name="System Bold Italic" size="13.0" />
+                                    </font>
+                                </Label>
+                                <Label prefHeight="17.0" prefWidth="147.0" text="Level: Beginner" textFill="#ef4040">
+                                    <font>
+                                        <Font name="System Bold Italic" size="13.0" />
+                                    </font>
+                                </Label>
+                                <Label prefHeight="29.0" prefWidth="198.0" text="Each package includes 4 sessions." textAlignment="JUSTIFY" />
+                                <Button fx:id="buyNow" alignment="CENTER" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#handleButtons" prefHeight="36.0" prefWidth="84.0" style="-fx-background-color: #FFA726;" text="Buy Now" textFill="WHITE">
+                                    <font>
+                                        <Font name="System Bold" size="13.0" />
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets left="380.0" />
+                                    </VBox.margin>
+                                </Button>
+                            </children>
+                        </VBox>
                     </children>
-                </Pane>
+                </VBox>
             </children></VBox>
     </center>
 
 
     <right>
-        <VBox prefHeight="560.0" prefWidth="182.0" spacing="5.0" style="-fx-padding: 5; -fx-background-color: #F8F8F8;" BorderPane.alignment="TOP_RIGHT">
+        <VBox spacing="5.0" style="-fx-padding: 5; -fx-background-color: #F8F8F8;">
             <!-- Schedule -->
             <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="My Schedule" />
             <HBox style="-fx-background-color: white; -fx-background-radius: 5;">
@@ -348,35 +357,6 @@
                             <VBox HBox.hgrow="ALWAYS">
                                 <children>
                                     <Label style="-fx-background-radius: 20;" text="Swimming Class" />
-                                    <Label prefHeight="17.0" prefWidth="53.0" text="RM100" textFill="#9d9d9d">
-                                        <font>
-                                            <Font size="9.0" />
-                                        </font>
-                                    </Label>
-                                </children>
-                                <padding>
-                                    <Insets left="10.0" />
-                                </padding>
-                            </VBox>
-                        </children>
-                    </HBox>
-                </children>
-                <padding>
-                    <Insets left="5.0" right="5.0" />
-                </padding>
-            </HBox>
-            <HBox layoutX="15.0" layoutY="414.0" style="-fx-background-color: white; -fx-background-radius: 5;">
-                <children>
-                    <HBox>
-                        <children>
-                            <ImageView fitHeight="40.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
-                                <image>
-                                    <Image url="@../../../WorkoutImages/Stretch.png" />
-                                </image>
-                            </ImageView>
-                            <VBox>
-                                <children>
-                                    <Label prefHeight="17.0" prefWidth="61.0" style="-fx-background-radius: 20;" text="Zumba" />
                                     <Label prefHeight="17.0" prefWidth="53.0" text="RM100" textFill="#9d9d9d">
                                         <font>
                                             <Font size="9.0" />
