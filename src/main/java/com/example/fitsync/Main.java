@@ -95,7 +95,7 @@ public class Main extends Application {
     }
 
     private Pane createDietPlanPage() {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/fxml/LoginPage.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/fxml/DietPlan.fxml"));
         try {
             return loader.load();
         } catch (Exception e) {
