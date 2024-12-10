@@ -9,7 +9,6 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -49,11 +48,20 @@ public class DietPlanController {
     // List to store diet entries
     private ArrayList<Diet> dietEntries = new ArrayList<>();
 
+    //Recommended Recipe Buttons
+    @FXML
+    private Button greenSaladButton;
+    @FXML
+    private Button roastedChickenButton;
+    @FXML
+    private Button oatsPancakesButton;
+
     // Initialize method
     @FXML
     private void initialize() {
         // Populate meal type combo box
         mealTypeComboBox.getItems().addAll("Breakfast", "Lunch", "Dinner", "Snack");
+
 
         // Load initial data
         loadInitialData();
@@ -232,4 +240,7 @@ public class DietPlanController {
         public double getCarbs() { return carbs; }
         public double getFats() { return fats; }
     }
+
+
+
 }
