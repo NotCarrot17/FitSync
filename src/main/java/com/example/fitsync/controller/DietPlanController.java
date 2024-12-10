@@ -205,8 +205,13 @@ public class DietPlanController {
 
     // Load Initial Data Method
     private void loadInitialData() {
-        dietEntries.add(new Diet("Chicken Breast", "Lunch", 165, 31, 0, 3));
-        dietEntries.add(new Diet("Quinoa Salad", "Dinner", 220, 8, 39, 4));
+        dietEntries.add(new Diet("Chicken Breast", "Lunch", 165, 31, 0, 3.6));
+        dietEntries.add(new Diet("Salad", "Dinner", 220, 7.45, 44, 6.63));
+        dietEntries.add(new Diet("Oatmeal", "Breakfast", 150, 12.48, 17.35, 3.80));
+        dietEntries.add(new Diet("Yogurt", "Snack", 100, 12.89, 6, 0));
+        dietEntries.add(new Diet("Steak", "Dinner", 840, 46, 0, 72));
+        dietEntries.add(new Diet("Mixed Nuts", "Snack", 200, 25.80, 16.13, 49.24));
+        dietEntries.add(new Diet("Salmon", "Lunch", 177, 18.80, 0, 10.50));
 
         // Update display with initial entries
         updateDietEntriesDisplay();
