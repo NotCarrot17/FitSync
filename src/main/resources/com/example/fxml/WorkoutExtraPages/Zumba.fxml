@@ -378,7 +378,7 @@
     </right>
 
     <bottom>
-        <HBox alignment="CENTER" prefHeight="37.0" prefWidth="1152.0" style="-fx-padding: 10; -fx-background-color: #E0E0E0;" BorderPane.alignment="BOTTOM_LEFT">
+        <HBox alignment="CENTER" style="-fx-padding: 10; -fx-background-color: #E0E0E0;" BorderPane.alignment="BOTTOM_LEFT">
             <Label text="© 2024 FitSync. All rights reserved." />
         </HBox>
     </bottom>
