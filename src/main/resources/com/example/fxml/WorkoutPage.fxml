@@ -2,650 +2,665 @@
 
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.effect.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane prefWidth="0.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fitsync.controller.WorkoutPageController">
+<BorderPane xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fitsync.controller.WorkoutPageController">
 
-   <top>
-      <Pane style="-fx-background-color: white;" BorderPane.alignment="TOP_LEFT">
-         <children>
-            <Label layoutX="14.0" layoutY="13.0" prefHeight="31.0" prefWidth="66.0" text="FitSync" textFill="#ef4040">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-            </Label>
-            <ImageView fitHeight="36.0" fitWidth="34.0" layoutX="80.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../WorkoutImages/FitSync_Logo.png" />
-               </image>
-            </ImageView>
-            <Separator layoutX="137.0" layoutY="8.0" orientation="VERTICAL" prefHeight="44.0" prefWidth="4.0" />
-            <TextField layoutX="149.0" layoutY="17.0" prefHeight="25.0" prefWidth="458.0" promptText="Search" />
-            <Button alignment="TOP_RIGHT" contentDisplay="RIGHT" layoutX="739.0" layoutY="6.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="42.0" style="-fx-background-radius: 50; -fx-background-color: transparent; -fx-alignment: right;">
-               <graphic>
-                  <ImageView fitHeight="30.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../WorkoutImages/Profile.png" />
-                     </image>
-                  </ImageView>
-               </graphic></Button>
-         </children>
-      </Pane>
-   </top>
+    <top>
+        <Pane style="-fx-background-color: white;" BorderPane.alignment="TOP_LEFT">
+            <children>
+                <Label layoutX="14.0" layoutY="13.0" prefHeight="31.0" prefWidth="66.0" text="FitSync" textFill="#ef4040">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Label>
+                <ImageView fitHeight="36.0" fitWidth="34.0" layoutX="80.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../WorkoutImages/FitSync_Logo.png" />
+                    </image>
+                </ImageView>
+                <Separator layoutX="137.0" layoutY="8.0" orientation="VERTICAL" prefHeight="44.0" prefWidth="4.0" />
+                <TextField layoutX="149.0" layoutY="17.0" prefHeight="25.0" prefWidth="458.0" promptText="Search" />
+                <Button alignment="TOP_RIGHT" contentDisplay="RIGHT" layoutX="739.0" layoutY="6.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="42.0" style="-fx-background-radius: 50; -fx-background-color: transparent; -fx-alignment: right;">
+                    <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../WorkoutImages/Profile.png" />
+                            </image>
+                        </ImageView>
+                    </graphic></Button>
+            </children>
+        </Pane>
+    </top>
 
     <left>
         <VBox prefHeight="522.0" prefWidth="138.0" spacing="15" style="-fx-padding: 10; -fx-background-color: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);" BorderPane.alignment="TOP_LEFT">
-           <Button fx:id="btnOverview" onAction="#handleNavigation" prefHeight="25.0" prefWidth="140.0" style="-fx-background-color: transparent; -fx-alignment: left;" text="Overview">
-            <graphic>
-               <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
-                  <image>
-                     <Image url="@../../../WorkoutImages/overview.png" />
-                  </image>
-               </ImageView>
-            </graphic></Button>
-         <Button fx:id="btnWorkout" layoutX="20.0" layoutY="20.0" onAction="#handleNavigation" prefHeight="25.0" prefWidth="140.0" style="-fx-background-color: #ef4040; -fx-alignment: left;" text="Workout" textFill="#fffbfb">
-            <graphic>
-               <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
-                  <image>
-                     <Image url="@../../../WorkoutImages/workout.png" />
-                  </image>
-               </ImageView>
-            </graphic>
-         </Button>
-         <Button fx:id="btnDietPlan" layoutX="20.0" layoutY="61.0" onAction="#handleNavigation" prefHeight="25.0" prefWidth="140.0" style="-fx-background-color: transparent; -fx-alignment: left;" text="Diet Plan">
-            <graphic>
-               <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
-                  <image>
-                     <Image url="@../../../WorkoutImages/dietplan.png" />
-                  </image>
-               </ImageView>
-            </graphic>
-         </Button>
-         <Button fx:id="btnGoalsAchievements" layoutX="20.0" layoutY="101.0" onAction="#handleNavigation" prefHeight="43.0" prefWidth="140.0" style="-fx-background-color: transparent; -fx-alignment: left;" text="Goals &amp;&#10;Achievements">
-            <graphic>
-               <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
-                  <image>
-                     <Image url="@../../../WorkoutImages/goalsandachievements.png" />
-                  </image>
-               </ImageView>
-            </graphic>
-         </Button>
-         <Button fx:id="btnProgress" layoutX="20.0" layoutY="142.0" onAction="#handleNavigation" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: transparent; -fx-alignment: left;" text="Progress">
-            <graphic>
-               <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
-                  <image>
-                     <Image url="@../../../WorkoutImages/progress.png" />
-                  </image>
-               </ImageView>
-            </graphic>
-         </Button>
-         <Button fx:id="btnCommunity" layoutX="20.0" layoutY="201.0" onAction="#handleNavigation" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: transparent; -fx-alignment: left;" text="My Community">
-            <graphic>
-               <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
-                  <image>
-                     <Image url="@../../../WorkoutImages/mycommunity.png" />
-                  </image>
-               </ImageView>
-            </graphic>
-         </Button>
-         <Button fx:id="btnLogout" layoutX="20.0" layoutY="201.0" onAction="#handleNavigation" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: transparent; -fx-alignment: left;" text="Log Out">
-            <graphic>
-               <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
-                  <image>
-                     <Image url="@../../../WorkoutImages/logout.png" />
-                  </image>
-               </ImageView>
-            </graphic>
-         </Button>
+            <Button fx:id="btnOverview" onAction="#handleNavigation" prefHeight="25.0" prefWidth="140.0" style="-fx-background-color: transparent; -fx-alignment: left;" text="Overview">
+                <graphic>
+                    <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@../../../WorkoutImages/overview.png" />
+                        </image>
+                    </ImageView>
+                </graphic></Button>
+            <Button fx:id="btnWorkout" layoutX="20.0" layoutY="20.0" onAction="#handleNavigation" prefHeight="25.0" prefWidth="140.0" style="-fx-background-color: #ef4040; -fx-alignment: left;" text="Workout" textFill="#fffbfb">
+                <graphic>
+                    <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@../../../WorkoutImages/workout.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button fx:id="btnDietPlan" layoutX="20.0" layoutY="61.0" onAction="#handleNavigation" prefHeight="25.0" prefWidth="140.0" style="-fx-background-color: transparent; -fx-alignment: left;" text="Diet Plan">
+                <graphic>
+                    <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@../../../WorkoutImages/dietplan.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button fx:id="btnGoalsAchievements" layoutX="20.0" layoutY="101.0" onAction="#handleNavigation" prefHeight="43.0" prefWidth="140.0" style="-fx-background-color: transparent; -fx-alignment: left;" text="Goals &amp;&#10;Achievements">
+                <graphic>
+                    <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@../../../WorkoutImages/goalsandachievements.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button fx:id="btnProgress" layoutX="20.0" layoutY="142.0" onAction="#handleNavigation" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: transparent; -fx-alignment: left;" text="Progress">
+                <graphic>
+                    <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@../../../WorkoutImages/progress.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button fx:id="btnCommunity" layoutX="20.0" layoutY="201.0" onAction="#handleNavigation" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: transparent; -fx-alignment: left;" text="My Community">
+                <graphic>
+                    <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@../../../WorkoutImages/mycommunity.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button fx:id="btnLogout" layoutX="20.0" layoutY="201.0" onAction="#handleNavigation" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: transparent; -fx-alignment: left;" text="Log Out">
+                <graphic>
+                    <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@../../../WorkoutImages/logout.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+
 
         </VBox>
     </left>
 
-   <center>
-      <VBox alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="5.0" style="-fx-padding: 7;" BorderPane.alignment="TOP_CENTER">
-         <HBox alignment="TOP_CENTER">
-            <children>
-               <HBox prefHeight="0.0" prefWidth="63.0" style="-fx-background-color: #ef4040; -fx-background-radius: 20;">
-                  <effect>
-                     <Blend />
-                  </effect>
-                  <children>
-                     <VBox prefWidth="500.0" HBox.hgrow="ALWAYS">
+    <center>
+        <VBox alignment="TOP_CENTER" fillWidth="false" spacing="5.0" style="-fx-padding: 7;" BorderPane.alignment="TOP_CENTER">
+            <HBox alignment="TOP_CENTER">
+                <children>
+                    <Pane style="-fx-background-radius: 20; -fx-background-color: #ef4040;" HBox.hgrow="ALWAYS">
                         <children>
-                           <Label prefHeight="17.0" prefWidth="234.0" text="Start your workout today!" textFill="WHITE">
-                              <font>
-                                 <Font name="System Bold" size="17.0" />
-                              </font>
-                           </Label>
+                            <ImageView fitHeight="90.0" fitWidth="500.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@../../../WorkoutImages/StartWorkout.png" />
+                                </image>
+                            </ImageView>
+                            <Label layoutX="28.0" layoutY="14.0" prefHeight="17.0" prefWidth="234.0" text="Start your workout today!" textFill="WHITE">
+                                <font>
+                                    <Font name="System Bold" size="17.0" />
+                                </font>
+                            </Label>
+                            <Button fx:id="btnRoutines" layoutX="28.0" layoutY="48.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="98.0" style="-fx-background-radius: 50; -fx-background-color: white;" text="Routines" textAlignment="RIGHT">
+                                <graphic>
+                                    <ImageView fitHeight="24.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                        <image>
+                                            <Image url="@../../../WorkoutImages/playbutton.png" />
+                                        </image>
+                                    </ImageView>
+                                </graphic>
+                            </Button>
+                            <Button fx:id="btnStartNow" layoutX="137.0" layoutY="48.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="98.0" style="-fx-background-radius: 50; -fx-background-color: white;" text="Start Now" textAlignment="RIGHT">
+                                <graphic>
+                                    <ImageView fitHeight="24.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                        <image>
+                                            <Image url="@../../../WorkoutImages/playbutton.png" />
+                                        </image>
+                                    </ImageView>
+                                </graphic>
+                            </Button>
                         </children>
-                     </VBox>
-                     <ImageView fitHeight="90.0" fitWidth="381.0" pickOnBounds="true" preserveRatio="true" style="-fx-blend-mode: 90;">
-                        <image>
-                           <Image url="@../../../WorkoutImages/StartWorkout.png" />
-                        </image>
-                     </ImageView>
-                  </children></HBox>
-            </children>
-         </HBox>
-         <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="5.0">
-            <children>
-               <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: #711DB0; -fx-background-radius: 30; -fx-alignment: center;" HBox.hgrow="ALWAYS">
-                  <children>
-                     <ImageView fitHeight="157.0" fitWidth="153.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
-                        <image>
-                           <Image url="@../../../WorkoutImages/Coach.png" />
-                        </image>
-                     </ImageView>
-                     <VBox alignment="CENTER_LEFT" fillWidth="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
+                    </Pane>
+                </children>
+            </HBox>
+            <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+                <children>
+                    <HBox alignment="CENTER_LEFT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: #711DB0; -fx-background-radius: 30;" HBox.hgrow="ALWAYS">
                         <children>
-                           <Label text="Coach Session - Video " textFill="WHITE">
-                              <font>
-                                 <Font name="System Italic" size="12.0" />
-                              </font>
-                           </Label>
-                           <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Caroline Girvan" textFill="WHITE">
-                              <font>
-                                 <Font size="22.0" />
-                              </font>
-                           </Label>
-                           <Label text="Specialisation:" textFill="WHITE" />
-                           <Label text="Legs Workout" textFill="WHITE">
-                              <font>
-                                 <Font size="14.0" />
-                              </font>
-                           </Label>
-                           <Label text="Level:" textFill="WHITE" />
-                           <Label text="Beginner" textFill="WHITE">
-                              <font>
-                                 <Font size="14.0" />
-                              </font>
-                           </Label>
-                           <Button fx:id="btnCoachVideo" onAction="#handleButtons" prefHeight="25.0" prefWidth="104.0" style="-fx-background-color: #FFA726; -fx-text-fill: white;" text="Start Now" textFill="WHITE" VBox.vgrow="ALWAYS">
-                              <font>
-                                 <Font name="System Bold" size="12.0" />
-                              </font>
-                              <VBox.margin>
-                                 <Insets top="5.0" />
-                              </VBox.margin>
-                           </Button>
+                            <ImageView fitHeight="157.0" fitWidth="153.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                                <image>
+                                    <Image url="@../../../WorkoutImages/Coach.png" />
+                                </image>
+                            </ImageView>
+                            <VBox alignment="CENTER_LEFT" fillWidth="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
+                                <children>
+                                    <Label text="Coach Session - Video " textFill="WHITE">
+                                        <font>
+                                            <Font name="System Italic" size="12.0" />
+                                        </font>
+                                    </Label>
+                                    <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Caroline Girvan" textFill="WHITE">
+                                        <font>
+                                            <Font size="22.0" />
+                                        </font>
+                                    </Label>
+                                    <Label text="Specialisation:" textFill="WHITE" />
+                                    <Label text="Legs Workout" textFill="WHITE">
+                                        <font>
+                                            <Font size="14.0" />
+                                        </font>
+                                    </Label>
+                                    <Label text="Level:" textFill="WHITE" />
+                                    <Label text="Beginner" textFill="WHITE">
+                                        <font>
+                                            <Font size="14.0" />
+                                        </font>
+                                    </Label>
+                                    <Button fx:id="btnCoachVideo" onAction="#handleButtons" prefHeight="25.0" prefWidth="104.0" style="-fx-background-color: #FFA726; -fx-text-fill: white;" text="Start Now" textFill="WHITE">
+                                        <font>
+                                            <Font name="System Bold" size="12.0" />
+                                        </font>
+                                        <VBox.margin>
+                                            <Insets top="5.0" />
+                                        </VBox.margin>
+                                    </Button>
+                                </children>
+                                <HBox.margin>
+                                    <Insets />
+                                </HBox.margin>
+                                <padding>
+                                    <Insets left="10.0" right="10.0" />
+                                </padding>
+                            </VBox>
                         </children>
                         <HBox.margin>
-                           <Insets />
+                            <Insets right="10.0" />
                         </HBox.margin>
+                    </HBox>
+
+                    <!-- Upcoming Workouts -->
+                    <GridPane hgap="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" vgap="10.0" HBox.hgrow="ALWAYS">
+                        <Label prefHeight="30.0" prefWidth="168.0" text="Upcoming Workouts">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                        </Label>
+                        <HBox style="-fx-background-color: white;" GridPane.rowIndex="1">
+                            <children>
+                                <ImageView fitHeight="40.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../../WorkoutImages/Stretch.png" />
+                                    </image>
+                                </ImageView>
+                                <VBox>
+                                    <children>
+                                        <Label prefHeight="17.0" prefWidth="69.0" style="-fx-background-radius: 20;" text="Stretch" />
+                                        <Label prefHeight="17.0" prefWidth="69.0" text="AT 09:00" textFill="#9d9d9d">
+                                            <font>
+                                                <Font size="9.0" />
+                                            </font>
+                                            <padding>
+                                                <Insets right="20.0" />
+                                            </padding>
+                                        </Label>
+                                    </children>
+                                    <padding>
+                                        <Insets left="10.0" />
+                                    </padding>
+                                </VBox>
+                                <Button fx:id="btnStretch" mnemonicParsing="false" onAction="#handleButtons" style="-fx-background-radius: 50; -fx-background-color: transparent;">
+                                    <graphic>
+                                        <ImageView fitHeight="29.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../../../WorkoutImages/playbutton.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                            </children>
+                            <GridPane.margin>
+                                <Insets />
+                            </GridPane.margin>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="80.0" style="-fx-background-color: white;" GridPane.rowIndex="3">
+                            <children>
+                                <ImageView fitHeight="40.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../../WorkoutImages/Yoga.png" />
+                                    </image>
+                                </ImageView>
+                                <VBox>
+                                    <children>
+                                        <Label prefHeight="17.0" prefWidth="69.0" style="-fx-background-radius: 20;" text="Yoga" />
+                                        <Label text="AT 09:00" textFill="#9d9d9d">
+                                            <font>
+                                                <Font size="9.0" />
+                                            </font>
+                                            <padding>
+                                                <Insets right="20.0" />
+                                            </padding>
+                                        </Label>
+                                    </children>
+                                    <padding>
+                                        <Insets left="10.0" />
+                                    </padding>
+                                </VBox>
+                                <Button fx:id="btnYoga" mnemonicParsing="false" onAction="#handleButtons" style="-fx-background-radius: 50; -fx-background-color: transparent;">
+                                    <graphic>
+                                        <ImageView fitHeight="29.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../../../WorkoutImages/playbutton.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                            </children>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="10.0" style="-fx-background-color: white;" GridPane.rowIndex="2">
+                            <children>
+                                <ImageView fitHeight="40.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../../WorkoutImages/BackStretch.png" />
+                                    </image>
+                                </ImageView>
+                                <VBox>
+                                    <children>
+                                        <Label prefHeight="17.0" prefWidth="69.0" style="-fx-background-radius: 20;" text="Back Stretch" />
+                                        <Label prefHeight="17.0" prefWidth="69.0" text="AT 09:00" textFill="#9d9d9d">
+                                            <font>
+                                                <Font size="9.0" />
+                                            </font>
+                                            <padding>
+                                                <Insets right="20.0" />
+                                            </padding>
+                                        </Label>
+                                    </children>
+                                    <padding>
+                                        <Insets left="10.0" />
+                                    </padding>
+                                </VBox>
+                                <Button fx:id="btnBackStretch" mnemonicParsing="false" onAction="#handleButtons" style="-fx-background-radius: 50; -fx-background-color: transparent;">
+                                    <graphic>
+                                        <ImageView fitHeight="29.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../../../WorkoutImages/playbutton.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                            </children>
+                        </HBox>
+                        <columnConstraints>
+                            <ColumnConstraints />
+                        </columnConstraints>
+                        <rowConstraints>
+                            <RowConstraints />
+                            <RowConstraints />
+                            <RowConstraints />
+                            <RowConstraints />
+                            <RowConstraints />
+                            <RowConstraints />
+                            <RowConstraints />
+                        </rowConstraints>
+                    </GridPane>
+                </children>
+            </HBox>
+            <Label alignment="TOP_LEFT" prefHeight="17.0" prefWidth="154.0" text="Recommended For You">
+                <font>
+                    <Font name="System Bold" size="14.0" />
+                </font>
+            </Label>
+
+            <HBox spacing="20" style="-fx-border-width: 1; -fx-padding: 0;">
+                <children>
+                    <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: white; -fx-background-radius: 10; -fx-background-color: white; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);" HBox.hgrow="ALWAYS">
+                        <children>
+                            <ImageView fitHeight="44.0" fitWidth="132.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@../../../WorkoutImages/Upperbody.png" />
+                                </image>
+                            </ImageView>
+                            <Label prefHeight="17.0" prefWidth="117.0" text="Upperbody Workout" />
+                            <Label text="32 Mins&#10;Level: Intermediate" textFill="#9d9d9d">
+                                <font>
+                                    <Font size="10.0" />
+                                </font>
+                            </Label>
+                            <Button fx:id="btnUpperbodyWorkout" alignment="CENTER_RIGHT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#handleButtons" prefHeight="22.0" prefWidth="130.0" style="-fx-background-color: transparent;" text="View More" textAlignment="RIGHT" textFill="#ef4040">
+                                <font>
+                                    <Font size="10.0" />
+                                </font>
+                            </Button>
+                        </children>
                         <padding>
-                           <Insets left="10.0" right="10.0" />
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                         </padding>
-                     </VBox>
-                  </children>
-                  <HBox.margin>
-                     <Insets />
-                  </HBox.margin>
-               </HBox>
-
-               <!-- Upcoming Workouts -->
-               <GridPane hgap="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" vgap="10.0" HBox.hgrow="ALWAYS">
-                  <Label prefHeight="30.0" prefWidth="168.0" text="Upcoming Workouts" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
-                  </Label>
-                  <HBox style="-fx-background-color: white;" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
-                     <children>
-                        <ImageView fitHeight="40.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../WorkoutImages/Stretch.png" />
-                           </image>
-                        </ImageView>
-                        <VBox>
-                           <children>
-                              <Label prefHeight="17.0" prefWidth="69.0" style="-fx-background-radius: 20;" text="Stretch" />
-                              <Label prefHeight="17.0" prefWidth="69.0" text="AT 09:00" textFill="#9d9d9d">
-                                 <font>
-                                    <Font size="9.0" />
-                                 </font>
-                                 <padding>
-                                    <Insets right="20.0" />
-                                 </padding>
-                              </Label>
-                           </children>
-                           <padding>
-                              <Insets left="10.0" />
-                           </padding>
-                        </VBox>
-                        <Button fx:id="btnStretch" mnemonicParsing="false" onAction="#handleButtons" style="-fx-background-radius: 50; -fx-background-color: transparent;">
-                           <graphic>
-                              <ImageView fitHeight="29.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../../WorkoutImages/playbutton.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-                     </children>
-                     <GridPane.margin>
-                        <Insets />
-                     </GridPane.margin>
-                  </HBox>
-                  <HBox layoutX="10.0" layoutY="80.0" style="-fx-background-color: white;" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.valignment="TOP" GridPane.vgrow="ALWAYS">
-                     <children>
-                        <ImageView fitHeight="40.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../WorkoutImages/Yoga.png" />
-                           </image>
-                        </ImageView>
-                        <VBox>
-                           <children>
-                              <Label prefHeight="17.0" prefWidth="69.0" style="-fx-background-radius: 20;" text="Yoga" VBox.vgrow="ALWAYS" />
-                              <Label text="AT 09:00" textFill="#9d9d9d" VBox.vgrow="ALWAYS">
-                                 <font>
-                                    <Font size="9.0" />
-                                 </font>
-                                 <padding>
-                                    <Insets right="20.0" />
-                                 </padding>
-                              </Label>
-                           </children>
-                           <padding>
-                              <Insets left="10.0" />
-                           </padding>
-                        </VBox>
-                        <Button fx:id="btnYoga" mnemonicParsing="false" onAction="#handleButtons" style="-fx-background-radius: 50; -fx-background-color: transparent;">
-                           <graphic>
-                              <ImageView fitHeight="29.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../../WorkoutImages/playbutton.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-                     </children>
-                  </HBox>
-                  <HBox layoutX="10.0" layoutY="10.0" style="-fx-background-color: white;" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS">
-                     <children>
-                        <ImageView fitHeight="40.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../WorkoutImages/BackStretch.png" />
-                           </image>
-                        </ImageView>
-                        <VBox>
-                           <children>
-                              <Label prefHeight="17.0" prefWidth="69.0" style="-fx-background-radius: 20;" text="Back Stretch" />
-                              <Label prefHeight="17.0" prefWidth="69.0" text="AT 09:00" textFill="#9d9d9d">
-                                 <font>
-                                    <Font size="9.0" />
-                                 </font>
-                                 <padding>
-                                    <Insets right="20.0" />
-                                 </padding>
-                              </Label>
-                           </children>
-                           <padding>
-                              <Insets left="10.0" />
-                           </padding>
-                        </VBox>
-                        <Button fx:id="btnBackStretch" mnemonicParsing="false" onAction="#handleButtons" style="-fx-background-radius: 50; -fx-background-color: transparent;">
-                           <graphic>
-                              <ImageView fitHeight="29.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../../WorkoutImages/playbutton.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-                     </children>
-                  </HBox>
-                  <columnConstraints>
-                     <ColumnConstraints />
-                  </columnConstraints>
-                  <rowConstraints>
-                     <RowConstraints />
-                     <RowConstraints />
-                     <RowConstraints />
-                     <RowConstraints />
-                     <RowConstraints />
-                     <RowConstraints />
-                     <RowConstraints />
-                  </rowConstraints>
-               </GridPane>
-            </children>
-         </HBox>
-         <Label alignment="TOP_LEFT" prefHeight="17.0" prefWidth="154.0" text="Recommended For You">
-            <font>
-               <Font name="System Bold" size="14.0" />
-            </font>
-         </Label>
-
-         <HBox spacing="20" style="-fx-border-width: 1; -fx-padding: 0;" VBox.vgrow="ALWAYS">
-            <children>
-               <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: white; -fx-background-radius: 10; -fx-background-color: white; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);" HBox.hgrow="ALWAYS">
-                  <children>
-                     <ImageView fitHeight="44.0" fitWidth="132.0" pickOnBounds="true" preserveRatio="true">
-                        <image>
-                           <Image url="@../../../WorkoutImages/Upperbody.png" />
-                        </image>
-                     </ImageView>
-                     <Label prefHeight="17.0" prefWidth="117.0" text="Upperbody Workout" />
-                     <Label text="32 Mins&#10;Level: Intermediate" textFill="#9d9d9d">
-                        <font>
-                           <Font size="10.0" />
-                        </font>
-                     </Label>
-                     <Button fx:id="btnUpperbodyWorkout" alignment="CENTER_RIGHT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#handleButtons" prefHeight="22.0" prefWidth="130.0" style="-fx-background-color: transparent;" text="View More" textAlignment="RIGHT" textFill="#ef4040">
-                        <font>
-                           <Font size="10.0" />
-                        </font>
-                     </Button>
-                  </children>
-                  <padding>
-                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                  </padding>
-               </VBox>
-               <VBox layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: white; -fx-background-radius: 10; -fx-background-color: white; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);" HBox.hgrow="ALWAYS">
-                  <children>
-                     <ImageView fitHeight="44.0" fitWidth="132.0" pickOnBounds="true" preserveRatio="true">
-                        <image>
-                           <Image url="@../../../WorkoutImages/Zumba.png" />
-                        </image>
-                     </ImageView>
-                     <Label prefHeight="17.0" prefWidth="117.0" text="Zumba" />
-                     <Label text="1 Hour&#10;Level: Beginner" textFill="#9d9d9d">
-                        <font>
-                           <Font size="10.0" />
-                        </font>
-                     </Label>
-                     <Button fx:id="btnZumba" alignment="CENTER_RIGHT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#handleButtons" prefHeight="22.0" prefWidth="130.0" style="-fx-background-color: transparent;" text="View More" textAlignment="RIGHT" textFill="#ef4040">
-                        <font>
-                           <Font size="10.0" />
-                        </font>
-                     </Button>
-                  </children>
-                  <padding>
-                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                  </padding>
-               </VBox>
-               <VBox layoutX="173.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: white; -fx-background-radius: 10; -fx-background-color: white; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);" HBox.hgrow="ALWAYS">
-                  <children>
-                     <ImageView fitHeight="44.0" fitWidth="132.0" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
-                        <image>
-                           <Image url="@../../../WorkoutImages/Pilates.png" />
-                        </image>
-                     </ImageView>
-                     <Label prefHeight="17.0" prefWidth="117.0" text="Pilates" VBox.vgrow="ALWAYS" />
-                     <Label text="1 Hour&#10;Level: Beginner" textFill="#9d9d9d" VBox.vgrow="ALWAYS">
-                        <font>
-                           <Font size="10.0" />
-                        </font>
-                     </Label>
-                     <Button fx:id="btnPilates" alignment="CENTER_RIGHT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#handleButtons" prefHeight="22.0" prefWidth="130.0" style="-fx-background-color: transparent;" text="View More" textAlignment="RIGHT" textFill="#ef4040" VBox.vgrow="ALWAYS">
-                        <font>
-                           <Font size="10.0" />
-                        </font>
-                     </Button>
-                  </children>
-                  <padding>
-                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                  </padding>
-               </VBox>
-            </children></HBox>
-      </VBox>
-   </center>
+                    </VBox>
+                    <VBox layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: white; -fx-background-radius: 10; -fx-background-color: white; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);">
+                        <children>
+                            <ImageView fitHeight="44.0" fitWidth="132.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@../../../WorkoutImages/Zumba.png" />
+                                </image>
+                            </ImageView>
+                            <Label prefHeight="17.0" prefWidth="117.0" text="Zumba" />
+                            <Label text="1 Hour&#10;Level: Beginner" textFill="#9d9d9d">
+                                <font>
+                                    <Font size="10.0" />
+                                </font>
+                            </Label>
+                            <Button fx:id="btnZumba" alignment="CENTER_RIGHT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#handleButtons" prefHeight="22.0" prefWidth="130.0" style="-fx-background-color: transparent;" text="View More" textAlignment="RIGHT" textFill="#ef4040">
+                                <font>
+                                    <Font size="10.0" />
+                                </font>
+                            </Button>
+                        </children>
+                        <padding>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </padding>
+                    </VBox>
+                    <VBox layoutX="173.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: white; -fx-background-radius: 10; -fx-background-color: white; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);">
+                        <children>
+                            <ImageView fitHeight="44.0" fitWidth="132.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@../../../WorkoutImages/Pilates.png" />
+                                </image>
+                            </ImageView>
+                            <Label prefHeight="17.0" prefWidth="117.0" text="Pilates" />
+                            <Label text="1 Hour&#10;Level: Beginner" textFill="#9d9d9d">
+                                <font>
+                                    <Font size="10.0" />
+                                </font>
+                            </Label>
+                            <Button fx:id="btnPilates" alignment="CENTER_RIGHT" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#handleButtons" prefHeight="22.0" prefWidth="130.0" style="-fx-background-color: transparent;" text="View More" textAlignment="RIGHT" textFill="#ef4040">
+                                <font>
+                                    <Font size="10.0" />
+                                </font>
+                            </Button>
+                        </children>
+                        <padding>
+                            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                        </padding>
+                    </VBox>
+                </children></HBox>
+        </VBox>
+    </center>
 
 
     <right>
         <VBox spacing="5.0" style="-fx-padding: 5; -fx-background-color: #F8F8F8;" BorderPane.alignment="TOP_RIGHT">
             <!-- Schedule -->
             <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="My Schedule" />
-         <HBox style="-fx-background-color: white; -fx-background-radius: 5;">
-            <children>
-               <VBox HBox.hgrow="ALWAYS">
-                  <children>
-                     <Label prefHeight="20.0" prefWidth="96.0" text="Monday" textFill="#9d9d9d">
-                        <font>
-                           <Font name="System Bold" size="14.0" />
-                        </font>
-                     </Label>
-                     <HBox prefHeight="46.0" prefWidth="81.0">
+            <HBox style="-fx-background-color: white; -fx-background-radius: 5;">
+                <children>
+                    <VBox HBox.hgrow="ALWAYS">
                         <children>
-                           <ImageView fitHeight="40.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
-                              <image>
-                                 <Image url="@../../../WorkoutImages/Stretch.png" />
-                              </image>
-                           </ImageView>
-                           <VBox HBox.hgrow="ALWAYS">
-                              <children>
-                                 <Label prefHeight="17.0" prefWidth="61.0" style="-fx-background-radius: 20;" text="Stretch" />
-                                 <Label prefHeight="17.0" prefWidth="53.0" text="AT 08:00" textFill="#9d9d9d">
-                                    <font>
-                                       <Font size="9.0" />
-                                    </font>
-                                 </Label>
-                              </children>
-                              <padding>
-                                 <Insets left="10.0" />
-                              </padding>
-                           </VBox>
+                            <Label prefHeight="20.0" prefWidth="96.0" text="Monday" textFill="#9d9d9d">
+                                <font>
+                                    <Font name="System Bold" size="14.0" />
+                                </font>
+                            </Label>
+                            <HBox prefHeight="46.0" prefWidth="81.0">
+                                <children>
+                                    <ImageView fitHeight="40.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                                        <image>
+                                            <Image url="@../../../WorkoutImages/Stretch.png" />
+                                        </image>
+                                    </ImageView>
+                                    <VBox HBox.hgrow="ALWAYS">
+                                        <children>
+                                            <Label prefHeight="17.0" prefWidth="61.0" style="-fx-background-radius: 20;" text="Stretch" />
+                                            <Label prefHeight="17.0" prefWidth="53.0" text="AT 08:00" textFill="#9d9d9d">
+                                                <font>
+                                                    <Font size="9.0" />
+                                                </font>
+                                            </Label>
+                                        </children>
+                                        <padding>
+                                            <Insets left="10.0" />
+                                        </padding>
+                                    </VBox>
+                                </children>
+                            </HBox>
                         </children>
-                     </HBox>
-                  </children>
-               </VBox>
-            </children>
-            <padding>
-               <Insets left="5.0" right="5.0" />
-            </padding>
-         </HBox>
-         <HBox layoutX="15.0" layoutY="51.0" style="-fx-background-color: white; -fx-background-radius: 5;">
-            <children>
-               <VBox HBox.hgrow="ALWAYS">
-                  <children>
-                     <Label prefHeight="20.0" prefWidth="96.0" text="Wednesday" textFill="#9d9d9d">
-                        <font>
-                           <Font name="System Bold" size="14.0" />
-                        </font>
-                     </Label>
-                     <HBox prefHeight="46.0" prefWidth="81.0">
+                    </VBox>
+                </children>
+                <padding>
+                    <Insets left="5.0" right="5.0" />
+                </padding>
+            </HBox>
+            <HBox layoutX="15.0" layoutY="51.0" style="-fx-background-color: white; -fx-background-radius: 5;">
+                <children>
+                    <VBox HBox.hgrow="ALWAYS">
                         <children>
-                           <ImageView fitHeight="40.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
-                              <image>
-                                 <Image url="@../../../WorkoutImages/Stretch.png" />
-                              </image>
-                           </ImageView>
-                           <VBox prefHeight="46.0" prefWidth="96.0">
-                              <children>
-                                 <Label prefHeight="17.0" prefWidth="103.0" style="-fx-background-radius: 20;" text="Back Stretch" />
-                                 <Label prefHeight="17.0" prefWidth="53.0" text="AT 08:00" textFill="#9d9d9d">
-                                    <font>
-                                       <Font size="9.0" />
-                                    </font>
-                                 </Label>
-                              </children>
-                              <padding>
-                                 <Insets left="10.0" />
-                              </padding>
-                           </VBox>
+                            <Label prefHeight="20.0" prefWidth="96.0" text="Wednesday" textFill="#9d9d9d">
+                                <font>
+                                    <Font name="System Bold" size="14.0" />
+                                </font>
+                            </Label>
+                            <HBox prefHeight="46.0" prefWidth="81.0">
+                                <children>
+                                    <ImageView fitHeight="40.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                                        <image>
+                                            <Image url="@../../../WorkoutImages/Stretch.png" />
+                                        </image>
+                                    </ImageView>
+                                    <VBox prefHeight="46.0" prefWidth="96.0">
+                                        <children>
+                                            <Label prefHeight="17.0" prefWidth="103.0" style="-fx-background-radius: 20;" text="Back Stretch" />
+                                            <Label prefHeight="17.0" prefWidth="53.0" text="AT 08:00" textFill="#9d9d9d">
+                                                <font>
+                                                    <Font size="9.0" />
+                                                </font>
+                                            </Label>
+                                        </children>
+                                        <padding>
+                                            <Insets left="10.0" />
+                                        </padding>
+                                    </VBox>
+                                </children>
+                            </HBox>
                         </children>
-                     </HBox>
-                  </children>
-               </VBox>
-            </children>
-            <padding>
-               <Insets left="5.0" right="5.0" />
-            </padding>
-         </HBox>
-         <HBox layoutX="15.0" layoutY="122.0" style="-fx-background-color: white; -fx-background-radius: 5;">
-            <children>
-               <VBox HBox.hgrow="ALWAYS">
-                  <children>
-                     <Label prefHeight="20.0" prefWidth="96.0" text="Friday" textFill="#9d9d9d">
-                        <font>
-                           <Font name="System Bold" size="14.0" />
-                        </font>
-                     </Label>
-                     <HBox prefHeight="46.0" prefWidth="81.0">
+                    </VBox>
+                </children>
+                <padding>
+                    <Insets left="5.0" right="5.0" />
+                </padding>
+            </HBox>
+            <HBox layoutX="15.0" layoutY="122.0" style="-fx-background-color: white; -fx-background-radius: 5;">
+                <children>
+                    <VBox HBox.hgrow="ALWAYS">
                         <children>
-                           <ImageView fitHeight="40.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
-                              <image>
-                                 <Image url="@../../../WorkoutImages/Stretch.png" />
-                              </image>
-                           </ImageView>
-                           <VBox>
-                              <children>
-                                 <Label prefHeight="17.0" prefWidth="61.0" style="-fx-background-radius: 20;" text="Stretch" />
-                                 <Label prefHeight="17.0" prefWidth="53.0" text="AT 08:00" textFill="#9d9d9d">
-                                    <font>
-                                       <Font size="9.0" />
-                                    </font>
-                                 </Label>
-                              </children>
-                              <padding>
-                                 <Insets left="10.0" />
-                              </padding>
-                           </VBox>
+                            <Label prefHeight="20.0" prefWidth="96.0" text="Friday" textFill="#9d9d9d">
+                                <font>
+                                    <Font name="System Bold" size="14.0" />
+                                </font>
+                            </Label>
+                            <HBox prefHeight="46.0" prefWidth="81.0">
+                                <children>
+                                    <ImageView fitHeight="40.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                                        <image>
+                                            <Image url="@../../../WorkoutImages/Stretch.png" />
+                                        </image>
+                                    </ImageView>
+                                    <VBox>
+                                        <children>
+                                            <Label prefHeight="17.0" prefWidth="61.0" style="-fx-background-radius: 20;" text="Stretch" />
+                                            <Label prefHeight="17.0" prefWidth="53.0" text="AT 08:00" textFill="#9d9d9d">
+                                                <font>
+                                                    <Font size="9.0" />
+                                                </font>
+                                            </Label>
+                                        </children>
+                                        <padding>
+                                            <Insets left="10.0" />
+                                        </padding>
+                                    </VBox>
+                                </children>
+                            </HBox>
                         </children>
-                     </HBox>
-                  </children>
-               </VBox>
-            </children>
-            <padding>
-               <Insets left="5.0" right="5.0" />
-            </padding>
-         </HBox>
-         <HBox layoutX="15.0" layoutY="122.0" style="-fx-background-color: white; -fx-background-radius: 5;">
-            <children>
-               <VBox HBox.hgrow="ALWAYS">
-                  <children>
-                     <Label prefHeight="20.0" prefWidth="96.0" text="Saturday" textFill="#9d9d9d">
-                        <font>
-                           <Font name="System Bold" size="14.0" />
-                        </font>
-                     </Label>
-                     <HBox prefHeight="46.0" prefWidth="81.0">
+                    </VBox>
+                </children>
+                <padding>
+                    <Insets left="5.0" right="5.0" />
+                </padding>
+            </HBox>
+            <HBox layoutX="15.0" layoutY="122.0" style="-fx-background-color: white; -fx-background-radius: 5;">
+                <children>
+                    <VBox HBox.hgrow="ALWAYS">
                         <children>
-                           <ImageView fitHeight="40.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
-                              <image>
-                                 <Image url="@../../../WorkoutImages/Stretch.png" />
-                              </image>
-                           </ImageView>
-                           <VBox>
-                              <children>
-                                 <Label prefHeight="17.0" prefWidth="61.0" style="-fx-background-radius: 20;" text="Stretch" />
-                                 <Label prefHeight="17.0" prefWidth="53.0" text="AT 08:00" textFill="#9d9d9d">
-                                    <font>
-                                       <Font size="9.0" />
-                                    </font>
-                                 </Label>
-                              </children>
-                              <padding>
-                                 <Insets left="10.0" />
-                              </padding>
-                           </VBox>
+                            <Label prefHeight="20.0" prefWidth="96.0" text="Saturday" textFill="#9d9d9d">
+                                <font>
+                                    <Font name="System Bold" size="14.0" />
+                                </font>
+                            </Label>
+                            <HBox prefHeight="46.0" prefWidth="81.0">
+                                <children>
+                                    <ImageView fitHeight="40.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                                        <image>
+                                            <Image url="@../../../WorkoutImages/Stretch.png" />
+                                        </image>
+                                    </ImageView>
+                                    <VBox>
+                                        <children>
+                                            <Label prefHeight="17.0" prefWidth="61.0" style="-fx-background-radius: 20;" text="Stretch" />
+                                            <Label prefHeight="17.0" prefWidth="53.0" text="AT 08:00" textFill="#9d9d9d">
+                                                <font>
+                                                    <Font size="9.0" />
+                                                </font>
+                                            </Label>
+                                        </children>
+                                        <padding>
+                                            <Insets left="10.0" />
+                                        </padding>
+                                    </VBox>
+                                </children>
+                            </HBox>
                         </children>
-                     </HBox>
-                  </children>
-               </VBox>
-            </children>
-            <padding>
-               <Insets left="5.0" right="5.0" />
-            </padding>
-         </HBox>
+                    </VBox>
+                </children>
+                <padding>
+                    <Insets left="5.0" right="5.0" />
+                </padding>
+            </HBox>
+
 
             <!-- Purchased Classes -->
             <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Purchased Classes" />
-         <HBox layoutX="15.0" layoutY="265.0" style="-fx-background-color: white; -fx-background-radius: 5;">
-            <children>
-               <HBox>
-                  <children>
-                     <ImageView fitHeight="40.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
-                        <image>
-                           <Image url="@../../../WorkoutImages/YogaPurchasedClasses.png" />
-                        </image>
-                     </ImageView>
-                     <VBox>
+            <HBox layoutX="15.0" layoutY="265.0" style="-fx-background-color: white; -fx-background-radius: 5;">
+                <children>
+                    <HBox>
                         <children>
-                           <Label prefHeight="17.0" prefWidth="61.0" style="-fx-background-radius: 20;" text="Yoga Class" />
-                           <Label prefHeight="17.0" prefWidth="53.0" text="RM100" textFill="#9d9d9d">
-                              <font>
-                                 <Font size="9.0" />
-                              </font>
-                           </Label>
+                            <ImageView fitHeight="40.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@../../../WorkoutImages/YogaPurchasedClasses.png" />
+                                </image>
+                            </ImageView>
+                            <VBox>
+                                <children>
+                                    <Label prefHeight="17.0" prefWidth="61.0" style="-fx-background-radius: 20;" text="Yoga Class" />
+                                    <Label prefHeight="17.0" prefWidth="53.0" text="RM100" textFill="#9d9d9d">
+                                        <font>
+                                            <Font size="9.0" />
+                                        </font>
+                                    </Label>
+                                </children>
+                                <padding>
+                                    <Insets left="10.0" />
+                                </padding>
+                            </VBox>
                         </children>
-                        <padding>
-                           <Insets left="10.0" />
-                        </padding>
-                     </VBox>
-                  </children>
-               </HBox>
-            </children>
-            <padding>
-               <Insets left="5.0" right="5.0" />
-            </padding>
-         </HBox>
-         <HBox layoutX="15.0" layoutY="371.0" style="-fx-background-color: white; -fx-background-radius: 5;">
-            <children>
-               <HBox HBox.hgrow="ALWAYS">
-                  <children>
-                     <ImageView fitHeight="40.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
-                        <image>
-                           <Image url="@../../../WorkoutImages/SwimPurchasedClasses.png" />
-                        </image>
-                     </ImageView>
-                     <VBox HBox.hgrow="ALWAYS">
+                    </HBox>
+                </children>
+                <padding>
+                    <Insets left="5.0" right="5.0" />
+                </padding>
+            </HBox>
+            <HBox layoutX="15.0" layoutY="371.0" style="-fx-background-color: white; -fx-background-radius: 5;">
+                <children>
+                    <HBox HBox.hgrow="ALWAYS">
                         <children>
-                           <Label style="-fx-background-radius: 20;" text="Swimming Class" />
-                           <Label prefHeight="17.0" prefWidth="53.0" text="RM100" textFill="#9d9d9d">
-                              <font>
-                                 <Font size="9.0" />
-                              </font>
-                           </Label>
+                            <ImageView fitHeight="40.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@../../../WorkoutImages/SwimPurchasedClasses.png" />
+                                </image>
+                            </ImageView>
+                            <VBox HBox.hgrow="ALWAYS">
+                                <children>
+                                    <Label style="-fx-background-radius: 20;" text="Swimming Class" />
+                                    <Label prefHeight="17.0" prefWidth="53.0" text="RM100" textFill="#9d9d9d">
+                                        <font>
+                                            <Font size="9.0" />
+                                        </font>
+                                    </Label>
+                                </children>
+                                <padding>
+                                    <Insets left="10.0" />
+                                </padding>
+                            </VBox>
                         </children>
-                        <padding>
-                           <Insets left="10.0" />
-                        </padding>
-                     </VBox>
-                  </children>
-               </HBox>
-            </children>
-            <padding>
-               <Insets left="5.0" right="5.0" />
-            </padding>
-         </HBox>
-         <HBox layoutX="15.0" layoutY="414.0" style="-fx-background-color: white; -fx-background-radius: 5;">
-            <children>
-               <HBox>
-                  <children>
-                     <ImageView fitHeight="40.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
-                        <image>
-                           <Image url="@../../../WorkoutImages/Stretch.png" />
-                        </image>
-                     </ImageView>
-                     <VBox>
+                    </HBox>
+                </children>
+                <padding>
+                    <Insets left="5.0" right="5.0" />
+                </padding>
+            </HBox>
+            <HBox layoutX="15.0" layoutY="414.0" style="-fx-background-color: white; -fx-background-radius: 5;">
+                <children>
+                    <HBox>
                         <children>
-                           <Label prefHeight="17.0" prefWidth="61.0" style="-fx-background-radius: 20;" text="Zumba" />
-                           <Label prefHeight="17.0" prefWidth="53.0" text="RM100" textFill="#9d9d9d">
-                              <font>
-                                 <Font size="9.0" />
-                              </font>
-                           </Label>
+                            <ImageView fitHeight="40.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@../../../WorkoutImages/Stretch.png" />
+                                </image>
+                            </ImageView>
+                            <VBox>
+                                <children>
+                                    <Label prefHeight="17.0" prefWidth="61.0" style="-fx-background-radius: 20;" text="Zumba" />
+                                    <Label prefHeight="17.0" prefWidth="53.0" text="RM100" textFill="#9d9d9d">
+                                        <font>
+                                            <Font size="9.0" />
+                                        </font>
+                                    </Label>
+                                </children>
+                                <padding>
+                                    <Insets left="10.0" />
+                                </padding>
+                            </VBox>
                         </children>
-                        <padding>
-                           <Insets left="10.0" />
-                        </padding>
-                     </VBox>
-                  </children>
-               </HBox>
-            </children>
-            <padding>
-               <Insets left="5.0" right="5.0" />
-            </padding>
-         </HBox>
+                    </HBox>
+                </children>
+                <padding>
+                    <Insets left="5.0" right="5.0" />
+                </padding>
+            </HBox>
         </VBox>
     </right>
+
 
     <bottom>
         <HBox alignment="CENTER" prefHeight="37.0" prefWidth="1152.0" style="-fx-padding: 10; -fx-background-color: #E0E0E0;" BorderPane.alignment="BOTTOM_LEFT">
             <Label text="© 2024 FitSync. All rights reserved." />
         </HBox>
     </bottom>
+
 </BorderPane>
