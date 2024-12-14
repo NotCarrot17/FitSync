@@ -255,7 +255,7 @@
                                 <VBox>
                                     <children>
                                         <Label prefHeight="17.0" prefWidth="69.0" style="-fx-background-radius: 20;" text="Yoga" />
-                                        <Label text="AT 09:00" textFill="#9d9d9d">
+                                        <Label text="AT 11:00" textFill="#9d9d9d">
                                             <font>
                                                 <Font size="9.0" />
                                             </font>
@@ -289,7 +289,7 @@
                                 <VBox>
                                     <children>
                                         <Label prefHeight="17.0" prefWidth="69.0" style="-fx-background-radius: 20;" text="Back Stretch" />
-                                        <Label prefHeight="17.0" prefWidth="69.0" text="AT 09:00" textFill="#9d9d9d">
+                                        <Label prefHeight="17.0" prefWidth="69.0" text="AT 10:00" textFill="#9d9d9d">
                                             <font>
                                                 <Font size="9.0" />
                                             </font>
@@ -465,7 +465,7 @@
                                 <children>
                                     <ImageView fitHeight="40.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
                                         <image>
-                                            <Image url="@../../../WorkoutImages/Stretch.png" />
+                                            <Image url="@../../../WorkoutImages/BackStretch.png" />
                                         </image>
                                     </ImageView>
                                     <VBox prefHeight="46.0" prefWidth="96.0">
@@ -541,12 +541,12 @@
                                 <children>
                                     <ImageView fitHeight="40.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
                                         <image>
-                                            <Image url="@../../../WorkoutImages/Stretch.png" />
+                                            <Image url="@../../../WorkoutImages/Yoga.png" />
                                         </image>
                                     </ImageView>
                                     <VBox>
                                         <children>
-                                            <Label prefHeight="17.0" prefWidth="61.0" style="-fx-background-radius: 20;" text="Stretch" />
+                                            <Label prefHeight="17.0" prefWidth="61.0" style="-fx-background-radius: 20;" text="Yoga" />
                                             <Label prefHeight="17.0" prefWidth="53.0" text="AT 08:00" textFill="#9d9d9d">
                                                 <font>
                                                     <Font size="9.0" />
