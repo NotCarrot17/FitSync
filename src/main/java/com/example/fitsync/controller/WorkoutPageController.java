@@ -7,6 +7,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
@@ -109,6 +111,8 @@ public class WorkoutPageController {
                 fxmlFile = "/com/example/fxml/WorkoutExtraPages/Pilates.fxml";
             } else if (clickedButton == goBack) {
                 fxmlFile = "/com/example/fxml/WorkoutPage.fxml";
+            } else if (clickedButton == btnRoutines) {
+                fxmlFile = "/com/example/fxml/WorkoutExtraPages/Routines.fxml";
             } else if (clickedButton == buyNow) {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Confirmation");

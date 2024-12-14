@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fitsync.controller.WorkoutPageController">
+<BorderPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fitsync.controller.WorkoutPageController">
 
     <top>
         <Pane style="-fx-background-color: white;" BorderPane.alignment="TOP_LEFT">
@@ -105,53 +105,54 @@
     </left>
 
     <center>
-        <VBox alignment="TOP_CENTER" fillWidth="false" spacing="5.0" style="-fx-padding: 7;" BorderPane.alignment="TOP_CENTER">
-            <HBox alignment="TOP_CENTER">
+        <VBox alignment="TOP_CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="5.0" style="-fx-padding: 10;" BorderPane.alignment="TOP_CENTER">
+            <HBox alignment="TOP_CENTER" style="-fx-background-color: #ef4040; -fx-background-radius: 20;">
                 <children>
-                    <Pane style="-fx-background-radius: 20; -fx-background-color: #ef4040;" HBox.hgrow="ALWAYS">
-                        <children>
-                            <ImageView fitHeight="90.0" fitWidth="500.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
-                                <image>
-                                    <Image url="@../../../WorkoutImages/StartWorkout.png" />
-                                </image>
-                            </ImageView>
-                            <Label layoutX="28.0" layoutY="14.0" prefHeight="17.0" prefWidth="234.0" text="Start your workout today!" textFill="WHITE">
+               <VBox alignment="CENTER" prefHeight="31.0" prefWidth="267.0" spacing="5.0">
+                  <children>
+                            <Label prefHeight="26.0" prefWidth="275.0" text="Start your workout today!" textFill="WHITE">
                                 <font>
                                     <Font name="System Bold" size="17.0" />
                                 </font>
                             </Label>
-                            <Button fx:id="btnRoutines" layoutX="28.0" layoutY="48.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="98.0" style="-fx-background-radius: 50; -fx-background-color: white;" text="Routines" textAlignment="RIGHT">
-                                <graphic>
-                                    <ImageView fitHeight="24.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
-                                        <image>
-                                            <Image url="@../../../WorkoutImages/playbutton.png" />
-                                        </image>
-                                    </ImageView>
-                                </graphic>
-                            </Button>
-                            <Button fx:id="btnStartNow" layoutX="137.0" layoutY="48.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="98.0" style="-fx-background-radius: 50; -fx-background-color: white;" text="Start Now" textAlignment="RIGHT">
-                                <graphic>
-                                    <ImageView fitHeight="24.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
-                                        <image>
-                                            <Image url="@../../../WorkoutImages/playbutton.png" />
-                                        </image>
-                                    </ImageView>
-                                </graphic>
-                            </Button>
+                     <HBox>
+                        <children>
+                                  <Button fx:id="btnRoutines" mnemonicParsing="false" onAction="#handleButtons" prefHeight="33.0" prefWidth="98.0" style="-fx-background-radius: 50; -fx-background-color: white;" text="Routines" textAlignment="RIGHT">
+                                      <graphic>
+                                          <ImageView fitHeight="24.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                              <image>
+                                                  <Image url="@../../../WorkoutImages/playbutton.png" />
+                                              </image>
+                                          </ImageView>
+                                      </graphic>
+                                  </Button>
                         </children>
-                    </Pane>
+                     </HBox>
+                  </children>
+                  <BorderPane.margin>
+                     <Insets />
+                  </BorderPane.margin>
+                  <padding>
+                     <Insets left="10.0" />
+                  </padding>
+               </VBox>
+                      <ImageView fitHeight="122.0" fitWidth="204.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                          <image>
+                              <Image url="@../../../WorkoutImages/StartWorkout.png" />
+                          </image>
+                      </ImageView>
                 </children>
             </HBox>
-            <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+            <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" VBox.vgrow="ALWAYS">
                 <children>
-                    <HBox alignment="CENTER_LEFT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: #711DB0; -fx-background-radius: 30;" HBox.hgrow="ALWAYS">
+                    <HBox alignment="CENTER" style="-fx-background-color: #711DB0; -fx-background-radius: 30;" HBox.hgrow="ALWAYS">
                         <children>
-                            <ImageView fitHeight="157.0" fitWidth="153.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
+                            <ImageView fitHeight="156.0" fitWidth="139.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
                                 <image>
                                     <Image url="@../../../WorkoutImages/Coach.png" />
                                 </image>
                             </ImageView>
-                            <VBox alignment="CENTER_LEFT" fillWidth="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
+                            <VBox alignment="CENTER_LEFT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" HBox.hgrow="ALWAYS">
                                 <children>
                                     <Label text="Coach Session - Video " textFill="WHITE">
                                         <font>
@@ -190,6 +191,9 @@
                                 <padding>
                                     <Insets left="10.0" right="10.0" />
                                 </padding>
+                        <opaqueInsets>
+                           <Insets />
+                        </opaqueInsets>
                             </VBox>
                         </children>
                         <HBox.margin>
@@ -204,7 +208,7 @@
                                 <Font name="System Bold" size="14.0" />
                             </font>
                         </Label>
-                        <HBox style="-fx-background-color: white;" GridPane.rowIndex="1">
+                        <HBox style="-fx-background-color: white;" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
                             <children>
                                 <ImageView fitHeight="40.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
@@ -241,7 +245,7 @@
                                 <Insets />
                             </GridPane.margin>
                         </HBox>
-                        <HBox layoutX="10.0" layoutY="80.0" style="-fx-background-color: white;" GridPane.rowIndex="3">
+                        <HBox layoutX="10.0" layoutY="80.0" style="-fx-background-color: white;" GridPane.hgrow="ALWAYS" GridPane.rowIndex="3" GridPane.vgrow="ALWAYS">
                             <children>
                                 <ImageView fitHeight="40.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
@@ -264,7 +268,7 @@
                                         <Insets left="10.0" />
                                     </padding>
                                 </VBox>
-                                <Button fx:id="btnYoga" mnemonicParsing="false" onAction="#handleButtons" style="-fx-background-radius: 50; -fx-background-color: transparent;">
+                                <Button fx:id="btnYoga" alignment="CENTER_RIGHT" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#handleButtons" style="-fx-background-radius: 50; -fx-background-color: transparent;" HBox.hgrow="SOMETIMES">
                                     <graphic>
                                         <ImageView fitHeight="29.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
@@ -275,7 +279,7 @@
                                 </Button>
                             </children>
                         </HBox>
-                        <HBox layoutX="10.0" layoutY="10.0" style="-fx-background-color: white;" GridPane.rowIndex="2">
+                        <HBox layoutX="10.0" layoutY="10.0" style="-fx-background-color: white;" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS">
                             <children>
                                 <ImageView fitHeight="40.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
@@ -355,7 +359,7 @@
                             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                         </padding>
                     </VBox>
-                    <VBox layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: white; -fx-background-radius: 10; -fx-background-color: white; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);">
+                    <VBox layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: white; -fx-background-radius: 10; -fx-background-color: white; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);" HBox.hgrow="ALWAYS">
                         <children>
                             <ImageView fitHeight="44.0" fitWidth="132.0" pickOnBounds="true" preserveRatio="true">
                                 <image>
@@ -378,7 +382,7 @@
                             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                         </padding>
                     </VBox>
-                    <VBox layoutX="173.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: white; -fx-background-radius: 10; -fx-background-color: white; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);">
+                    <VBox alignment="TOP_CENTER" layoutX="173.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: white; -fx-background-radius: 10; -fx-background-color: white; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);" HBox.hgrow="ALWAYS">
                         <children>
                             <ImageView fitHeight="44.0" fitWidth="132.0" pickOnBounds="true" preserveRatio="true">
                                 <image>
@@ -625,30 +629,6 @@
                 </padding>
             </HBox>
             <HBox layoutX="15.0" layoutY="414.0" style="-fx-background-color: white; -fx-background-radius: 5;">
-                <children>
-                    <HBox>
-                        <children>
-                            <ImageView fitHeight="40.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
-                                <image>
-                                    <Image url="@../../../WorkoutImages/Stretch.png" />
-                                </image>
-                            </ImageView>
-                            <VBox>
-                                <children>
-                                    <Label prefHeight="17.0" prefWidth="61.0" style="-fx-background-radius: 20;" text="Zumba" />
-                                    <Label prefHeight="17.0" prefWidth="53.0" text="RM100" textFill="#9d9d9d">
-                                        <font>
-                                            <Font size="9.0" />
-                                        </font>
-                                    </Label>
-                                </children>
-                                <padding>
-                                    <Insets left="10.0" />
-                                </padding>
-                            </VBox>
-                        </children>
-                    </HBox>
-                </children>
                 <padding>
                     <Insets left="5.0" right="5.0" />
                 </padding>
