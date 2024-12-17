@@ -105,7 +105,7 @@ public class Main extends Application {
     }
 
     private Pane createTrackerPage() {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/fxml/LoginPage.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/fxml/FitnessTrackerPage.fxml"));
         try {
             return loader.load();
         } catch (Exception e) {
