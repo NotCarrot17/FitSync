@@ -6,14 +6,14 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="600.0" prefWidth="716.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fitsync.controller.GoalsPageController">
+<AnchorPane prefHeight="600.0" prefWidth="864.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fitsync.controller.GoalsPageController">
    <children>
-      <BorderPane prefHeight="600.0" prefWidth="716.0">
+      <BorderPane prefHeight="600.0" prefWidth="950.0">
          <center>
             <VBox prefHeight="389.0" prefWidth="348.0" style="-fx-padding: 10;" BorderPane.alignment="CENTER">
                <children>
                   <Label style="-fx-font-size: 20; -fx-font-weight: bold;" text="My Goals" />
-                  <HBox alignment="CENTER" prefHeight="131.0" prefWidth="348.0">
+                  <HBox alignment="CENTER" prefHeight="204.0" prefWidth="444.0">
                      <children>
                         <VBox prefHeight="131.0" prefWidth="270.0" style="-fx-padding: 5; -fx-background-color: #f8f8f8;">
                            <children>
@@ -88,6 +88,7 @@
                                           <Image url="@../../../images/BadgePlaceholder.png" />
                                        </image>
                                     </ImageView>
+                                    <Label layoutX="11.0" layoutY="89.0" text="10,000 Steps" />
                                  </children>
                               </Pane>
                               <Pane layoutX="101.0" layoutY="10.0" prefHeight="88.0" prefWidth="91.0">
@@ -97,24 +98,27 @@
                                           <Image url="@../../../images/BadgePlaceholder.png" />
                                        </image>
                                     </ImageView>
+                                    <Label layoutX="11.0" layoutY="89.0" text="10,000 Steps" />
                                  </children>
                               </Pane>
-                              <Pane layoutX="193.0" layoutY="10.0" prefHeight="88.0" prefWidth="91.0">
+                              <Pane layoutX="101.0" layoutY="10.0" prefHeight="88.0" prefWidth="91.0">
                                  <children>
                                     <ImageView fitHeight="89.0" fitWidth="95.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../../../images/BadgePlaceholder.png" />
                                        </image>
                                     </ImageView>
+                                    <Label layoutX="11.0" layoutY="89.0" text="10,000 Steps" />
                                  </children>
                               </Pane>
-                              <Pane layoutX="10.0" layoutY="10.0" prefHeight="88.0" prefWidth="91.0">
+                              <Pane layoutX="284.0" layoutY="10.0" prefHeight="88.0" prefWidth="91.0">
                                  <children>
                                     <ImageView fitHeight="89.0" fitWidth="95.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../../../images/BadgePlaceholder.png" />
                                        </image>
                                     </ImageView>
+                                    <Label layoutX="11.0" layoutY="89.0" text="10,000 Steps" />
                                  </children>
                               </Pane>
                            </children></HBox>
@@ -123,7 +127,7 @@
                </children></VBox>
          </center>
          <right>
-            <VBox prefHeight="366.0" prefWidth="152.0" style="-fx-padding: 5; -fx-spacing: 7;" BorderPane.alignment="CENTER">
+            <VBox prefHeight="538.0" prefWidth="207.0" style="-fx-padding: 5; -fx-spacing: 7;" BorderPane.alignment="CENTER">
                <children>
                   <Label style="-fx-font-size: 20; -fx-font-weight: bold;" text="Set Goals" />
                   <Pane prefHeight="40.0" prefWidth="152.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-padding: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 5, 0, 0, 0);">
@@ -133,7 +137,7 @@
                            <image>
                               <Image url="@../../../images/Running.png" />
                            </image></ImageView>
-                        <Label layoutX="54.0" layoutY="21.0" text="70/80km">
+                        <Label layoutX="54.0" layoutY="21.0" text="70 / 80km">
                            <font>
                               <Font size="9.0" />
                            </font>
@@ -147,7 +151,7 @@
                               <Image url="@../../../images/Sleep.png" />
                            </image>
                         </ImageView>
-                        <Label layoutX="54.0" layoutY="21.0" text="50/60 hrs">
+                        <Label layoutX="54.0" layoutY="21.0" text="50 / 60 hrs">
                            <font>
                               <Font size="9.0" />
                            </font>
@@ -165,7 +169,7 @@
                               <Image url="@../../../images/Weight.png" />
                            </image>
                         </ImageView>
-                        <Label layoutX="54.0" layoutY="21.0" text="70/80km">
+                        <Label layoutX="54.0" layoutY="21.0" text="70 / 100 kg">
                            <font>
                               <Font size="9.0" />
                            </font>
@@ -183,7 +187,7 @@
                               <Image url="@../../../images/Calories.png" />
                            </image>
                         </ImageView>
-                        <Label layoutX="54.0" layoutY="21.0" text="70/80km">
+                        <Label layoutX="54.0" layoutY="21.0" text="505 / 600 Kcal">
                            <font>
                               <Font size="9.0" />
                            </font>
@@ -201,7 +205,7 @@
                               <Image url="@../../../images/Water.png" />
                            </image>
                         </ImageView>
-                        <Label layoutX="54.0" layoutY="21.0" text="70/80km">
+                        <Label layoutX="54.0" layoutY="21.0" text="1.7 / 2.0 Litres">
                            <font>
                               <Font size="9.0" />
                            </font>
@@ -215,7 +219,7 @@
             </VBox>
          </right>
          <left>
-            <VBox prefHeight="200.0" prefWidth="100.0" style="-fx-padding: 5; -fx-background-color: white;" BorderPane.alignment="CENTER" />
+            <VBox prefHeight="538.0" prefWidth="144.0" style="-fx-padding: 5; -fx-background-color: white;" BorderPane.alignment="CENTER" />
          </left>
          <top>
             <Pane prefHeight="34.0" prefWidth="600.0" BorderPane.alignment="CENTER">
