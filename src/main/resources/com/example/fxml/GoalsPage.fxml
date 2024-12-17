@@ -6,9 +6,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="543.0" prefWidth="687.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fitsync.controller.GoalsPageController">
+<AnchorPane prefHeight="600.0" prefWidth="716.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fitsync.controller.GoalsPageController">
    <children>
-      <BorderPane prefHeight="536.0" prefWidth="716.0">
+      <BorderPane prefHeight="600.0" prefWidth="716.0">
          <center>
             <VBox prefHeight="389.0" prefWidth="348.0" style="-fx-padding: 10;" BorderPane.alignment="CENTER">
                <children>
@@ -62,14 +62,14 @@
                         </HBox>
                      </children>
                   </VBox>
-                  <VBox alignment="BOTTOM_LEFT" prefHeight="122.0" prefWidth="348.0" style="-fx-padding: 5; -fx-background-color: #f8f8f8;">
+                  <VBox alignment="BOTTOM_LEFT" prefHeight="176.0" prefWidth="444.0" style="-fx-padding: 5; -fx-background-color: #f8f8f8;">
                      <children>
                         <Label style="-fx-padding: 3;" text="My Badges">
                            <opaqueInsets>
                               <Insets />
                            </opaqueInsets>
                         </Label>
-                        <HBox prefHeight="100.0" prefWidth="200.0">
+                        <HBox prefHeight="140.0" prefWidth="433.0">
                            <children>
                               <Pane prefHeight="88.0" prefWidth="91.0">
                                  <children>
@@ -78,6 +78,7 @@
                                           <Image url="@../../../images/BadgePlaceholder.png" />
                                        </image>
                                     </ImageView>
+                                    <Label layoutX="11.0" layoutY="89.0" text="10,000 Steps" />
                                  </children>
                               </Pane>
                               <Pane layoutX="10.0" layoutY="10.0" prefHeight="88.0" prefWidth="91.0">
@@ -224,7 +225,7 @@
                </children></Pane>
          </top>
          <bottom>
-            <HBox alignment="CENTER" prefHeight="28.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+            <HBox alignment="CENTER" prefHeight="28.0" prefWidth="716.0" BorderPane.alignment="CENTER">
                <children>
                   <Label text="© 2024 FitSync. All rights reserved." textAlignment="CENTER" />
                </children></HBox>
