@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fitsync.controller.WorkoutPageController">
+<BorderPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fitsync.controller.WorkoutPageController">
 
     <top>
         <Pane style="-fx-background-color: white;" BorderPane.alignment="TOP_LEFT">
@@ -129,11 +129,26 @@
                      <children>
                         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
                            <children>
-                              <Label text="STRETCH ROUTINE" textFill="#ef4040">
-                                 <font>
-                                    <Font name="Gill Sans MT Condensed" size="18.0" />
-                                 </font>
-                              </Label>
+                              <GridPane alignment="CENTER">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="412.0" minWidth="10.0" prefWidth="369.0000305175781" />
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="227.0" minWidth="10.0" prefWidth="94.99996948242188" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label prefHeight="22.0" prefWidth="323.0" text="STRETCH ROUTINE" textFill="#ef4040">
+                                       <font>
+                                          <Font name="Gill Sans MT Condensed" size="18.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="20.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Button fx:id="btnSetStretch" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleButtons" prefHeight="26.0" prefWidth="97.0" style="-fx-background-radius: 20; -fx-background-color: transparent;" text="Set Schedule" textFill="#ef4040" underline="true" GridPane.columnIndex="1" />
+                                 </children>
+                              </GridPane>
                               <ImageView fitHeight="150.0" fitWidth="464.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../../../../WorkoutImages/StretchProcess.png" />
@@ -143,11 +158,26 @@
                         </VBox>
                         <VBox alignment="CENTER" layoutX="10.0" layoutY="-1.0" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
                            <children>
-                              <Label text="BACK STRETCH ROUTINE" textFill="#ef4040">
-                                 <font>
-                                    <Font name="Gill Sans MT Condensed" size="18.0" />
-                                 </font>
-                              </Label>
+                              <GridPane alignment="CENTER">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="412.0" minWidth="10.0" prefWidth="369.0000305175781" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="227.0" minWidth="10.0" prefWidth="94.99996948242188" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label prefHeight="22.0" prefWidth="323.0" text="BACK STRETCH ROUTINE" textFill="#ef4040">
+                                       <font>
+                                          <Font name="Gill Sans MT Condensed" size="18.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="20.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Button fx:id="btnSetBackStretch" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="26.0" prefWidth="97.0" style="-fx-background-radius: 20; -fx-background-color: transparent;" text="Set Schedule" textFill="#ef4040" underline="true" GridPane.columnIndex="1" />
+                                 </children>
+                              </GridPane>
                               <ImageView fitHeight="150.0" fitWidth="464.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../../../../WorkoutImages/BackStretchProcess.png" />
@@ -157,11 +187,26 @@
                         </VBox>
                         <VBox alignment="CENTER" layoutX="10.0" layoutY="161.0" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="2">
                            <children>
-                              <Label text="YOGA ROUTINE" textFill="#ef4040">
-                                 <font>
-                                    <Font name="Gill Sans MT Condensed" size="18.0" />
-                                 </font>
-                              </Label>
+                              <GridPane alignment="CENTER">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="412.0" minWidth="10.0" prefWidth="369.0000305175781" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="227.0" minWidth="10.0" prefWidth="94.99996948242188" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label prefHeight="22.0" prefWidth="323.0" text="YOGA ROUTINE" textFill="#ef4040">
+                                       <font>
+                                          <Font name="Gill Sans MT Condensed" size="18.0" />
+                                       </font>
+                                       <GridPane.margin>
+                                          <Insets left="20.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                    <Button fx:id="btnSetYoga" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="26.0" prefWidth="97.0" style="-fx-background-radius: 20; -fx-background-color: transparent;" text="Set Schedule" textFill="#ef4040" underline="true" GridPane.columnIndex="1" />
+                                 </children>
+                              </GridPane>
                               <ImageView fitHeight="150.0" fitWidth="464.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
                                     <Image url="@../../../../WorkoutImages/YogaProcess.png" />

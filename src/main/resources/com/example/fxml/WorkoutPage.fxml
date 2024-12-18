@@ -126,6 +126,18 @@
                                           </ImageView>
                                       </graphic>
                                   </Button>
+                           <Button fx:id="btnRoutines1" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleButtons" prefHeight="33.0" prefWidth="98.0" style="-fx-background-radius: 50; -fx-background-color: white;" text="Start Now" textAlignment="RIGHT">
+                              <graphic>
+                                 <ImageView fitHeight="24.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                       <Image url="@../../../WorkoutImages/playbutton.png" />
+                                    </image>
+                                 </ImageView>
+                              </graphic>
+                              <HBox.margin>
+                                 <Insets left="5.0" />
+                              </HBox.margin>
+                           </Button>
                         </children>
                      </HBox>
                   </children>
@@ -202,7 +214,7 @@
                     </HBox>
 
                     <!-- Upcoming Workouts -->
-                    <GridPane hgap="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" vgap="10.0" HBox.hgrow="ALWAYS">
+                    <GridPane fx:id="upcomingWorkoutsGrid" hgap="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" vgap="10.0" HBox.hgrow="ALWAYS">
                         <Label prefHeight="30.0" prefWidth="168.0" text="Upcoming Workouts">
                             <font>
                                 <Font name="System Bold" size="14.0" />
@@ -382,7 +394,7 @@
                             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                         </padding>
                     </VBox>
-                    <VBox alignment="TOP_CENTER" layoutX="173.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: white; -fx-background-radius: 10; -fx-background-color: white; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);" HBox.hgrow="ALWAYS">
+                    <VBox layoutX="173.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" style="-fx-background-color: white; -fx-background-radius: 10; -fx-background-color: white; -fx-background-radius: 5; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);" HBox.hgrow="ALWAYS">
                         <children>
                             <ImageView fitHeight="44.0" fitWidth="132.0" pickOnBounds="true" preserveRatio="true">
                                 <image>
