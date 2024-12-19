@@ -4,48 +4,57 @@ import com.example.fitsync.dao.ProfileDAO;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.Label;
+import javafx.scene.control.DatePicker;
+import javafx.event.ActionEvent;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class ProfilePageController {
 
     @FXML
-    private TextField nameField;
-
+    private TextField fullNameField;
+    @FXML
+    private TextField phoneField;
     @FXML
     private TextField emailField;
-
     @FXML
-    private TextField ageField;
-
+    private PasswordField passwordField;
+    @FXML
+    private TextField genderField;
+    @FXML
+    private DatePicker dobField;
     @FXML
     private TextField weightField;
-
     @FXML
     private TextField heightField;
-
     @FXML
     private Button saveButton;
+    @FXML
+    private Label statusMessage;
 
     private ProfileDAO profileDAO = new ProfileDAO();
 
     @FXML
-    public void initialize() {
-        // Load saved profile data
-        nameField.setText(profileDAO.getProfile("name"));
-        emailField.setText(profileDAO.getProfile("email"));
-        ageField.setText(profileDAO.getProfile("age"));
-        weightField.setText(profileDAO.getProfile("weight"));
-        heightField.setText(profileDAO.getProfile("height"));
-    }
+    public void handleSave(ActionEvent event) {
+        // Collect data from text fields
+        Map<String, String> profileData = new HashMap<>();
+        profileData.put("Full Name", fullNameField.getText());
+        profileData.put("Phone Number", phoneField.getText());
+        profileData.put("Email", emailField.getText());
+        profileData.put("Password", passwordField.getText());
+        profileData.put("Gender", genderField.getText());
+        profileData.put("Date of Birth", dobField.getValue() != null ? dobField.getValue().toString() : "N/A");
+        profileData.put("Weight", weightField.getText());
+        profileData.put("Height", heightField.getText());
 
-    @FXML
-    public void handleSaveProfile() {
-        // Save profile data
-        profileDAO.saveProfile("name", nameField.getText());
-        profileDAO.saveProfile("email", emailField.getText());
-        profileDAO.saveProfile("age", ageField.getText());
-        profileDAO.saveProfile("weight", weightField.getText());
-        profileDAO.saveProfile("height", heightField.getText());
+        // Save profile data to a file
+        profileDAO.saveProfileData(profileData);
 
-        System.out.println("Profile data saved successfully.");
+        // Show confirmation message
+        statusMessage.setText("Profile saved successfully!");
+        statusMessage.setVisible(true);
     }
 }
