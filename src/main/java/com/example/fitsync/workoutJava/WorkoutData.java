@@ -1,4 +1,4 @@
-package com.example.fitsync;
+package com.example.fitsync.workoutJava;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

@@ -159,7 +159,6 @@
 
     <right>
         <VBox spacing="5.0" style="-fx-padding: 5; -fx-background-color: #F8F8F8;" BorderPane.alignment="TOP_RIGHT">
-            <!-- Schedule -->
             <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="My Schedule" />
             <VBox fx:id="scheduleContainer" prefHeight="200.0" prefWidth="100.0" spacing="5.0" VBox.vgrow="ALWAYS">
                 <children>
@@ -298,8 +297,6 @@
                 </children>
             </VBox>
 
-
-            <!-- Purchased Classes -->
             <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Purchased Classes" />
             <VBox fx:id="purchasedClassesContainer" spacing="5.0" VBox.vgrow="ALWAYS">
                 <children>
