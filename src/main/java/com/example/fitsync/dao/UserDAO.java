@@ -1,149 +1,192 @@
 package com.example.fitsync.dao;
 
 import java.io.*;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Base64;
+import javax.crypto.Cipher;
+import javax.crypto.KeyGenerator;
+import javax.crypto.SecretKey;
+import javax.crypto.spec.SecretKeySpec;
 
-public class UserDAO implements Serializable {
-    // File to store user data
-    private static final String USER_FILE = "users.ser";
+public class UserDAO {
+    private static final String USER_FILE = "users.dat";
+    private static final String KEY_FILE = "key.dat";
+    private List<User> users;
+    private SecretKey secretKey;
 
-    // In-memory storage of users
-    private Map<String, UserData> users;
-
-    // Constructor
-    public UserDAO() {
-        // Load existing users or initialize a new map
-        users = loadUsers();
-    }
-
-    // User data class (serializable)
-    private static class UserData implements Serializable {
+    // User class to store user information
+    private static class User implements Serializable {
         private String email;
-        private String hashedPassword;
-        private long createdAt;
+        private byte[] encryptedPassword; // Store password as encrypted bytes
 
-        public UserData(String email, String hashedPassword) {
+        public User(String email, byte[] encryptedPassword) {
             this.email = email;
-            this.hashedPassword = hashedPassword;
-            this.createdAt = System.currentTimeMillis();
+            this.encryptedPassword = encryptedPassword;
         }
     }
 
-    // Custom Authentication Exception
     public static class AuthenticationException extends Exception {
         public AuthenticationException(String message) {
             super(message);
         }
     }
 
-    // Hash password for secure storage
-    private String hashPassword(String password) {
-        try {
-            MessageDigest md = MessageDigest.getInstance("SHA-256");
-            byte[] hashedBytes = md.digest(password.getBytes());
+    // Constructor
+    public UserDAO() {
+        initializeSecretKey();
+        users = loadUsers();
+    }
 
-            StringBuilder sb = new StringBuilder();
-            for (byte b : hashedBytes) {
-                sb.append(String.format("%02x", b));
+    // Initialize or load the encryption key
+    private void initializeSecretKey() {
+        try {
+            File keyFile = new File(KEY_FILE);
+            if (keyFile.exists()) {
+                // Load existing key
+                try (FileInputStream fis = new FileInputStream(keyFile)) {
+                    byte[] keyBytes = new byte[(int) keyFile.length()];
+                    fis.read(keyBytes);
+                    secretKey = new SecretKeySpec(keyBytes, "AES");
+                }
+            } else {
+                // Generate new key
+                KeyGenerator keyGen = KeyGenerator.getInstance("AES");
+                keyGen.init(256); // Use 256-bit key
+                secretKey = keyGen.generateKey();
+
+                // Save the key
+                try (FileOutputStream fos = new FileOutputStream(KEY_FILE)) {
+                    fos.write(secretKey.getEncoded());
+                }
             }
-            return sb.toString();
-        } catch (NoSuchAlgorithmException e) {
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    // Encrypt password
+    private byte[] encryptPassword(String password) {
+        try {
+            Cipher cipher = Cipher.getInstance("AES");
+            cipher.init(Cipher.ENCRYPT_MODE, secretKey);
+            return cipher.doFinal(password.getBytes());
+        } catch (Exception e) {
             e.printStackTrace();
             return null;
         }
     }
 
-    // Save users to file
+    // Decrypt password
+    private String decryptPassword(byte[] encryptedPassword) {
+        try {
+            Cipher cipher = Cipher.getInstance("AES");
+            cipher.init(Cipher.DECRYPT_MODE, secretKey);
+            byte[] decryptedBytes = cipher.doFinal(encryptedPassword);
+            return new String(decryptedBytes);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    // Save users to binary file
     private void saveUsers() {
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(USER_FILE))) {
-            oos.writeObject(users);
+        try (DataOutputStream dos = new DataOutputStream(
+                new FileOutputStream(USER_FILE))) {
+
+            // Write number of users
+            dos.writeInt(users.size());
+
+            // Write each user's data
+            for (User user : users) {
+                dos.writeUTF(user.email);
+                dos.writeInt(user.encryptedPassword.length);
+                dos.write(user.encryptedPassword);
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    // Load users from file
-    @SuppressWarnings("unchecked")
-    private Map<String, UserData> loadUsers() {
+    // Load users from binary file
+    private List<User> loadUsers() {
+        List<User> loadedUsers = new ArrayList<>();
         File file = new File(USER_FILE);
+
         if (!file.exists()) {
-            return new HashMap<>();
+            return loadedUsers;
         }
 
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file))) {
-            return (Map<String, UserData>) ois.readObject();
-        } catch (IOException | ClassNotFoundException e) {
+        try (DataInputStream dis = new DataInputStream(
+                new FileInputStream(file))) {
+
+            // Read number of users
+            int userCount = dis.readInt();
+
+            // Read each user's data
+            for (int i = 0; i < userCount; i++) {
+                String email = dis.readUTF();
+                int passwordLength = dis.readInt();
+                byte[] encryptedPassword = new byte[passwordLength];
+                dis.readFully(encryptedPassword);
+
+                loadedUsers.add(new User(email, encryptedPassword));
+            }
+        } catch (IOException e) {
             e.printStackTrace();
-            return new HashMap<>();
         }
+
+        return loadedUsers;
     }
 
-    // Check if the user credentials are valid
-    public boolean isValidUser(String email, String password) throws AuthenticationException {
-        String hashedPassword = hashPassword(password);
-
-        UserData userData = users.get(email);
-        if (userData == null) {
-            throw new AuthenticationException("Email does not exist.");
+    // Register new user
+    public boolean registerUser(String email, String password) {
+        if (!isValidEmailFormat(email) || emailExists(email)) {
+            return false;
         }
 
-        if (!userData.hashedPassword.equals(hashedPassword)) {
-            throw new AuthenticationException("Invalid password.");
+        byte[] encryptedPassword = encryptPassword(password);
+        if (encryptedPassword == null) {
+            return false;
         }
 
+        users.add(new User(email, encryptedPassword));
+        saveUsers();
         return true;
     }
 
     // Authenticate user
     public boolean authenticate(String email, String password) throws AuthenticationException {
-        return isValidUser(email, password);
+        for (User user : users) {
+            if (user.email.equals(email)) {
+                String decryptedPassword = decryptPassword(user.encryptedPassword);
+                if (decryptedPassword != null && decryptedPassword.equals(password)) {
+                    return true;
+                } else {
+                    throw new AuthenticationException("Invalid password.");
+                }
+            }
+        }
+        throw new AuthenticationException("Email does not exist.");
     }
 
     // Check if email exists
     public boolean emailExists(String email) {
-        return users.containsKey(email);
+        for (User user : users) {
+            if (user.email.equals(email)) {
+                return true;
+            }
+        }
+        return false;
     }
 
-    // Register new user
-    public boolean registerUser(String email, String password) {
-        // Basic email validation
-        if (!isValidEmailFormat(email)) {
-            return false;
-        }
-
-        // Check if user already exists
-        if (emailExists(email)) {
-            return false;
-        }
-
-        // Hash password
-        String hashedPassword = hashPassword(password);
-
-        // Create and store user data
-        users.put(email, new UserData(email, hashedPassword));
-
-        // Save to file
-        saveUsers();
-
-        return true;
-    }
-
-    // Basic email format validation
+    // Email validation
     private boolean isValidEmailFormat(String email) {
         if (email == null || email.isEmpty()) {
             return false;
         }
-
-        // Simple regex for email validation
         String emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$";
         return email.matches(emailRegex);
-    }
-
-    // Get user details
-    public boolean getUserDetails(String email) {
-        return users.containsKey(email);
     }
 }

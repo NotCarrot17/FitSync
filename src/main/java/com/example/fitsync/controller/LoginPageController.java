@@ -74,11 +74,17 @@ public class LoginPageController {
         String email = emailField.getText();
         String password = passwordField.getText();
 
+        // Check email format
+        String emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$";
+        if (!email.matches(emailRegex)) {
+            System.out.println("Invalid email format. Please use a valid email address.");
+            return;
+        }
+
         if (userDAO.registerUser(email, password)) {
             System.out.println("User registered successfully.");
         } else {
-            errorMessage.setText("Registration failed. Please try again.");
-            errorMessage.setVisible(true);
+            System.out.println("Registration failed. Email may already be registered.");
         }
     }
 
