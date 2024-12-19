@@ -2,7 +2,13 @@ package com.example.fitsync.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class DietPlanController {
@@ -41,6 +47,12 @@ public class DietPlanController {
     private ArrayList<Diet> dietEntries = new ArrayList<>();
     @FXML
     private Label statusLabel;
+
+    @FXML
+    private Button btnPastaSalad;
+
+    @FXML
+    private Button btnGoBack;
 
     @FXML
     private ProgressBar waterProgressBar;
@@ -103,6 +115,27 @@ public class DietPlanController {
                 logFood();
                 break;
         }
+    }
+
+    // handle Pasta Salad button action
+    @FXML
+    private void handlePastaSaladButtonAction(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/fxml/PastaSalad.fxml"));
+        Scene scene = new Scene(root);
+        Stage stage = (Stage) btnPastaSalad.getScene().getWindow(); // Assume button and scene are set up reliably
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    // handle Go Back button action
+    @FXML
+    private void handleGoBackButtonAction(ActionEvent event) throws IOException {
+        // Replace with the path to your diet plan page FXML
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/fxml/DietPlan.fxml"));
+        Scene scene = new Scene(root);
+        Stage stage = (Stage) btnGoBack.getScene().getWindow(); // Assume button and scene are set up reliably
+        stage.setScene(scene);
+        stage.show();
     }
 
     private void logFood() {
