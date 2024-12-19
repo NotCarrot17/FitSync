@@ -1,6 +1,11 @@
 package com.example.fitsync.controller;
 
+import com.example.fitsync.workoutJava.ScheduledWorkout;
+import com.example.fitsync.workoutJava.WorkoutClass;
+import com.example.fitsync.workoutJava.WorkoutData;
+import com.example.fitsync.workoutJava.WorkoutSchedule;
 import javafx.collections.FXCollections;
+import javafx.collections.ListChangeListener;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,8 +15,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
@@ -61,13 +66,11 @@ public class WorkoutPageController {
     @FXML
     private Button btnStretch;
     @FXML
-    private Button btnBackStretch;
-    @FXML
-    private Button btnYoga;
-    @FXML
-    private GridPane upcomingWorkoutsGrid;
-    @FXML
     private Button btnSetStretch;
+    @FXML
+    private VBox purchasedClassesContainer;
+    @FXML
+    private VBox scheduleContainer;
 
     @FXML
     private void handleNavigation(ActionEvent event) {
@@ -91,18 +94,56 @@ public class WorkoutPageController {
                 fxmlFile = "/com/example/fitsync/view/LoginPage.fxml";
             }
 
-            // Load the FXML file
             if (fxmlFile != null) {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
                 Parent root = loader.load();
 
-                // Get the current stage and set the new scene
                 Stage stage = (Stage) clickedButton.getScene().getWindow();
                 stage.setScene(new Scene(root));
                 stage.show();
             }
         } catch (IOException e) {
             e.printStackTrace();
+        }
+    }
+
+    @FXML
+    public void initialize() {
+        WorkoutData.getPurchasedClasses().addListener((ListChangeListener<WorkoutClass>) change -> {
+            while (change.next()) {
+                if (change.wasAdded()) {
+                    for (WorkoutClass workoutClass : change.getAddedSubList()) {
+                        addPurchasedClassToUI(workoutClass);
+                    }
+                }
+            }
+        });
+
+        WorkoutSchedule.getSchedule().addListener((ListChangeListener<ScheduledWorkout>) change -> {
+            while (change.next()) {
+                if (change.wasAdded()) {
+                    for (ScheduledWorkout workout : change.getAddedSubList()) {
+                        addScheduledWorkoutToUI(workout);
+                    }
+                }
+            }
+        });
+
+        reloadPurchasedClasses();
+        reloadSchedule();
+    }
+
+    private void reloadPurchasedClasses() {
+        purchasedClassesContainer.getChildren().clear();
+        for (WorkoutClass workoutClass : WorkoutData.getPurchasedClasses()) {
+            addPurchasedClassToUI(workoutClass);
+        }
+    }
+
+    private void reloadSchedule() {
+        scheduleContainer.getChildren().clear();
+        for (ScheduledWorkout workout : WorkoutSchedule.getSchedule()) {
+            addScheduledWorkoutToUI(workout);
         }
     }
 
@@ -122,126 +163,46 @@ public class WorkoutPageController {
                 fxmlFile = "/com/example/fxml/WorkoutPage.fxml";
             } else if (clickedButton == btnRoutines) {
                 fxmlFile = "/com/example/fxml/WorkoutExtraPages/Routines.fxml";
-            } else if (clickedButton == btnStartNow) {
-                fxmlFile = "/com/example/fxml/WorkoutExtraPages/StartNow.fxml";
             } else if (clickedButton == buyNow) {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Confirmation");
                 alert.setHeaderText("Order Confirmation");
                 alert.setContentText("Congratulations!!! Purchase Successful!!!");
                 alert.showAndWait();
-
+                WorkoutData.addPurchasedClass(new WorkoutClass("UpperBody Workout", "RM120"));
             } else if (clickedButton == btnCoachVideo) {
-                // Create a new Stage (Window)
                 Stage videoStage = new Stage();
                 videoStage.setTitle("YouTube Video");
 
-                // Create a WebView and load the YouTube video
                 WebView webView = new WebView();
                 WebEngine webEngine = webView.getEngine();
                 webEngine.load("https://www.youtube.com/watch?v=uVwNVEQS_uo");
 
-                // Create a Scene with the WebView
                 Scene scene = new Scene(webView, 800, 450);
 
-                // Set the scene on the new stage
                 videoStage.setScene(scene);
                 videoStage.show();
-            } else if (clickedButton == btnStretch) {
-                // Create a popup
+            } else if (clickedButton == btnStretch || clickedButton == btnStartNow) {
                 Popup popup = new Popup();
-                
-
-                // Create a layout for the popup content
                 TilePane popupLayout = new TilePane();
                 popupLayout.setPrefColumns(1); // Arrange items vertically
                 popupLayout.setStyle("-fx-background-color: white; -fx-padding: 20; -fx-gap: 10; -fx-background-radius: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);");
 
-                // Create an ImageView for the routine steps
                 ImageView imageView = new ImageView();
                 imageView.setImage(new Image(getClass().getResourceAsStream("/WorkoutImages/StretchProcess.png")));
-                imageView.setFitWidth(500); // Replace 200 with your desired width
+                imageView.setFitWidth(500);
                 imageView.setPreserveRatio(true);
 
-                // Create a label for the timer
                 Label timerLabel = new Label("Time Remaining: 05:00");
                 timerLabel.setStyle("-fx-font-size: 14px;");
 
-                // Create a Cancel button
                 Button cancelButton = new Button("Cancel");
                 cancelButton.setStyle("-fx-font-size: 14px; -fx-background-color: #ef4040; -fx-text-fill: white;");
 
-                // Add the label and button to the layout
                 popupLayout.getChildren().addAll(imageView,timerLabel, cancelButton);
 
-                // Add the layout to the popup
                 popup.getContent().add(popupLayout);
 
-                // Variables for countdown
-                int[] timeRemaining = {300}; // 5 minutes in seconds
-
-                // Declare the Timeline variable
-                Timeline timeline = new Timeline();
-
-                // Add the KeyFrame to the timeline
-                timeline.getKeyFrames().add(
-                        new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
-                            @Override
-                            public void handle(ActionEvent event) {
-                                int minutes = timeRemaining[0] / 60;
-                                int seconds = timeRemaining[0] % 60;
-                                timerLabel.setText(String.format("Time Remaining: %02d:%02d", minutes, seconds));
-
-                                // Decrement the time
-                                timeRemaining[0]--;
-
-                                // Stop the timer when it reaches 0
-                                if (timeRemaining[0] < 0) {
-                                    timeline.stop(); // Access timeline here without issues
-                                    timerLabel.setText("Time's Up!");
-                                }
-                            }
-                        })
-                );
-
-                timeline.setCycleCount(Timeline.INDEFINITE);
-                timeline.play();
-
-                // Show the popup and start the timer
-                if (!popup.isShowing()) {
-                    popup.show(clickedButton.getScene().getWindow());
-                    timeline.play();
-                }
-
-                // Add action to Cancel button to close the popup and stop the timer
-                cancelButton.setOnAction(e -> {
-                    timeline.stop();
-                    popup.hide();
-                });
-            } else if (clickedButton == btnBackStretch) {
-                Popup popup = new Popup();
-
-                TilePane popupLayout = new TilePane();
-                popupLayout.setPrefColumns(1);
-                popupLayout.setStyle("-fx-background-color: white; -fx-padding: 20; -fx-gap: 10; -fx-background-radius: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);");
-
-                // Create an ImageView for the routine steps
-                ImageView imageView = new ImageView();
-                imageView.setImage(new Image(getClass().getResourceAsStream("/WorkoutImages/BackStretchProcess.png")));
-                imageView.setFitWidth(500); // Replace 200 with your desired width
-                imageView.setPreserveRatio(true);
-
-                Label timerLabel = new Label("Time Remaining: 05:00");
-                timerLabel.setStyle("-fx-font-size: 14px;");
-
-                Button cancelButton = new Button("Cancel");
-                cancelButton.setStyle("-fx-font-size: 14px; -fx-background-color: #ef4040; -fx-text-fill: white;");
-
-                popupLayout.getChildren().addAll(imageView, timerLabel, cancelButton);
-
-                popup.getContent().add(popupLayout);
-
-                // Variables for countdown
                 int[] timeRemaining = {300}; // 5 minutes in seconds
 
                 Timeline timeline = new Timeline();
@@ -263,66 +224,6 @@ public class WorkoutPageController {
                             }
                         })
                 );
-
-                timeline.setCycleCount(Timeline.INDEFINITE);
-                timeline.play();
-
-                if (!popup.isShowing()) {
-                    popup.show(clickedButton.getScene().getWindow());
-                    timeline.play();
-                }
-
-                cancelButton.setOnAction(e -> {
-                    timeline.stop();
-                    popup.hide();
-                });
-            } else if (clickedButton == btnYoga) {
-
-                Popup popup = new Popup();
-
-                TilePane popupLayout = new TilePane();
-                popupLayout.setPrefColumns(1);
-                popupLayout.setStyle("-fx-background-color: white; -fx-padding: 20; -fx-gap: 10; -fx-background-radius: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);");
-
-                // Create an ImageView for the routine steps
-                ImageView imageView = new ImageView();
-                imageView.setImage(new Image(getClass().getResourceAsStream("/WorkoutImages/YogaProcess.png")));
-                imageView.setFitWidth(500); // Replace 200 with your desired width
-                imageView.setPreserveRatio(true);
-
-                Label timerLabel = new Label("Time Remaining: 05:00");
-                timerLabel.setStyle("-fx-font-size: 14px;");
-
-                Button cancelButton = new Button("Cancel");
-                cancelButton.setStyle("-fx-font-size: 14px; -fx-background-color: #ef4040; -fx-text-fill: white;");
-
-                popupLayout.getChildren().addAll(imageView, timerLabel, cancelButton);
-
-                popup.getContent().add(popupLayout);
-
-                // Variables for countdown
-                int[] timeRemaining = {300}; // 5 minutes in seconds
-
-                Timeline timeline = new Timeline();
-
-                timeline.getKeyFrames().add(
-                        new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
-                            @Override
-                            public void handle(ActionEvent event) {
-                                int minutes = timeRemaining[0] / 60;
-                                int seconds = timeRemaining[0] % 60;
-                                timerLabel.setText(String.format("Time Remaining: %02d:%02d", minutes, seconds));
-
-                                timeRemaining[0]--;
-
-                                if (timeRemaining[0] < 0) {
-                                    timeline.stop();
-                                    timerLabel.setText("Time's Up!");
-                                }
-                            }
-                        })
-                );
-
                 timeline.setCycleCount(Timeline.INDEFINITE);
                 timeline.play();
 
@@ -338,18 +239,15 @@ public class WorkoutPageController {
             } else if (clickedButton == btnSetStretch) {
                 Popup popup = new Popup();
 
-                // Layout for popup content
                 TilePane popupLayout = new TilePane();
                 popupLayout.setPrefColumns(1);
                 popupLayout.setStyle("-fx-background-color: white; -fx-padding: 20; -fx-gap: 10; "
                         + "-fx-background-radius: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);");
 
-                // DatePicker for date selection
                 Label dateLabel = new Label("Select Date:");
                 dateLabel.setStyle("-fx-font-size: 14px;");
                 DatePicker datePicker = new DatePicker(LocalDate.now());
 
-                // Time dropdown
                 Label timeLabel = new Label("Select Time:");
                 timeLabel.setStyle("-fx-font-size: 14px;");
                 ComboBox<String> timeComboBox = new ComboBox<>();
@@ -358,33 +256,27 @@ public class WorkoutPageController {
                         "11:00 AM", "12:00 PM", "01:00 PM", "02:00 PM", "03:00 PM",
                         "04:00 PM", "05:00 PM", "06:00 PM", "07:00 PM", "08:00 PM"
                 ));
-                timeComboBox.getSelectionModel().select("09:00 AM"); // Default time
+                timeComboBox.getSelectionModel().select("09:00 AM");
 
-                // OK and Cancel buttons
                 Button okButton = new Button("OK");
-                okButton.setStyle("-fx-font-size: 14px; -fx-background-color: #ffa732; -fx-text-fill: white; -fx-padding: 2");
+                okButton.setStyle("-fx-font-size: 14px; -fx-background-color: #ffa732; -fx-text-fill: white;");
                 Button cancelButton = new Button("Cancel");
                 cancelButton.setStyle("-fx-font-size: 14px; -fx-background-color: #ef4040; -fx-text-fill: white;");
 
-                HBox buttonBox = new HBox(10); // 10px spacing between buttons
+                HBox buttonBox = new HBox(10);
                 buttonBox.setAlignment(Pos.CENTER);
-                buttonBox.getChildren().addAll(okButton, cancelButton);;
+                buttonBox.getChildren().addAll(okButton, cancelButton);
 
-                // Add components to layout
                 popupLayout.getChildren().addAll(dateLabel, datePicker, timeLabel, timeComboBox, okButton, cancelButton);
                 popup.getContent().add(popupLayout);
 
-                // Handle OK button click
                 okButton.setOnAction(e -> {
                     LocalDate selectedDate = datePicker.getValue();
                     String selectedTime = timeComboBox.getValue();
 
                     if (selectedDate != null && selectedTime != null) {
-                        // Format date and time
                         String formattedDate = selectedDate.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-                        String workoutDetails = "Scheduled on " + formattedDate + " at " + selectedTime;
-
-                        // Close popup
+                        WorkoutSchedule.addWorkout(new ScheduledWorkout("Stretch", formattedDate, selectedTime));
                         popup.hide();
                     } else {
                         Alert alert = new Alert(Alert.AlertType.ERROR, "Please select both a date and time.", ButtonType.OK);
@@ -392,21 +284,16 @@ public class WorkoutPageController {
                     }
                 });
 
-                // Handle Cancel button click
                 cancelButton.setOnAction(e -> popup.hide());
 
-                // Show popup
                 if (!popup.isShowing()) {
                     popup.show(btnSetStretch.getScene().getWindow());
                 }
             }
-
-            // Load the FXML file
             if (fxmlFile != null) {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
                 Parent root = loader.load();
 
-                // Get the current stage and set the new scene
                 Stage stage = (Stage) clickedButton.getScene().getWindow();
                 stage.setScene(new Scene(root));
                 stage.show();
@@ -416,4 +303,37 @@ public class WorkoutPageController {
         }
     }
 
+    private void addPurchasedClassToUI(WorkoutClass workoutClass) {
+        HBox workoutBox = new HBox();
+        workoutBox.setStyle("-fx-background-color: white; -fx-background-radius: 5;");
+        workoutBox.setSpacing(5);
+
+        VBox detailsBox = new VBox();
+        Label className = new Label(workoutClass.getName());
+        Label price = new Label(workoutClass.getPrice());
+        price.setStyle("-fx-text-fill: #9d9d9d; -fx-font-size: 9px;");
+        detailsBox.getChildren().addAll(className, price);
+
+        workoutBox.getChildren().addAll(detailsBox);
+        purchasedClassesContainer.getChildren().add(workoutBox);
+    }
+
+    private void addScheduledWorkoutToUI(ScheduledWorkout workout) {
+        HBox scheduleBox = new HBox();
+        scheduleBox.setStyle("-fx-background-color: white; -fx-background-radius: 5;");
+        scheduleBox.setSpacing(5);
+
+        Label dateLabel = new Label(workout.getDate());
+        dateLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: #9d9d9d;");
+        dateLabel.setPrefWidth(96);
+
+        VBox detailsBox = new VBox();
+        Label workoutLabel = new Label(workout.getName());
+        Label timeLabel = new Label("AT " + workout.getTime());
+        timeLabel.setStyle("-fx-text-fill: #9d9d9d; -fx-font-size: 9px;");
+        detailsBox.getChildren().addAll(workoutLabel, timeLabel);
+
+        scheduleBox.getChildren().addAll(dateLabel, detailsBox);
+        scheduleContainer.getChildren().add(scheduleBox);
+    }
 }
