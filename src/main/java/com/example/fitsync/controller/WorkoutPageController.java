@@ -130,6 +130,7 @@ public class WorkoutPageController {
                 alert.setHeaderText("Order Confirmation");
                 alert.setContentText("Congratulations!!! Purchase Successful!!!");
                 alert.showAndWait();
+
             } else if (clickedButton == btnCoachVideo) {
                 // Create a new Stage (Window)
                 Stage videoStage = new Stage();
@@ -149,6 +150,7 @@ public class WorkoutPageController {
             } else if (clickedButton == btnStretch) {
                 // Create a popup
                 Popup popup = new Popup();
+                
 
                 // Create a layout for the popup content
                 TilePane popupLayout = new TilePane();
