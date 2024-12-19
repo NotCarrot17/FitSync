@@ -9,6 +9,7 @@ module com.example.fitsync {
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
+    requires java.desktop;
 
     opens com.example.fitsync to javafx.fxml;
     exports com.example.fitsync;
@@ -16,4 +17,6 @@ module com.example.fitsync {
     opens com.example.fitsync.controller to javafx.fxml;
     exports com.example.fitsync.dao;
     opens com.example.fitsync.dao to javafx.fxml;
+    exports com.example.fitsync.workoutJava;
+    opens com.example.fitsync.workoutJava to javafx.fxml;
 }

@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane fx:id="loginPage" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fitsync.controller.LoginPageController">
+<BorderPane fx:id="loginPage" prefHeight="365.0" prefWidth="594.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fitsync.controller.LoginPageController">
          <top>
       <VBox BorderPane.alignment="CENTER">
          <children>
@@ -21,7 +21,7 @@
                            </Label>
                            <ImageView fx:id="logo" fitHeight="51.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
                               <image>
-                                 <Image url="@../../../DietPlanImages/FitSync_Logo.png" />
+                                 <Image url="@../../../WorkoutImages/FitSync_Logo.png" />
                               </image>
                            </ImageView>
                   </children>
@@ -49,7 +49,7 @@
                   <children>
                      <ImageView fx:id="logo1" fitHeight="51.0" fitWidth="51.0" pickOnBounds="true" preserveRatio="true">
                         <image>
-                           <Image url="@../../../DietPlanImages/FitSync_Logo.png" />
+                           <Image url="@../../../FitSync_Logo.png" />
                         </image>
                      </ImageView>
                      <Label prefHeight="48.0" prefWidth="149.0" text="FitSync" textFill="#ef4040">
