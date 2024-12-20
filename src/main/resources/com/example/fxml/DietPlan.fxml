@@ -117,6 +117,7 @@
                     </ImageView>
                 </graphic>
             </Button>
+         <Button fx:id="btnPastaSalad" mnemonicParsing="false" onAction="#handlePastaSaladButtonAction" onMouseClicked="#handlePastaSaladButtonAction" prefHeight="134.0" prefWidth="168.0" style="-fx-background-radius: 20; -fx-background-color: pink; -fx-border-style: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);" text="Pasta Salad" />
         </VBox>
     </left>
     <right>
@@ -360,10 +361,6 @@
                     <children>
                         <Pane layoutX="250.0" layoutY="25.0" prefHeight="132.0" prefWidth="155.0" style="-fx-background-color: white; -fx-background-radius: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);">
                             <children>
-                                <Label layoutX="88.0" layoutY="104.0" text="Protein: 17.1g">
-                                    <font>
-                                        <Font name="Calibri Light" size="10.0" />
-                                    </font></Label>
                                 <Label layoutX="14.0" layoutY="76.0" prefHeight="20.0" prefWidth="74.0" text="Pasta Salad">
                                     <font>
                                         <Font size="14.0" />
@@ -383,6 +380,11 @@
                                         <Font name="Dubai Regular" size="12.0" />
                                     </font>
                                 </Label>
+                                <Label layoutX="40.0" layoutY="101.0" text="Protein: 17.1g">
+                                    <font>
+                                        <Font name="Calibri Light" size="10.0" />
+                                    </font>
+                        </Label>
                             </children></Pane>
                         <Pane prefHeight="132.0" prefWidth="155.0" style="-fx-background-color: white; -fx-background-radius: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);">
                             <children>

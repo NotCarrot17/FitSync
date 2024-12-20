@@ -60,9 +60,7 @@ public class Main extends Application {
             e.printStackTrace();
             return null;
         }
-
     }
-
 
     private Pane createDashboardPage() {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/fxml/LoginPage.fxml"));

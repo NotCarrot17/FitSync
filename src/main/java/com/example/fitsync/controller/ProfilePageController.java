@@ -4,6 +4,13 @@ import com.example.fitsync.dao.ProfileDAO;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.Label;
+import javafx.scene.control.DatePicker;
+import javafx.event.ActionEvent;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class ProfilePageController {
 
@@ -12,16 +19,13 @@ public class ProfilePageController {
 
     @FXML
     private TextField emailField;
-
     @FXML
     private TextField ageField;
 
     @FXML
     private TextField weightField;
-
     @FXML
     private TextField heightField;
-
     @FXML
     private Button saveButton;
 

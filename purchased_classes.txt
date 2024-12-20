@@ -1,0 +1,4 @@
+Yoga Class,RM100
+Swimming Class,RM100
+
+
