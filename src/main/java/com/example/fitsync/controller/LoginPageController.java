@@ -4,6 +4,7 @@ import com.example.fitsync.dao.UserDAO;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.event.ActionEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 
 public class LoginPageController {
@@ -45,7 +46,6 @@ public class LoginPageController {
         try {
             if (userDAO.authenticate(email, password)) {
                 System.out.println("Login successful. Navigate to Dashboard.");
-                System.out.println(userDAO.printLoggedInUser(email, password));
                 errorMessage.setText(""); // Clear any previous error message
             }
         } catch (UserDAO.AuthenticationException ex) {
@@ -74,12 +74,17 @@ public class LoginPageController {
         String email = emailField.getText();
         String password = passwordField.getText();
 
+        // Check email format
+        String emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$";
+        if (!email.matches(emailRegex)) {
+            System.out.println("Invalid email format. Please use a valid email address.");
+            return;
+        }
+
         if (userDAO.registerUser(email, password)) {
             System.out.println("User registered successfully.");
-            System.out.println(userDAO.printAllUsers());
         } else {
-            errorMessage.setText("Registration failed. Please try again.");
-            errorMessage.setVisible(true);
+            System.out.println("Registration failed. Email may already be registered.");
         }
     }
 

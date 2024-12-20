@@ -53,13 +53,16 @@ public class Main extends Application {
     }
 
     private Pane createProfilePage() {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/fxml/LoginPage.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/fxml/ProfilePage.fxml"));
         try {
             return loader.load();
         } catch (Exception e) {
             e.printStackTrace();
             return null;
-        }    }
+        }
+
+    }
+
 
     private Pane createDashboardPage() {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/fxml/LoginPage.fxml"));
@@ -73,7 +76,7 @@ public class Main extends Application {
     }
 
     private Pane createWorkoutPage() {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/fxml/WorkoutPage.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/fxml/LoginPage.fxml"));
         try {
             return loader.load();
         } catch (Exception e) {
@@ -83,7 +86,7 @@ public class Main extends Application {
     }
 
     private Pane createDietPlanPage() {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/fxml/DietPlan.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/fxml/LoginPage.fxml"));
         try {
             return loader.load();
         } catch (Exception e) {

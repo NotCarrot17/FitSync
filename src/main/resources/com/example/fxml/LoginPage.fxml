@@ -8,6 +8,7 @@
 
 <BorderPane fx:id="loginPage" prefHeight="365.0" prefWidth="594.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fitsync.controller.LoginPageController">
          <top>
+             <Label fx:id="errorMessage" text="" style="-fx-text-fill: red;" />
       <VBox BorderPane.alignment="CENTER">
          <children>
                     <!-- Top Bar with Buttons (Language, Notifications, Settings) -->
@@ -84,7 +85,7 @@
                      <Button fx:id="forgotPasswordButton" onAction="#handleForgotPassword" text="Forgot Password" />
                      <Button fx:id="registerButton" onAction="#handleRegister" text="Register" />
                  </VBox>
-               <HBox prefHeight="25.0" prefWidth="258.0" spacing="5.0">
+               <HBox alignment="CENTER" prefHeight="25.0" prefWidth="258.0" spacing="5.0">
                   <children>
                         <Button fx:id="facebookSignInButton" onAction="#handleFacebookSignIn" text="Sign in with Facebook" />
                         <Button fx:id="googleSignInButton" onAction="#handleGoogleSignIn" text="Sign in with Google" />
