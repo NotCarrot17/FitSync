@@ -88,7 +88,7 @@
                                           <Image url="@../../../images/BadgePlaceholder.png" />
                                        </image>
                                     </ImageView>
-                                    <Label layoutX="11.0" layoutY="89.0" text="10,000 Steps" />
+                                    <Label layoutX="11.0" layoutY="89.0" text="5,000 Steps" />
                                  </children>
                               </Pane>
                               <Pane layoutX="101.0" layoutY="10.0" prefHeight="88.0" prefWidth="91.0">
@@ -98,7 +98,7 @@
                                           <Image url="@../../../images/BadgePlaceholder.png" />
                                        </image>
                                     </ImageView>
-                                    <Label layoutX="11.0" layoutY="89.0" text="10,000 Steps" />
+                                    <Label layoutX="5.0" layoutY="89.0" text="100 Days Login" />
                                  </children>
                               </Pane>
                               <Pane layoutX="101.0" layoutY="10.0" prefHeight="88.0" prefWidth="91.0">
@@ -108,7 +108,7 @@
                                           <Image url="@../../../images/BadgePlaceholder.png" />
                                        </image>
                                     </ImageView>
-                                    <Label layoutX="11.0" layoutY="89.0" text="10,000 Steps" />
+                                    <Label layoutX="4.0" layoutY="89.0" text="100 Daily Goals" />
                                  </children>
                               </Pane>
                               <Pane layoutX="284.0" layoutY="10.0" prefHeight="88.0" prefWidth="91.0">
@@ -118,7 +118,7 @@
                                           <Image url="@../../../images/BadgePlaceholder.png" />
                                        </image>
                                     </ImageView>
-                                    <Label layoutX="11.0" layoutY="89.0" text="10,000 Steps" />
+                                    <Label layoutX="4.0" layoutY="89.0" text="100 Day Streak" />
                                  </children>
                               </Pane>
                            </children></HBox>
