@@ -21,7 +21,14 @@
    <left>
       <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="btnOverView" mnemonicParsing="false" text="Overview" />
+            <Button fx:id="btnOverView" prefHeight="33.0" prefWidth="100.0" style="-fx-background-color: transparent; -fx-alignment: left;" text="Overview">
+               <graphic>
+                  <ImageView fitHeight="21.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic></Button>
+            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" style="-fx-background-color: transparent; -fx-alignment: left;" text="Workout" />
+            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="102.0" style="-fx-background-color: transparent; -fx-alignment: left;" text="Diet Plan" />
+            <Button mnemonicParsing="false" prefHeight="64.0" prefWidth="100.0" style="-fx-background-color: transparent; -fx-alignment: left;" text="Goals and Achievements" />
+            <Button mnemonicParsing="false" style="-fx-background-color: transparent; -fx-alignment: left;" text="Progress" />
          </children></VBox>
    </left>
    <center>
