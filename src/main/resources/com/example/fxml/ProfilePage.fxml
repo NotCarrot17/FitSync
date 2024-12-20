@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane fx:id="loginPage" xmlns="http://javafx.com/javafx/17.0.6" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fitsync.controller.LoginPageController">
+<BorderPane fx:id="loginPage" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fitsync.controller.LoginPageController">
          <top>
       <VBox BorderPane.alignment="CENTER">
          <children>
@@ -150,7 +150,7 @@
                   <graphic>
                      <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                         <image>
-                           <Image url="@/ProfileImages/Screenshot_2024-12-19_224422-removebg-preview.png" />
+                           <Image url="@../../../ProfileImages/Screenshot_2024-12-19_224422-removebg-preview.png" />
                         </image></ImageView>
                   </graphic>
                   <HBox.margin>
@@ -160,7 +160,7 @@
                   <graphic>
                      <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                         <image>
-                           <Image url="@/ProfileImages/Screenshot_2024-12-19_224428-removebg-preview.png" />
+                           <Image url="@../../../ProfileImages/Screenshot_2024-12-19_224428-removebg-preview.png" />
                         </image></ImageView>
                   </graphic>
                   <HBox.margin>
@@ -170,7 +170,7 @@
                   <graphic>
                      <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                         <image>
-                           <Image url="@/ProfileImages/Screenshot_2024-12-19_224433-removebg-preview.png" />
+                           <Image url="@../../../ProfileImages/Screenshot_2024-12-19_224433-removebg-preview.png" />
                         </image></ImageView>
                   </graphic>
                   <HBox.margin>
@@ -180,7 +180,7 @@
                   <graphic>
                      <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                         <image>
-                           <Image url="@/ProfileImages/Screenshot_2024-12-19_224437-removebg-preview.png" />
+                           <Image url="@../../../ProfileImages/Screenshot_2024-12-19_224437-removebg-preview.png" />
                         </image></ImageView>
                   </graphic>
                   <HBox.margin>
@@ -210,12 +210,18 @@
                   <Font size="10.0" />
                </font>
                <graphic>
-                  <ImageView fitHeight="17.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="17.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@/C:/Users/celes/OneDrive/Documents/FitSync/src/main/resources/ProfileImages/personal-removebg-preview.png" />
+                     </image></ImageView>
                </graphic>
             </Button>
             <Button mnemonicParsing="false" prefHeight="23.0" prefWidth="152.0" style="-fx-alignment: left;" text="Close Friends &gt;">
                <graphic>
-                  <ImageView fitHeight="17.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="17.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@/C:/Users/celes/OneDrive/Documents/FitSync/src/main/resources/ProfileImages/personal-removebg-preview.png" />
+                     </image></ImageView>
                </graphic>
                <font>
                   <Font size="10.0" />
@@ -226,14 +232,20 @@
                   <Font size="10.0" />
                </font>
                <graphic>
-                  <ImageView fitHeight="17.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="17.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@/C:/Users/celes/OneDrive/Documents/FitSync/src/main/resources/ProfileImages/achievement-removebg-preview.png" />
+                     </image></ImageView>
                </graphic></Button>
             <Button mnemonicParsing="false" prefHeight="0.0" prefWidth="147.0" style="-fx-alignment: left;" text="Activity History &gt;">
                <font>
                   <Font size="10.0" />
                </font>
                <graphic>
-                  <ImageView fitHeight="17.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="17.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@/C:/Users/celes/OneDrive/Documents/FitSync/src/main/resources/ProfileImages/activity-removebg-preview.png" />
+                     </image></ImageView>
                </graphic>
             </Button>
             <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="213.0" style="-fx-alignment: lefft;" text="Workout Progress &gt;">
@@ -241,7 +253,10 @@
                   <Font size="10.0" />
                </font>
                <graphic>
-                  <ImageView fitHeight="17.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="17.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@/C:/Users/celes/OneDrive/Documents/FitSync/src/main/resources/ProfileImages/workout-removebg-preview.png" />
+                     </image></ImageView>
                </graphic>
             </Button>
             <Label text="Notification">
@@ -249,19 +264,25 @@
                   <Font size="10.0" />
                </font>
             </Label>
-            <ToggleButton layoutX="10.0" layoutY="28.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="147.0" style="-fx-alignment: left;" text="Linked Devices">
+            <ToggleButton alignment="CENTER_LEFT" layoutX="10.0" layoutY="28.0" mnemonicParsing="false" prefHeight="0.0" prefWidth="147.0" style="-fx-alignment: left;" text="Linked Devices">
                <font>
                   <Font size="10.0" />
                </font>
                <graphic>
-                  <ImageView fitHeight="17.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="17.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@/C:/Users/celes/OneDrive/Documents/FitSync/src/main/resources/ProfileImages/noti-removebg-preview.png" />
+                     </image></ImageView>
                </graphic></ToggleButton>
-            <ToggleButton mnemonicParsing="false" prefHeight="26.0" prefWidth="180.0" style="-fx-alignment: left;" text="Location">
+            <ToggleButton alignment="CENTER_LEFT" mnemonicParsing="false" prefHeight="26.0" prefWidth="180.0" style="-fx-alignment: left;" text="Location">
                <font>
                   <Font size="10.0" />
                </font>
                <graphic>
-                  <ImageView fitHeight="17.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="17.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@/C:/Users/celes/OneDrive/Documents/FitSync/src/main/resources/ProfileImages/noti-removebg-preview.png" />
+                     </image></ImageView>
                </graphic>
             </ToggleButton>
             <Label text="BIlling">
@@ -274,7 +295,10 @@
                   <Font size="10.0" />
                </font>
                <graphic>
-                  <ImageView fitHeight="17.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="17.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@/C:/Users/celes/OneDrive/Documents/FitSync/src/main/resources/ProfileImages/subs-removebg-preview.png" />
+                     </image></ImageView>
                </graphic>
             </Button>
             <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="266.0" style="-fx-alignment: left;" text="Payment Info &gt;">
@@ -282,7 +306,10 @@
                   <Font size="10.0" />
                </font>
                <graphic>
-                  <ImageView fitHeight="17.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="17.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@/C:/Users/celes/OneDrive/Documents/FitSync/src/main/resources/ProfileImages/bill-removebg-preview.png" />
+                     </image></ImageView>
                </graphic>
             </Button>
             <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="224.0" style="-fx-alignment: left;" text="Purchase Class &gt;">
@@ -290,7 +317,10 @@
                   <Font size="10.0" />
                </font>
                <graphic>
-                  <ImageView fitHeight="17.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="17.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@/C:/Users/celes/OneDrive/Documents/FitSync/src/main/resources/ProfileImages/bill-removebg-preview.png" />
+                     </image></ImageView>
                </graphic>
             </Button>
          </children>
