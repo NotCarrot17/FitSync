@@ -1,9 +1,10 @@
 package com.example.fitsync.controller;
 
-import com.example.fitsync.ScheduledWorkout;
-import com.example.fitsync.WorkoutClass;
-import com.example.fitsync.WorkoutData;
-import com.example.fitsync.WorkoutSchedule;
+import com.example.fitsync.workoutJava.ScheduledWorkout;
+import com.example.fitsync.workoutJava.WorkoutClass;
+import com.example.fitsync.workoutJava.WorkoutData;
+import com.example.fitsync.workoutJava.WorkoutSchedule;
+import com.example.fitsync.workoutJava.WorkoutFileManager;
 import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener;
 import javafx.event.ActionEvent;

@@ -1,6 +1,7 @@
-package com.example.fitsync;
+package com.example.fitsync.workoutJava;
 
 public class WorkoutClass {
+
     private final String name;
     private final String price;
 

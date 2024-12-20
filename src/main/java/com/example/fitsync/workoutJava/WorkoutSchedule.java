@@ -1,4 +1,6 @@
-package com.example.fitsync;
+package com.example.fitsync.workoutJava;
+
+import javafx.collections.*;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -7,10 +9,15 @@ public class WorkoutSchedule {
     private static final ObservableList<ScheduledWorkout> schedule = FXCollections.observableArrayList();
 
     static {
-        // Add initial schedule items
-        schedule.add(new ScheduledWorkout("Stretch", "2025-01-01", "08:00 AM"));
-        schedule.add(new ScheduledWorkout("Back Stretch", "2025-01-02", "08:00 AM"));
-        schedule.add(new ScheduledWorkout("Yoga", "2025-01-03", "09:00 AM"));
+        schedule.addAll(WorkoutFileManager.loadScheduledWorkouts());
+
+        schedule.addListener((ListChangeListener<ScheduledWorkout>) change -> {
+            while (change.next()) {
+                if (change.wasAdded() || change.wasRemoved()) {
+                    WorkoutFileManager.saveScheduledWorkouts(schedule);
+                }
+            }
+        });
     }
 
     public static ObservableList<ScheduledWorkout> getSchedule() {
@@ -21,3 +28,4 @@ public class WorkoutSchedule {
         schedule.add(workout);
     }
 }
+
