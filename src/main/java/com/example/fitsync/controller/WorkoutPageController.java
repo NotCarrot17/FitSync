@@ -83,7 +83,7 @@ public class WorkoutPageController {
             } else if (clickedButton == btnWorkout) {
                 fxmlFile = "/com/example/fitsync/view/WorkoutPage.fxml";
             } else if (clickedButton == btnDietPlan) {
-                fxmlFile = "/com/example/fitsync/view/DietPlanPage.fxml";
+                fxmlFile = "com/example/fxml/DietPlan.fxml";
             } else if (clickedButton == btnGoalsAchievements) {
                 fxmlFile = "/com/example/fitsync/view/GoalsAchievementsPage.fxml";
             } else if (clickedButton == btnProgress) {
