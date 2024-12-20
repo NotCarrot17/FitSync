@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane prefHeight="600" prefWidth="800" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fitsync.controller.DietPlanController">
+
+    <!-- Top Section -->
+    <top>
+        <Pane style="-fx-background-color: white;" BorderPane.alignment="TOP_LEFT">
+            <children>
+                <Label layoutX="14.0" layoutY="13.0" prefHeight="31.0" prefWidth="66.0" text="FitSync" textFill="#ef4040">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Label>
+                <ImageView fitHeight="36.0" fitWidth="34.0" layoutX="80.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../DietPlanImages/FitSync_Logo.png" />
+                    </image>
+                </ImageView>
+                <Separator layoutX="137.0" layoutY="8.0" orientation="VERTICAL" prefHeight="44.0" prefWidth="4.0" />
+                <TextField layoutX="149.0" layoutY="17.0" prefHeight="25.0" prefWidth="458.0" promptText="Search" />
+                <Button alignment="TOP_RIGHT" contentDisplay="RIGHT" layoutX="739.0" layoutY="6.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="42.0" style="-fx-background-radius: 50; -fx-background-color: transparent; -fx-alignment: right;">
+                    <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../DietPlanImages/Profile.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </children>
+        </Pane>
+    </top>
+
+    <!-- Left Side Navigation -->
+    <left>
+        <VBox prefHeight="522.0" prefWidth="138.0" spacing="15" style="-fx-padding: 10; -fx-background-color: white; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);" BorderPane.alignment="TOP_LEFT">
+            <Button fx:id="btnOverview" onAction="#handleNavigation" prefHeight="25.0" prefWidth="140.0" style="-fx-background-color: transparent; -fx-alignment: left;" text="Overview">
+                <graphic>
+                    <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@../../../DietPlanImages/overview.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button fx:id="btnWorkout" onAction="#handleNavigation" prefHeight="25.0" prefWidth="140.0" style="-fx-background-color: transparent; -fx-alignment: left;" text="Workout">
+                <graphic>
+                    <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@../../../DietPlanImages/workout.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button fx:id="btnDietPlan" onAction="#handleNavigation" prefHeight="25.0" prefWidth="140.0" style="-fx-background-color: #ef4040; -fx-alignment: left;" text="Diet Plan" textFill="#fffbfb">
+                <graphic>
+                    <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@../../../DietPlanImages/dietplan.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button fx:id="btnGoalsAchievements" onAction="#handleNavigation" prefHeight="43.0" prefWidth="140.0" style="-fx-background-color: transparent; -fx-alignment: left;" text="Goals &amp;&#10;Achievements">
+                <graphic>
+                    <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@../../../DietPlanImages/goalsandachievements.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button fx:id="btnProgress" onAction="#handleNavigation" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: transparent; -fx-alignment: left;" text="Progress">
+                <graphic>
+                    <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@../../../DietPlanImages/progress.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button fx:id="btnCommunity" onAction="#handleNavigation" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: transparent; -fx-alignment: left;" text="My Community">
+                <graphic>
+                    <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@../../../DietPlanImages/mycommunity.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+            <Button fx:id="btnLogout" onAction="#handleNavigation" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: transparent; -fx-alignment: left;" text="Log Out">
+                <graphic>
+                    <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@../../../DietPlanImages/logout.png" />
+                        </image>
+                    </ImageView>
+                </graphic>
+            </Button>
+        </VBox>
+    </left>
+    <right>
+        <VBox prefHeight="548.0" prefWidth="158.0" spacing="10" BorderPane.alignment="CENTER">
+            <Label fx:id="statusLabel11" text="Week Plan">
+                <font>
+                    <Font name="Gill Sans MT Bold" size="16.0" />
+                </font>
+            </Label>
+            <Pane prefHeight="54.0" prefWidth="136.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+                <children>
+                    <Label layoutX="14.0" layoutY="6.0" text="Monday">
+                        <font>
+                            <Font name="System Bold" size="12.0" />
+                        </font></Label>
+                    <Label layoutX="14.0" layoutY="27.0" text="Egg | Breakfast" textFill="#514f4f">
+                        <font>
+                            <Font size="10.0" />
+                        </font></Label>
+                    <Label layoutX="106.0" layoutY="17.0" prefHeight="20.0" prefWidth="44.0" style="-fx-background-color: pink; -fx-background-radius: 5;" text="08:00 AM">
+                        <font>
+                            <Font size="10.0" />
+                        </font></Label>
+                </children>
+            </Pane>
+            <Pane prefHeight="54.0" prefWidth="136.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+                <children>
+                    <Label layoutX="14.0" layoutY="6.0" text="Tuesday">
+                        <font>
+                            <Font name="System Bold" size="12.0" />
+                        </font>
+                    </Label>
+                    <Label layoutX="14.0" layoutY="27.0" text="Noodle | Lunch" textFill="#514f4f">
+                        <font>
+                            <Font size="10.0" />
+                        </font>
+                    </Label>
+                    <Label layoutX="106.0" layoutY="17.0" prefHeight="20.0" prefWidth="44.0" style="-fx-background-color: pink; -fx-background-radius: 5;" text="01:00 PM">
+                        <font>
+                            <Font size="10.0" />
+                        </font>
+                    </Label>
+                </children>
+            </Pane>
+            <Pane prefHeight="54.0" prefWidth="136.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+                <children>
+                    <Label layoutX="14.0" layoutY="6.0" text="Wednesday">
+                        <font>
+                            <Font name="System Bold" size="12.0" />
+                        </font>
+                    </Label>
+                    <Label layoutX="14.0" layoutY="27.0" text="Burrito | Lunch" textFill="#514f4f">
+                        <font>
+                            <Font size="10.0" />
+                        </font>
+                    </Label>
+                    <Label layoutX="106.0" layoutY="17.0" prefHeight="20.0" prefWidth="44.0" style="-fx-background-color: pink; -fx-background-radius: 5;" text="12:00 PM">
+                        <font>
+                            <Font size="10.0" />
+                        </font>
+                    </Label>
+                </children>
+            </Pane>
+            <Pane prefHeight="54.0" prefWidth="136.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+                <children>
+                    <Label layoutX="14.0" layoutY="6.0" text="Thursday">
+                        <font>
+                            <Font name="System Bold" size="12.0" />
+                        </font>
+                    </Label>
+                    <Label layoutX="14.0" layoutY="27.0" text="Tofu | Lunch" textFill="#514f4f">
+                        <font>
+                            <Font size="10.0" />
+                        </font>
+                    </Label>
+                    <Label layoutX="106.0" layoutY="17.0" prefHeight="20.0" prefWidth="44.0" style="-fx-background-color: pink; -fx-background-radius: 5;" text="01:00 PM">
+                        <font>
+                            <Font size="10.0" />
+                        </font>
+                    </Label>
+                </children>
+            </Pane>
+            <Pane prefHeight="54.0" prefWidth="136.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+                <children>
+                    <Label layoutX="14.0" layoutY="6.0" text="Friday">
+                        <font>
+                            <Font name="System Bold" size="12.0" />
+                        </font>
+                    </Label>
+                    <Label layoutX="14.0" layoutY="27.0" text="Avacado | Breakfast" textFill="#514f4f">
+                        <font>
+                            <Font size="10.0" />
+                        </font>
+                    </Label>
+                    <Label layoutX="106.0" layoutY="17.0" prefHeight="20.0" prefWidth="44.0" style="-fx-background-color: pink; -fx-background-radius: 5;" text="08:00 AM">
+                        <font>
+                            <Font size="10.0" />
+                        </font>
+                    </Label>
+                </children>
+            </Pane>
+            <Pane prefHeight="54.0" prefWidth="136.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+                <children>
+                    <Label layoutX="14.0" layoutY="6.0" text="Saturday">
+                        <font>
+                            <Font name="System Bold" size="12.0" />
+                        </font>
+                    </Label>
+                    <Label layoutX="14.0" layoutY="27.0" text="Chicken | Lunch" textFill="#514f4f">
+                        <font>
+                            <Font size="10.0" />
+                        </font>
+                    </Label>
+                    <Label layoutX="106.0" layoutY="17.0" prefHeight="20.0" prefWidth="44.0" style="-fx-background-color: pink; -fx-background-radius: 5;" text="1:00 PM">
+                        <font>
+                            <Font size="10.0" />
+                        </font>
+                    </Label>
+                </children>
+            </Pane>
+            <Pane prefHeight="54.0" prefWidth="136.0" style="-fx-background-color: white; -fx-background-radius: 10;">
+                <children>
+                    <Label layoutX="14.0" layoutY="6.0" text="Sunday">
+                        <font>
+                            <Font name="System Bold" size="12.0" />
+                        </font>
+                    </Label>
+                    <Label layoutX="14.0" layoutY="27.0" text="Papaya | Breakfast" textFill="#514f4f">
+                        <font>
+                            <Font size="10.0" />
+                        </font>
+                    </Label>
+                    <Label layoutX="106.0" layoutY="17.0" prefHeight="20.0" prefWidth="44.0" style="-fx-background-color: pink; -fx-background-radius: 5;" text="09:00 AM">
+                        <font>
+                            <Font size="10.0" />
+                        </font>
+                    </Label>
+                </children>
+            </Pane>
+            <Label fx:id="statusLabel1" text="Today Records">
+                <font>
+                    <Font name="Gill Sans MT Bold" size="16.0" />
+                </font>
+            </Label>
+            <VBox alignment="CENTER" minHeight="-Infinity" prefHeight="122.0" prefWidth="158.0" style="-fx-background-color: #ffcc00; -fx-background-radius: 10;">
+                <children>
+                    <ImageView fitHeight="35.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@../../../DietPlanImages/water droplet.png" />
+                        </image></ImageView>
+                    <Label maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="18.0" prefWidth="52.0" text="Water">
+                        <font>
+                            <Font name="Bell MT Bold" size="18.0" />
+                        </font></Label>
+                    <ProgressBar fx:id="waterProgressBar" prefHeight="17.0" prefWidth="150.0" progress="0.1" />
+                    <Label fx:id="waterAmountLabel" text="0.25 Liters">
+                        <font>
+                            <Font size="13.0" />
+                        </font></Label>
+                    <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#addWater" style="-fx-background-color: white; -fx-background-radius: 20;" text="+" textFill="#362b2b">
+                        <font>
+                            <Font name="System Bold" size="14.0" />
+                        </font></Button>
+                </children></VBox>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0">
+                <font>
+                    <Font size="1.0" />
+                </font>
+            </Text>
+        </VBox>
+    </right>
+    <center>
+        <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+            <children>
+            <HBox prefHeight="110.0" prefWidth="503.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#handleGoBackButtonAction" prefHeight="26.0" prefWidth="34.0" style="-fx-background-color: white; -fx-background-radius: 20;" text="&lt;" />
+                          <ImageView fitHeight="129.0" fitWidth="196.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: #FEE2C7; -fx-background-radius: 20;">
+                              <image>
+                                  <Image url="@../../../DietPlanImages/Pasta Salad.jpg" />
+                              </image>
+                          </ImageView>
+                  <Pane minHeight="-Infinity" minWidth="-Infinity" prefHeight="60.0" prefWidth="306.0" style="-fx-background-color: #FEE2C7; -fx-background-radius: 10;">
+                     <children>
+                        <VBox prefHeight="100.0" prefWidth="278.0">
+                           <children>
+                              <Text lineSpacing="0.5" nodeOrientation="LEFT_TO_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" text="Italian Pasta Salad" wrappingWidth="291.34693145751953">
+                                 <font>
+                                    <Font name="Cambria Bold" size="16.0" />
+                                 </font>
+                              </Text>
+                              <Text lineSpacing="0.5" nodeOrientation="LEFT_TO_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" text="This EASY Italian Pasta Salad is loaded with juicy tomatoes, cucumbers, fresh mozzarella, spicy salami, pepperoncini, red onion and olives all tossed together with a zesty homemade Italian dressing!" wrappingWidth="291.34693145751953">
+                                 <font>
+                                    <Font name="Cambria" size="13.0" />
+                                 </font>
+                              </Text>
+                              <Text lineSpacing="0.5" nodeOrientation="RIGHT_TO_LEFT" strokeType="OUTSIDE" strokeWidth="0.0" text=" " wrappingWidth="105.74690246582031">
+                                 <font>
+                                    <Font name="Yu Gothic UI Regular" size="4.0" />
+                                 </font>
+                              </Text>
+                              <Text lineSpacing="0.5" nodeOrientation="LEFT_TO_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" text="Cook time : 10minutes" textAlignment="CENTER" wrappingWidth="105.74690246582031">
+                                 <font>
+                                    <Font name="Yu Gothic UI Semilight" size="10.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </VBox>
+                     </children>
+                  </Pane>
+               </children>
+            </HBox>
+            <Text lineSpacing="0.5" nodeOrientation="LEFT_TO_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" text=" " wrappingWidth="105.74690246582031">
+               <font>
+                  <Font name="Yu Gothic UI Regular" size="10.0" />
+               </font>
+            </Text>
+
+                <!-- Buttons and Status -->
+                <HBox alignment="CENTER" prefHeight="131.0" prefWidth="500.0" spacing="10">
+                    <children>
+                  <Pane nodeOrientation="LEFT_TO_RIGHT" prefHeight="95.0" prefWidth="210.0">
+                     <children>
+                        <CheckBox mnemonicParsing="false" text="16 oz rotini pasta" />
+                        <CheckBox layoutY="24.0" mnemonicParsing="false" text="1 pint cherry tomatoes" />
+                        <CheckBox layoutY="49.0" mnemonicParsing="false" text="1 english cucumber" />
+                        <CheckBox layoutY="74.0" mnemonicParsing="false" text="1/2 red onion" />
+                        <CheckBox layoutY="100.0" mnemonicParsing="false" text="8 oz fresh mozzarella balls" />
+                     </children>
+                  </Pane>
+                  <Pane prefHeight="95.0" prefWidth="204.0">
+                     <children>
+                        <CheckBox mnemonicParsing="false" text="4 oz salami" />
+                        <CheckBox layoutY="24.0" mnemonicParsing="false" text="3/4 cup kalamata olives" />
+                        <CheckBox layoutY="49.0" mnemonicParsing="false" text="3/4 cup pepperoncini" />
+                        <CheckBox layoutY="74.0" mnemonicParsing="false" text="1/2 cup basil" />
+                        <CheckBox layoutY="100.0" mnemonicParsing="false" text="salad dressing" />
+                     </children>
+                  </Pane>
+                    </children>
+                </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                        <Pane minHeight="-Infinity" prefHeight="196.0" prefWidth="527.0" style="-fx-background-color: white; -fx-background-radius: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);">
+                            <children>
+                                <Label layoutX="14.0" layoutY="4.0" prefHeight="20.0" prefWidth="100.0" text="Instructions ">
+                                    <font>
+                                        <Font name="Bodoni MT Bold" size="16.0" />
+                                    </font>
+                                </Label>
+                        <Text layoutX="7.0" layoutY="34.0" lineSpacing="0.5" strokeType="OUTSIDE" strokeWidth="0.0" text="1. Bring a large pot of water to a boil, sprinkle in some salt, and cook the pasta according to the package directions until al dente. " wrappingWidth="480.1469192504883">
+                           <font>
+                              <Font name="Corbel" size="13.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="7.0" layoutY="74.0" lineSpacing="0.5" strokeType="OUTSIDE" strokeWidth="0.0" text="2. Mix together the cooked pasta, chopped veggies, mozzarella, salami, pepperoncini, olives and fresh herbs in a large bowl and drizzle the whole thing with the Italian dressing.  Give it a good toss, season with additional salt and pepper, as needed." wrappingWidth="480.1469192504883">
+                           <font>
+                              <Font name="Corbel" size="13.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="7.0" layoutY="132.0" lineSpacing="0.5" strokeType="OUTSIDE" strokeWidth="0.0" text="3. You can either serve this immediately or marinate for a few hours before serving. To marinate, cover the pasta salad and place it in the fridge allowing the flavors to marinate for a few hours or even overnight. I even like to reserve a little extra dressing to toss right before serving since the pasta really soaks up a lot of it." wrappingWidth="480.1469192504883">
+                           <font>
+                              <Font name="Corbel" size="13.0" />
+                           </font>
+                        </Text>
+                            </children>
+                        </Pane>
+               </children>
+            </HBox>
+                <Text lineSpacing="0.5" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="185.74695587158203">
+                    <font>
+                        <Font name="Microsoft JhengHei UI" size="12.0" />
+                    </font>
+                </Text>
+                  <Pane prefHeight="76.0" prefWidth="490.0" style="-fx-background-color: white; -fx-background-radius: 20; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);">
+               <children>
+                  <Label layoutX="14.0" layoutY="4.0" prefHeight="20.0" prefWidth="100.0" text="Nutrition">
+                     <font>
+                        <Font name="Bodoni MT Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Text layoutX="11.0" layoutY="33.0" lineSpacing="0.5" strokeType="OUTSIDE" strokeWidth="0.0" text="Serving: 1/8th of recipe | Calories: 452kcal | Carbohydrates: 47.3g | Protein: 17.1g | Fat: 23.3g | Saturated Fat: 6.6g | Sodium: 467.4mg | Fiber: 6.2g | Sugar: 3.7g" wrappingWidth="480.1469192504883">
+                     <font>
+                        <Font name="Calibri Light Italic" size="12.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="11.0" layoutY="66.0" lineSpacing="0.5" strokeType="OUTSIDE" strokeWidth="0.0" text="Nutrition information is automatically calculated, so should only be used as an approximation." wrappingWidth="480.1469192504883">
+                     <font>
+                        <Font name="Corbel Light" size="10.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            </children>
+        </VBox>
+    </center>
+</BorderPane>
