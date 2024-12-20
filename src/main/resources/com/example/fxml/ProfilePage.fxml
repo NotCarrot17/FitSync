@@ -195,7 +195,7 @@
         <VBox fx:id="notificationPopup" layoutX="500" layoutY="50" prefHeight="0.0" prefWidth="0.0" spacing="10" style="-fx-background-color: lightgrey; -fx-padding: 10;" visible="false">
             <Label text="Notification 1" />
             <Label text="Notification 2" />
-            <Button onAction="#closeNotifications" text="Close" />
+            <Button text="Close" />
         </VBox>
    <right>
       <VBox prefHeight="435.0" prefWidth="147.0" BorderPane.alignment="CENTER">
