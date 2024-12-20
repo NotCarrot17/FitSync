@@ -4,7 +4,6 @@ import com.example.fitsync.dao.UserDAO;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.event.ActionEvent;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 
 public class LoginPageController {
@@ -34,30 +33,40 @@ public class LoginPageController {
     @FXML
     private Button facebookSignInButton;
 
+
     private UserDAO userDAO = new UserDAO();
+
 
     @FXML
     public void handleLogin(ActionEvent event) {
         String email = emailField.getText();
         String password = passwordField.getText();
 
-        if (userDAO.isValidUser(email, password)) {
-            System.out.println("Login successful. Navigate to Dashboard.");
-        } else {
-            errorMessage.setText("No user account found. Please register an account.");
+        try {
+            if (userDAO.authenticate(email, password)) {
+                System.out.println("Login successful. Navigate to Dashboard.");
+                System.out.println(userDAO.printLoggedInUser(email, password));
+                errorMessage.setText(""); // Clear any previous error message
+            }
+        } catch (UserDAO.AuthenticationException ex) {
+            String errorMsg = "Authentication failed: " + ex.getMessage();
+            errorMessage.setText(errorMsg);
             errorMessage.setVisible(true);
+
+            // Display the error message in the main console
+            System.out.println(errorMsg);
         }
     }
 
     @FXML
     public void handleForgotPassword(ActionEvent event) {
         String email = emailField.getText();
-        if (userDAO.emailExists(email)) {
-            System.out.println("Password reset link sent to " + email);
-        } else {
-            errorMessage.setText("Email not found. Please register.");
-            errorMessage.setVisible(true);
-        }
+            if (userDAO.emailExists(email)) {
+                System.out.println("Password reset link sent to " + email);
+            } else {
+                errorMessage.setText("Email not found. Please register.");
+                errorMessage.setVisible(true);
+            }
     }
 
     @FXML
@@ -67,6 +76,7 @@ public class LoginPageController {
 
         if (userDAO.registerUser(email, password)) {
             System.out.println("User registered successfully.");
+            System.out.println(userDAO.printAllUsers());
         } else {
             errorMessage.setText("Registration failed. Please try again.");
             errorMessage.setVisible(true);

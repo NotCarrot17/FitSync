@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fitsync.controller.WorkoutPageController">
+<BorderPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fitsync.controller.WorkoutPageController">
 
     <top>
         <Pane style="-fx-background-color: white;" BorderPane.alignment="TOP_LEFT">
@@ -158,222 +158,201 @@
 
 
     <right>
-        <VBox spacing="5.0" style="-fx-padding: 5; -fx-background-color: #F8F8F8;">
+        <VBox spacing="5.0" style="-fx-padding: 5; -fx-background-color: #F8F8F8;" BorderPane.alignment="TOP_RIGHT">
             <!-- Schedule -->
             <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="My Schedule" />
-            <HBox style="-fx-background-color: white; -fx-background-radius: 5;">
+            <VBox fx:id="scheduleContainer" prefHeight="200.0" prefWidth="100.0" spacing="5.0" VBox.vgrow="ALWAYS">
                 <children>
-                    <VBox HBox.hgrow="ALWAYS">
+                    <HBox style="-fx-background-color: white; -fx-background-radius: 5;">
                         <children>
-                            <Label prefHeight="20.0" prefWidth="96.0" text="Monday" textFill="#9d9d9d">
-                                <font>
-                                    <Font name="System Bold" size="14.0" />
-                                </font>
-                            </Label>
-                            <HBox prefHeight="46.0" prefWidth="81.0">
+                            <VBox alignment="TOP_RIGHT" HBox.hgrow="ALWAYS">
                                 <children>
-                                    <ImageView fitHeight="40.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
-                                        <image>
-                                            <Image url="@../../../../WorkoutImages/Stretch.png" />
-                                        </image>
-                                    </ImageView>
-                                    <VBox HBox.hgrow="ALWAYS">
+                                    <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefHeight="20.0" prefWidth="96.0" text="1/1/2025" textAlignment="RIGHT" textFill="#9d9d9d">
+                                        <font>
+                                            <Font name="System Bold" size="14.0" />
+                                        </font>
+                                    </Label>
+                                    <HBox>
                                         <children>
-                                            <Label prefHeight="17.0" prefWidth="61.0" style="-fx-background-radius: 20;" text="Stretch" />
-                                            <Label prefHeight="17.0" prefWidth="53.0" text="AT 08:00" textFill="#9d9d9d">
-                                                <font>
-                                                    <Font size="9.0" />
-                                                </font>
-                                            </Label>
+                                            <VBox prefHeight="26.0" prefWidth="157.0" HBox.hgrow="ALWAYS">
+                                                <children>
+                                                    <Label prefHeight="17.0" prefWidth="61.0" style="-fx-background-radius: 20;" text="Stretch" />
+                                                    <Label prefHeight="17.0" prefWidth="53.0" text="AT 08:00" textFill="#9d9d9d">
+                                                        <font>
+                                                            <Font size="9.0" />
+                                                        </font>
+                                                    </Label>
+                                                </children>
+                                                <padding>
+                                                    <Insets left="10.0" />
+                                                </padding>
+                                            </VBox>
                                         </children>
-                                        <padding>
-                                            <Insets left="10.0" />
-                                        </padding>
-                                    </VBox>
+                                    </HBox>
                                 </children>
-                            </HBox>
+                            </VBox>
                         </children>
-                    </VBox>
-                </children>
-                <padding>
-                    <Insets left="5.0" right="5.0" />
-                </padding>
-            </HBox>
-            <HBox layoutX="15.0" layoutY="51.0" style="-fx-background-color: white; -fx-background-radius: 5;">
-                <children>
-                    <VBox HBox.hgrow="ALWAYS">
+                        <padding>
+                            <Insets left="5.0" right="5.0" />
+                        </padding>
+                    </HBox>
+                    <HBox style="-fx-background-color: white; -fx-background-radius: 5;">
                         <children>
-                            <Label prefHeight="20.0" prefWidth="96.0" text="Wednesday" textFill="#9d9d9d">
-                                <font>
-                                    <Font name="System Bold" size="14.0" />
-                                </font>
-                            </Label>
-                            <HBox prefHeight="46.0" prefWidth="81.0">
+                            <VBox alignment="TOP_RIGHT" HBox.hgrow="ALWAYS">
                                 <children>
-                                    <ImageView fitHeight="40.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
-                                        <image>
-                                            <Image url="@../../../../WorkoutImages/BackStretch.png" />
-                                        </image>
-                                    </ImageView>
-                                    <VBox prefHeight="46.0" prefWidth="96.0">
+                                    <Label alignment="CENTER_RIGHT" prefHeight="20.0" prefWidth="96.0" text="2/1/2025" textFill="#9d9d9d">
+                                        <font>
+                                            <Font name="System Bold" size="14.0" />
+                                        </font>
+                                    </Label>
+                                    <HBox>
                                         <children>
-                                            <Label prefHeight="17.0" prefWidth="103.0" style="-fx-background-radius: 20;" text="Back Stretch" />
-                                            <Label prefHeight="17.0" prefWidth="53.0" text="AT 08:00" textFill="#9d9d9d">
-                                                <font>
-                                                    <Font size="9.0" />
-                                                </font>
-                                            </Label>
+                                            <VBox prefHeight="23.0" prefWidth="113.0">
+                                                <children>
+                                                    <Label prefHeight="17.0" prefWidth="103.0" style="-fx-background-radius: 20;" text="Back Stretch" />
+                                                    <Label prefHeight="17.0" prefWidth="53.0" text="AT 08:00" textFill="#9d9d9d">
+                                                        <font>
+                                                            <Font size="9.0" />
+                                                        </font>
+                                                    </Label>
+                                                </children>
+                                                <padding>
+                                                    <Insets left="10.0" />
+                                                </padding>
+                                            </VBox>
                                         </children>
-                                        <padding>
-                                            <Insets left="10.0" />
-                                        </padding>
-                                    </VBox>
+                                    </HBox>
                                 </children>
-                            </HBox>
+                            </VBox>
                         </children>
-                    </VBox>
-                </children>
-                <padding>
-                    <Insets left="5.0" right="5.0" />
-                </padding>
-            </HBox>
-            <HBox layoutX="15.0" layoutY="122.0" style="-fx-background-color: white; -fx-background-radius: 5;">
-                <children>
-                    <VBox HBox.hgrow="ALWAYS">
+                        <padding>
+                            <Insets left="5.0" right="5.0" />
+                        </padding>
+                    </HBox>
+                    <HBox style="-fx-background-color: white; -fx-background-radius: 5;">
                         <children>
-                            <Label prefHeight="20.0" prefWidth="96.0" text="Friday" textFill="#9d9d9d">
-                                <font>
-                                    <Font name="System Bold" size="14.0" />
-                                </font>
-                            </Label>
-                            <HBox prefHeight="46.0" prefWidth="81.0">
+                            <VBox alignment="TOP_RIGHT" HBox.hgrow="ALWAYS">
                                 <children>
-                                    <ImageView fitHeight="40.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
-                                        <image>
-                                            <Image url="@../../../../WorkoutImages/Stretch.png" />
-                                        </image>
-                                    </ImageView>
-                                    <VBox>
+                                    <Label alignment="CENTER_RIGHT" prefHeight="20.0" prefWidth="96.0" text="3/1/2025" textFill="#9d9d9d">
+                                        <font>
+                                            <Font name="System Bold" size="14.0" />
+                                        </font>
+                                    </Label>
+                                    <HBox>
                                         <children>
-                                            <Label prefHeight="17.0" prefWidth="61.0" style="-fx-background-radius: 20;" text="Stretch" />
-                                            <Label prefHeight="17.0" prefWidth="53.0" text="AT 08:00" textFill="#9d9d9d">
-                                                <font>
-                                                    <Font size="9.0" />
-                                                </font>
-                                            </Label>
+                                            <VBox>
+                                                <children>
+                                                    <Label prefHeight="17.0" prefWidth="61.0" style="-fx-background-radius: 20;" text="Stretch" />
+                                                    <Label prefHeight="17.0" prefWidth="53.0" text="AT 08:00" textFill="#9d9d9d">
+                                                        <font>
+                                                            <Font size="9.0" />
+                                                        </font>
+                                                    </Label>
+                                                </children>
+                                                <padding>
+                                                    <Insets left="10.0" />
+                                                </padding>
+                                            </VBox>
                                         </children>
-                                        <padding>
-                                            <Insets left="10.0" />
-                                        </padding>
-                                    </VBox>
+                                    </HBox>
                                 </children>
-                            </HBox>
+                            </VBox>
                         </children>
-                    </VBox>
-                </children>
-                <padding>
-                    <Insets left="5.0" right="5.0" />
-                </padding>
-            </HBox>
-            <HBox layoutX="15.0" layoutY="122.0" style="-fx-background-color: white; -fx-background-radius: 5;">
-                <children>
-                    <VBox HBox.hgrow="ALWAYS">
+                        <padding>
+                            <Insets left="5.0" right="5.0" />
+                        </padding>
+                    </HBox>
+                    <HBox style="-fx-background-color: white; -fx-background-radius: 5;">
                         <children>
-                            <Label prefHeight="20.0" prefWidth="96.0" text="Saturday" textFill="#9d9d9d">
-                                <font>
-                                    <Font name="System Bold" size="14.0" />
-                                </font>
-                            </Label>
-                            <HBox prefHeight="46.0" prefWidth="81.0">
+                            <VBox alignment="TOP_RIGHT" HBox.hgrow="ALWAYS">
                                 <children>
-                                    <ImageView fitHeight="40.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
-                                        <image>
-                                            <Image url="@../../../../WorkoutImages/Stretch.png" />
-                                        </image>
-                                    </ImageView>
-                                    <VBox>
+                                    <Label alignment="CENTER_RIGHT" prefHeight="20.0" prefWidth="96.0" text="4/1/2025" textFill="#9d9d9d">
+                                        <font>
+                                            <Font name="System Bold" size="14.0" />
+                                        </font>
+                                    </Label>
+                                    <HBox>
                                         <children>
-                                            <Label prefHeight="17.0" prefWidth="61.0" style="-fx-background-radius: 20;" text="Stretch" />
-                                            <Label prefHeight="17.0" prefWidth="53.0" text="AT 08:00" textFill="#9d9d9d">
-                                                <font>
-                                                    <Font size="9.0" />
-                                                </font>
-                                            </Label>
+                                            <VBox>
+                                                <children>
+                                                    <Label prefHeight="17.0" prefWidth="61.0" style="-fx-background-radius: 20;" text="Yoga" />
+                                                    <Label prefHeight="17.0" prefWidth="53.0" text="AT 08:00" textFill="#9d9d9d">
+                                                        <font>
+                                                            <Font size="9.0" />
+                                                        </font>
+                                                    </Label>
+                                                </children>
+                                                <padding>
+                                                    <Insets left="10.0" />
+                                                </padding>
+                                            </VBox>
                                         </children>
-                                        <padding>
-                                            <Insets left="10.0" />
-                                        </padding>
-                                    </VBox>
+                                    </HBox>
                                 </children>
-                            </HBox>
+                            </VBox>
                         </children>
-                    </VBox>
+                        <padding>
+                            <Insets left="5.0" right="5.0" />
+                        </padding>
+                    </HBox>
                 </children>
-                <padding>
-                    <Insets left="5.0" right="5.0" />
-                </padding>
-            </HBox>
+            </VBox>
+
 
             <!-- Purchased Classes -->
             <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Purchased Classes" />
-            <HBox layoutX="15.0" layoutY="265.0" style="-fx-background-color: white; -fx-background-radius: 5;">
+            <VBox fx:id="purchasedClassesContainer" spacing="5.0" VBox.vgrow="ALWAYS">
                 <children>
-                    <HBox>
+                    <HBox style="-fx-background-color: white; -fx-background-radius: 5;">
                         <children>
-                            <ImageView fitHeight="40.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
-                                <image>
-                                    <Image url="@../../../../WorkoutImages/YogaPurchasedClasses.png" />
-                                </image>
-                            </ImageView>
-                            <VBox>
+                            <HBox HBox.hgrow="ALWAYS">
                                 <children>
-                                    <Label prefHeight="17.0" prefWidth="61.0" style="-fx-background-radius: 20;" text="Yoga Class" />
-                                    <Label prefHeight="17.0" prefWidth="53.0" text="RM100" textFill="#9d9d9d">
-                                        <font>
-                                            <Font size="9.0" />
-                                        </font>
-                                    </Label>
+                                    <VBox HBox.hgrow="ALWAYS">
+                                        <children>
+                                            <Label prefHeight="17.0" prefWidth="90.0" style="-fx-background-radius: 20;" text="Swimming Class" />
+                                            <Label prefHeight="17.0" prefWidth="53.0" text="RM100" textFill="#9d9d9d">
+                                                <font>
+                                                    <Font size="9.0" />
+                                                </font>
+                                            </Label>
+                                        </children>
+                                        <padding>
+                                            <Insets left="10.0" />
+                                        </padding>
+                                    </VBox>
                                 </children>
-                                <padding>
-                                    <Insets left="10.0" />
-                                </padding>
-                            </VBox>
+                            </HBox>
                         </children>
+                        <padding>
+                            <Insets left="5.0" right="5.0" />
+                        </padding>
+                    </HBox>
+                    <HBox style="-fx-background-color: white; -fx-background-radius: 5;">
+                        <children>
+                            <HBox>
+                                <children>
+                                    <VBox>
+                                        <children>
+                                            <Label prefHeight="17.0" prefWidth="61.0" style="-fx-background-radius: 20;" text="Yoga Class" />
+                                            <Label prefHeight="17.0" prefWidth="53.0" text="RM100" textFill="#9d9d9d">
+                                                <font>
+                                                    <Font size="9.0" />
+                                                </font>
+                                            </Label>
+                                        </children>
+                                        <padding>
+                                            <Insets left="10.0" />
+                                        </padding>
+                                    </VBox>
+                                </children>
+                            </HBox>
+                        </children>
+                        <padding>
+                            <Insets left="5.0" right="5.0" />
+                        </padding>
                     </HBox>
                 </children>
-                <padding>
-                    <Insets left="5.0" right="5.0" />
-                </padding>
-            </HBox>
-            <HBox layoutX="15.0" layoutY="371.0" style="-fx-background-color: white; -fx-background-radius: 5;">
-                <children>
-                    <HBox HBox.hgrow="ALWAYS">
-                        <children>
-                            <ImageView fitHeight="40.0" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
-                                <image>
-                                    <Image url="@../../../../WorkoutImages/SwimPurchasedClasses.png" />
-                                </image>
-                            </ImageView>
-                            <VBox HBox.hgrow="ALWAYS">
-                                <children>
-                                    <Label style="-fx-background-radius: 20;" text="Swimming Class" />
-                                    <Label prefHeight="17.0" prefWidth="53.0" text="RM100" textFill="#9d9d9d">
-                                        <font>
-                                            <Font size="9.0" />
-                                        </font>
-                                    </Label>
-                                </children>
-                                <padding>
-                                    <Insets left="10.0" />
-                                </padding>
-                            </VBox>
-                        </children>
-                    </HBox>
-                </children>
-                <padding>
-                    <Insets left="5.0" right="5.0" />
-                </padding>
-            </HBox>
+            </VBox>
         </VBox>
     </right>
 
