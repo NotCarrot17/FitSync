@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane fx:id="loginPage" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fitsync.controller.LoginPageController">
+<BorderPane fx:id="loginPage" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fitsync.controller.ProfilePageController">
     <top>
         <VBox BorderPane.alignment="CENTER">
             <children>
@@ -26,9 +26,9 @@
                             </ImageView>
                         </children>
                     </HBox>
-                    <Button fx:id="languageButton" onAction="#changeLanguage" text="Language" />
-                    <Button fx:id="notificationButton" onAction="#showNotifications" text="Notifications" />
-                    <Button fx:id="settingsButton" onAction="#openSettings" text="Settings">
+                    <Button fx:id="languageButton"  text="Language" />
+                    <Button fx:id="notificationButton" text="Notifications" />
+                    <Button fx:id="settingsButton" text="Settings">
                         <HBox.margin>
                             <Insets />
                         </HBox.margin>
@@ -89,8 +89,8 @@
                                 </font></Label>
                             <HBox prefHeight="100.0" prefWidth="200.0">
                                 <children>
-                                    <Button fx:id="facebookSignInButton1" onAction="#handleFacebookSignIn" prefHeight="64.0" prefWidth="108.0" text="Improve Shape&#10;Build Muscle &#10;&amp; Bulking" textAlignment="CENTER" />
-                                    <Button fx:id="facebookSignInButton" onAction="#handleFacebookSignIn" prefHeight="58.0" prefWidth="116.0" text="Lose Fat&#10;Lose Weight &amp; Fit" textAlignment="CENTER" />
+                                    <Button prefHeight="64.0" prefWidth="108.0" text="Improve Shape&#10;Build Muscle &#10;&amp; Bulking" textAlignment="CENTER" />
+                                    <Button prefHeight="58.0" prefWidth="116.0" text="Lose Fat&#10;Lose Weight &amp; Fit" textAlignment="CENTER" />
                                 </children>
                             </HBox>
                         </children>
@@ -129,9 +129,9 @@
                                 </font></Label>
                             <HBox prefHeight="100.0" prefWidth="200.0">
                                 <children>
-                                    <Button fx:id="facebookSignInButton11" onAction="#handleFacebookSignIn" prefHeight="63.0" prefWidth="78.0" text="Samsung &#10;Watch" textAlignment="CENTER" />
-                                    <Button fx:id="facebookSignInButton1" onAction="#handleFacebookSignIn" prefHeight="65.0" prefWidth="69.0" text="Apple &#10;Watch" textAlignment="CENTER" />
-                                    <Button fx:id="facebookSignInButton12" layoutX="110.0" layoutY="10.0" onAction="#handleFacebookSignIn" prefHeight="79.0" prefWidth="75.0" text="Google &#10;Fitbit" textAlignment="CENTER" />
+                                    <Button prefHeight="63.0" prefWidth="78.0" text="Samsung &#10;Watch" textAlignment="CENTER" />
+                                    <Button prefHeight="65.0" prefWidth="69.0" text="Apple &#10;Watch" textAlignment="CENTER" />
+                                    <Button layoutX="110.0" layoutY="10.0" prefHeight="79.0" prefWidth="75.0" text="Google &#10;Fitbit" textAlignment="CENTER" />
                                 </children>
                             </HBox>
                         </children>
@@ -146,7 +146,7 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="43.0" prefWidth="592.0">
                 <children>
-                    <Button fx:id="loginButton" onAction="#handleLogin">
+                    <Button>
                         <graphic>
                             <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                 <image>
@@ -156,7 +156,7 @@
                         <HBox.margin>
                             <Insets right="10.0" />
                         </HBox.margin></Button>
-                    <Button fx:id="forgotPasswordButton" onAction="#handleForgotPassword" prefWidth="0.0">
+                    <Button prefWidth="0.0">
                         <graphic>
                             <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                 <image>
@@ -166,7 +166,7 @@
                         <HBox.margin>
                             <Insets right="10.0" />
                         </HBox.margin></Button>
-                    <Button fx:id="registerButton" onAction="#handleRegister">
+                    <Button>
                         <graphic>
                             <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                 <image>
@@ -176,7 +176,7 @@
                         <HBox.margin>
                             <Insets right="10.0" />
                         </HBox.margin></Button>
-                    <Button fx:id="registerButton1" layoutX="352.0" layoutY="48.0" onAction="#handleRegister">
+                    <Button layoutX="352.0" layoutY="48.0">
                         <graphic>
                             <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                 <image>
@@ -195,7 +195,7 @@
     <VBox fx:id="notificationPopup" layoutX="500" layoutY="50" prefHeight="0.0" prefWidth="0.0" spacing="10" style="-fx-background-color: lightgrey; -fx-padding: 10;" visible="false">
         <Label text="Notification 1" />
         <Label text="Notification 2" />
-        <Button onAction="#closeNotifications" text="Close" />
+        <Button text="Close" />
     </VBox>
     <right>
         <VBox prefHeight="435.0" prefWidth="147.0" BorderPane.alignment="CENTER">
@@ -212,7 +212,7 @@
                     <graphic>
                         <ImageView fitHeight="17.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@/C:/Users/celes/OneDrive/Documents/FitSync/src/main/resources/ProfileImages/personal-removebg-preview.png" />
+                                <Image url="@../../../ProfilePageImages/personal-removebg-preview.png" />
                             </image></ImageView>
                     </graphic>
                 </Button>
@@ -220,7 +220,7 @@
                     <graphic>
                         <ImageView fitHeight="17.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@/C:/Users/celes/OneDrive/Documents/FitSync/src/main/resources/ProfileImages/personal-removebg-preview.png" />
+                                <Image url="@../../../ProfilePageImages/personal-removebg-preview.png" />
                             </image></ImageView>
                     </graphic>
                     <font>
@@ -234,7 +234,7 @@
                     <graphic>
                         <ImageView fitHeight="17.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@/C:/Users/celes/OneDrive/Documents/FitSync/src/main/resources/ProfileImages/achievement-removebg-preview.png" />
+                                <Image url="@../../../ProfilePageImages/achievement-removebg-preview.png" />
                             </image></ImageView>
                     </graphic></Button>
                 <Button mnemonicParsing="false" prefHeight="0.0" prefWidth="147.0" style="-fx-alignment: left;" text="Activity History &gt;">
@@ -244,7 +244,7 @@
                     <graphic>
                         <ImageView fitHeight="17.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@/C:/Users/celes/OneDrive/Documents/FitSync/src/main/resources/ProfileImages/activity-removebg-preview.png" />
+                                <Image url="@../../../ProfilePageImages/activity-removebg-preview.png" />
                             </image></ImageView>
                     </graphic>
                 </Button>
@@ -255,7 +255,7 @@
                     <graphic>
                         <ImageView fitHeight="17.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@/C:/Users/celes/OneDrive/Documents/FitSync/src/main/resources/ProfileImages/workout-removebg-preview.png" />
+                                <Image url="@../../../ProfilePageImages/workout-removebg-preview.png" />
                             </image></ImageView>
                     </graphic>
                 </Button>
@@ -271,7 +271,7 @@
                     <graphic>
                         <ImageView fitHeight="17.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@/C:/Users/celes/OneDrive/Documents/FitSync/src/main/resources/ProfileImages/noti-removebg-preview.png" />
+                                <Image url="@../../../ProfilePageImages/noti-removebg-preview.png" />
                             </image></ImageView>
                     </graphic></ToggleButton>
                 <ToggleButton alignment="CENTER_LEFT" mnemonicParsing="false" prefHeight="26.0" prefWidth="180.0" style="-fx-alignment: left;" text="Location">
@@ -281,7 +281,7 @@
                     <graphic>
                         <ImageView fitHeight="17.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@/C:/Users/celes/OneDrive/Documents/FitSync/src/main/resources/ProfileImages/noti-removebg-preview.png" />
+                                <Image url="@../../../ProfilePageImages/noti-removebg-preview.png" />
                             </image></ImageView>
                     </graphic>
                 </ToggleButton>
@@ -297,7 +297,7 @@
                     <graphic>
                         <ImageView fitHeight="17.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@/C:/Users/celes/OneDrive/Documents/FitSync/src/main/resources/ProfileImages/subs-removebg-preview.png" />
+                                <Image url="@../../../ProfilePageImages/subs-removebg-preview.png" />
                             </image></ImageView>
                     </graphic>
                 </Button>
@@ -308,7 +308,7 @@
                     <graphic>
                         <ImageView fitHeight="17.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@/C:/Users/celes/OneDrive/Documents/FitSync/src/main/resources/ProfileImages/bill-removebg-preview.png" />
+                                <Image url="@../../../ProfilePageImages/bill-removebg-preview.png" />
                             </image></ImageView>
                     </graphic>
                 </Button>
@@ -319,7 +319,7 @@
                     <graphic>
                         <ImageView fitHeight="17.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@/C:/Users/celes/OneDrive/Documents/FitSync/src/main/resources/ProfileImages/bill-removebg-preview.png" />
+                                <Image url="@../../../ProfilePageImages/bill-removebg-preview.png" />
                             </image></ImageView>
                     </graphic>
                 </Button>
