@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane prefHeight="365.0" prefWidth="594.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fitsync.controller.WorkoutPageController">
+<BorderPane prefHeight="600" prefWidth="800" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.fitsync.controller.WorkoutPageController">
 
    <top>
       <Pane style="-fx-background-color: white;" BorderPane.alignment="TOP_LEFT">
@@ -333,7 +333,7 @@
 
 
     <right>
-        <VBox prefHeight="560.0" prefWidth="182.0" spacing="5.0" style="-fx-padding: 5; -fx-background-color: #F8F8F8;" BorderPane.alignment="TOP_RIGHT">
+        <VBox fx:id="purchasedClassesContainer" prefHeight="560.0" prefWidth="182.0" spacing="5.0" style="-fx-padding: 5; -fx-background-color: #F8F8F8;" BorderPane.alignment="TOP_RIGHT">
             <!-- Schedule -->
             <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="My Schedule" />
          <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="65.0" prefWidth="168.0" style="-fx-background-color: white; -fx-background-radius: 5;">
