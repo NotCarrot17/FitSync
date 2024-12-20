@@ -105,30 +105,25 @@ public class DietPlanController {
 
     @FXML
     public void handleButtons(ActionEvent event) {
-        Button clickedButton = (Button) event.getSource();
-
         try {
-            switch (clickedButton.getId()) {
-                case "btnPastaSalad":
-                    Parent pastaSaladPage = FXMLLoader.load(getClass().getResource("/com/example/fxml/PastaSalad.fxml"));
-                    Scene pastaSaladScene = new Scene(pastaSaladPage);
-                    Stage stage = (Stage) btnPastaSalad.getScene().getWindow();
-                    stage.setScene(pastaSaladScene);
-                    stage.show();
-                    break;
+            Button clickedButton = (Button) event.getSource();
+            String fxmlFile = null;
 
-                case "btnBack":
-                    Parent dietPage = FXMLLoader.load(getClass().getResource("/com/example/fxml/DietPage.fxml"));
-                    Scene dietScene = new Scene(dietPage);
-                    Stage stageBack = (Stage) btnBack.getScene().getWindow();
-                    stageBack.setScene(dietScene);
-                    stageBack.show();
-                    break;
+            if (clickedButton == btnPastaSalad) {
+                fxmlFile = "/com/example/fxml/PastaSalad.fxml";
+            } else if (clickedButton == btnBack) {
+                fxmlFile = "/com/example/fxml/DietPage.fxml";
+            } else if (clickedButton == btnLogFood) {
+                logFood();
+                return;
+            }
 
-                case "btnLogFood":
-                    logFood();
-                    break;
-
+            if (fxmlFile != null) {
+                Parent newPage = FXMLLoader.load(getClass().getResource(fxmlFile));
+                Scene newScene = new Scene(newPage);
+                Stage stage = (Stage) clickedButton.getScene().getWindow();
+                stage.setScene(newScene);
+                stage.show();
             }
         } catch (Exception e) {
             e.printStackTrace();
