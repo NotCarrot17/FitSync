@@ -26,7 +26,7 @@
                             </ImageView>
                         </children>
                     </HBox>
-                    <Button fx:id="languageButton"  text="Language" />
+                    <Button fx:id="languageButton" text="Language" />
                     <Button fx:id="notificationButton" text="Notifications" />
                     <Button fx:id="settingsButton" text="Settings">
                         <HBox.margin>
@@ -210,12 +210,18 @@
                   <Font size="10.0" />
                </font>
                <graphic>
-                  <ImageView fitHeight="17.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="17.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../ProfilePageImages/personal-removebg-preview.png" />
+                     </image></ImageView>
                </graphic>
             </Button>
             <Button mnemonicParsing="false" prefHeight="23.0" prefWidth="152.0" style="-fx-alignment: left;" text="Close Friends &gt;">
                <graphic>
-                  <ImageView fitHeight="17.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="17.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../ProfilePageImages/personal-removebg-preview.png" />
+                     </image></ImageView>
                </graphic>
                <font>
                   <Font size="10.0" />
@@ -226,14 +232,20 @@
                   <Font size="10.0" />
                </font>
                <graphic>
-                  <ImageView fitHeight="17.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="17.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../ProfilePageImages/achievement-removebg-preview.png" />
+                     </image></ImageView>
                </graphic></Button>
             <Button mnemonicParsing="false" prefHeight="0.0" prefWidth="147.0" style="-fx-alignment: left;" text="Activity History &gt;">
                <font>
                   <Font size="10.0" />
                </font>
                <graphic>
-                  <ImageView fitHeight="17.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="17.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../ProfilePageImages/activity-removebg-preview.png" />
+                     </image></ImageView>
                </graphic>
             </Button>
             <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="213.0" style="-fx-alignment: lefft;" text="Workout Progress &gt;">
@@ -241,7 +253,10 @@
                   <Font size="10.0" />
                </font>
                <graphic>
-                  <ImageView fitHeight="17.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="17.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../ProfilePageImages/workout-removebg-preview.png" />
+                     </image></ImageView>
                </graphic>
             </Button>
             <Label text="Notification">
@@ -254,14 +269,20 @@
                   <Font size="10.0" />
                </font>
                <graphic>
-                  <ImageView fitHeight="17.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="17.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../ProfilePageImages/noti-removebg-preview.png" />
+                     </image></ImageView>
                </graphic></ToggleButton>
             <ToggleButton mnemonicParsing="false" prefHeight="26.0" prefWidth="180.0" style="-fx-alignment: left;" text="Location">
                <font>
                   <Font size="10.0" />
                </font>
                <graphic>
-                  <ImageView fitHeight="17.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="17.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../ProfilePageImages/noti-removebg-preview.png" />
+                     </image></ImageView>
                </graphic>
             </ToggleButton>
             <Label text="BIlling">
@@ -274,7 +295,10 @@
                   <Font size="10.0" />
                </font>
                <graphic>
-                  <ImageView fitHeight="17.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="17.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../ProfilePageImages/subs-removebg-preview.png" />
+                     </image></ImageView>
                </graphic>
             </Button>
             <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="266.0" style="-fx-alignment: left;" text="Payment Info &gt;">
@@ -282,7 +306,10 @@
                   <Font size="10.0" />
                </font>
                <graphic>
-                  <ImageView fitHeight="17.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="17.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../ProfilePageImages/bill-removebg-preview.png" />
+                     </image></ImageView>
                </graphic>
             </Button>
             <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="224.0" style="-fx-alignment: left;" text="Purchase Class &gt;">
@@ -290,7 +317,10 @@
                   <Font size="10.0" />
                </font>
                <graphic>
-                  <ImageView fitHeight="17.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fitHeight="17.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../ProfilePageImages/bill-removebg-preview.png" />
+                     </image></ImageView>
                </graphic>
             </Button>
          </children>

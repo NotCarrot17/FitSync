@@ -5,19 +5,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ProfileDAO {
-    private static final String PROFILE_FILE = "profile.dat";
+    private static final String PROFILE_FILE = "profile_data.txt";
     private Map<String, String> profileData = new HashMap<>();
 
-    public ProfileDAO() {
-        loadProfile();
-    }
-
-    // Save profile data to a file
-    public void saveProfile(String key, String value) {
-        profileData.put(key, value);
+    // Save profile data to a text file
+    public void saveProfileData(Map < String, String > profileData){
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(PROFILE_FILE))) {
             for (Map.Entry<String, String> entry : profileData.entrySet()) {
-                writer.write(entry.getKey() + "=" + entry.getValue());
+                writer.write(entry.getKey() + ": " + entry.getValue());
                 writer.newLine();
             }
         } catch (IOException e) {
@@ -25,15 +20,13 @@ public class ProfileDAO {
         }
     }
 
-    // Load profile data from a file
-    private void loadProfile() {
-        File file = new File(PROFILE_FILE);
-        if (!file.exists()) return;
-
-        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
+    // Load profile data from the text file
+    public Map<String, String> loadProfileData () {
+        Map<String, String> profileData = new java.util.HashMap<>();
+        try (BufferedReader reader = new BufferedReader(new FileReader(PROFILE_FILE))) {
             String line;
             while ((line = reader.readLine()) != null) {
-                String[] parts = line.split("=", 2);
+                String[] parts = line.split(": ", 2);
                 if (parts.length == 2) {
                     profileData.put(parts[0], parts[1]);
                 }
@@ -41,10 +34,6 @@ public class ProfileDAO {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    // Get profile value by key
-    public String getProfile(String key) {
-        return profileData.getOrDefault(key, "");
+        return profileData;
     }
 }
