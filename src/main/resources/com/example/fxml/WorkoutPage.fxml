@@ -165,7 +165,7 @@
                         </font></Button>
                      <ImageView fitHeight="135.0" fitWidth="146.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
                         <image>
-                           <Image url="@../../../WorkoutImages/coach.png" />
+                           <Image url="@../../../WorkoutImages/Coach.png" />
                         </image>
                      </ImageView>
                      <Label layoutX="131.0" layoutY="147.0" text="Beginner" textFill="WHITE">
