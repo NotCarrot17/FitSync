@@ -319,7 +319,7 @@ public class WorkoutPageController {
     private void addScheduledWorkoutToUI(ScheduledWorkout workout) {
         HBox scheduleBox = new HBox();
         scheduleBox.setStyle("-fx-background-color: white; -fx-background-radius: 5;");
-        scheduleBox.setSpacing(10);
+        scheduleBox.setSpacing(2);
 
         Label dateLabel = new Label(workout.getDate());
         dateLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: #9d9d9d;");
