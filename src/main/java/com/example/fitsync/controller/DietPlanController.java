@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class DietPlanController {
@@ -101,7 +102,6 @@ public class DietPlanController {
                 break;
         }
     }
-
 
     @FXML
     public void handleButtons(ActionEvent event) {

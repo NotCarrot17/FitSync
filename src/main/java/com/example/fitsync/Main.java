@@ -85,7 +85,7 @@ public class Main extends Application {
     }
 
     private Pane createWorkoutPage() {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/fxml/PastaSalad.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/fxml/LoginPage.fxml"));
         try {
             return loader.load();
         } catch (Exception e) {

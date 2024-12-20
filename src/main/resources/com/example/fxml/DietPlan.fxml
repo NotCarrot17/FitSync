@@ -117,7 +117,7 @@
                     </ImageView>
                 </graphic>
             </Button>
-         <Button fx:id="btnPastaSalad" mnemonicParsing="false" onAction="#handlePastaSaladButtonAction" onMouseClicked="#handlePastaSaladButtonAction" prefHeight="134.0" prefWidth="168.0" style="-fx-background-radius: 20; -fx-background-color: pink; -fx-border-style: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);" text="Pasta Salad" />
+         <Button fx:id="btnPastaSalad" mnemonicParsing="false" onAction="#handleButtons" onMouseClicked="#handleButtons" prefHeight="134.0" prefWidth="168.0" style="-fx-background-radius: 20; -fx-background-color: pink; -fx-border-style: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);" text="Pasta Salad" />
         </VBox>
     </left>
     <right>
