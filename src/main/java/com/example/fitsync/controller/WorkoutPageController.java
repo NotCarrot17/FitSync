@@ -1,9 +1,9 @@
 package com.example.fitsync.controller;
 
-import com.example.fitsync.workoutJava.ScheduledWorkout;
-import com.example.fitsync.workoutJava.WorkoutClass;
-import com.example.fitsync.workoutJava.WorkoutData;
-import com.example.fitsync.workoutJava.WorkoutSchedule;
+import com.example.fitsync.ScheduledWorkout;
+import com.example.fitsync.WorkoutClass;
+import com.example.fitsync.WorkoutData;
+import com.example.fitsync.WorkoutSchedule;
 import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener;
 import javafx.event.ActionEvent;
@@ -49,8 +49,6 @@ public class WorkoutPageController {
     private Button btnLogout;
     @FXML
     private Button btnRoutines;
-    @FXML
-    private Button btnStartNow;
     @FXML
     private Button btnCoachVideo;
     @FXML
@@ -182,7 +180,7 @@ public class WorkoutPageController {
 
                 videoStage.setScene(scene);
                 videoStage.show();
-            } else if (clickedButton == btnStretch || clickedButton == btnStartNow) {
+            } else if (clickedButton == btnStretch) {
                 Popup popup = new Popup();
                 TilePane popupLayout = new TilePane();
                 popupLayout.setPrefColumns(1); // Arrange items vertically
@@ -306,7 +304,7 @@ public class WorkoutPageController {
     private void addPurchasedClassToUI(WorkoutClass workoutClass) {
         HBox workoutBox = new HBox();
         workoutBox.setStyle("-fx-background-color: white; -fx-background-radius: 5;");
-        workoutBox.setSpacing(5);
+        workoutBox.setSpacing(10);
 
         VBox detailsBox = new VBox();
         Label className = new Label(workoutClass.getName());
@@ -321,7 +319,7 @@ public class WorkoutPageController {
     private void addScheduledWorkoutToUI(ScheduledWorkout workout) {
         HBox scheduleBox = new HBox();
         scheduleBox.setStyle("-fx-background-color: white; -fx-background-radius: 5;");
-        scheduleBox.setSpacing(5);
+        scheduleBox.setSpacing(10);
 
         Label dateLabel = new Label(workout.getDate());
         dateLabel.setStyle("-fx-font-size: 14px; -fx-text-fill: #9d9d9d;");

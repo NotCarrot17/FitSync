@@ -1,4 +1,4 @@
-package com.example.fitsync.workoutJava;
+package com.example.fitsync;
 
 public class ScheduledWorkout {
     private final String name;
