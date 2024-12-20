@@ -10,7 +10,7 @@ import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 
 public class UserDAO {
-    private static final String USER_FILE = "users.dat";
+    private static final String USER_FILE = "users.txt";
     private static final String KEY_FILE = "key.dat";
     private List<User> users;
     private SecretKey secretKey;
