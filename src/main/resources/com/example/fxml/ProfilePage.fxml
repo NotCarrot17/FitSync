@@ -150,7 +150,7 @@
                         <graphic>
                             <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                 <image>
-                                    <Image url="@../../../ProfileImages/Screenshot_2024-12-19_224422-removebg-preview.png" />
+                                    <Image url="@../../../ProfilePageImages/Screenshot_2024-12-19_224422-removebg-preview.png" />
                                 </image></ImageView>
                         </graphic>
                         <HBox.margin>
@@ -160,7 +160,7 @@
                         <graphic>
                             <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                 <image>
-                                    <Image url="@../../../ProfileImages/Screenshot_2024-12-19_224428-removebg-preview.png" />
+                                    <Image url="@../../../ProfilePageImages/Screenshot_2024-12-19_224428-removebg-preview.png" />
                                 </image></ImageView>
                         </graphic>
                         <HBox.margin>
@@ -170,7 +170,7 @@
                         <graphic>
                             <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                 <image>
-                                    <Image url="@../../../ProfileImages/Screenshot_2024-12-19_224433-removebg-preview.png" />
+                                    <Image url="@../../../ProfilePageImages/Screenshot_2024-12-19_224433-removebg-preview.png" />
                                 </image></ImageView>
                         </graphic>
                         <HBox.margin>
@@ -180,7 +180,7 @@
                         <graphic>
                             <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                                 <image>
-                                    <Image url="@../../../ProfileImages/Screenshot_2024-12-19_224437-removebg-preview.png" />
+                                    <Image url="@../../../ProfilePageImages/Screenshot_2024-12-19_224437-removebg-preview.png" />
                                 </image></ImageView>
                         </graphic>
                         <HBox.margin>
