@@ -288,7 +288,7 @@
             <children>
             <HBox prefHeight="110.0" prefWidth="503.0">
                <children>
-                  <Button fx:id="btnBack" mnemonicParsing="false" onAction="#handleButtons" prefHeight="26.0" prefWidth="34.0" style="-fx-background-color: white; -fx-background-radius: 20;" text="&lt;" />
+                  <Button fx:id="btnBack" alignment="TOP_LEFT" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleButtons" prefHeight="26.0" prefWidth="34.0" style="-fx-background-color: white; -fx-background-radius: 20;" text="&lt;" />
                           <ImageView fitHeight="129.0" fitWidth="196.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: #FEE2C7; -fx-background-radius: 20;">
                               <image>
                                   <Image url="@../../../DietPlanImages/Pasta Salad.jpg" />

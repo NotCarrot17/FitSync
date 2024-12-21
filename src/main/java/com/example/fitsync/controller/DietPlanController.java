@@ -9,6 +9,7 @@ import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 
 public class DietPlanController {
@@ -60,12 +61,7 @@ public class DietPlanController {
     private double waterIntake = 0.25;
     private double waterTarget = 3;
 
-    @FXML
-    private void initialize() {
-        mealTypeComboBox.getItems().addAll("Breakfast", "Lunch", "Dinner", "Snack");
-        updateWaterProgress();
-        loadInitialData();
-    }
+
 
     @FXML
     private void addWater() {
@@ -112,21 +108,38 @@ public class DietPlanController {
             if (clickedButton == btnPastaSalad) {
                 fxmlFile = "/com/example/fxml/PastaSalad.fxml";
             } else if (clickedButton == btnBack) {
-                fxmlFile = "/com/example/fxml/DietPage.fxml";
+                fxmlFile = "/com/example/fxml/DietPlan.fxml";
             } else if (clickedButton == btnLogFood) {
                 logFood();
                 return;
             }
 
             if (fxmlFile != null) {
-                Parent newPage = FXMLLoader.load(getClass().getResource(fxmlFile));
-                Scene newScene = new Scene(newPage);
-                Stage stage = (Stage) clickedButton.getScene().getWindow();
-                stage.setScene(newScene);
-                stage.show();
+                URL resource = getClass().getResource(fxmlFile); // Use the ClassLoader to locate the resource
+                if (resource == null) {
+                    throw new IOException("FXML file not found: " + fxmlFile);
+                }
+
+                FXMLLoader loader = new FXMLLoader(resource);
+                Parent newPage = loader.load(); // Load the FXML file
+                Scene newScene = new Scene(newPage); // Create a new scene
+                Stage stage = (Stage) clickedButton.getScene().getWindow(); // Get the current stage
+                stage.setScene(newScene); // Set the new scene
+                stage.show(); // Display the stage
             }
-        } catch (Exception e) {
+        } catch (NullPointerException e) {
             e.printStackTrace();
+            // Display a meaningful error log to help debug missing components
+            if (statusLabel != null) {
+                statusLabel.setText("Error: Missing UI component. Please contact support.");
+                statusLabel.setStyle("-fx-text-fill: red;");
+            }
+        } catch (IOException e) {
+            e.printStackTrace(); // Print the error log
+            if (statusLabel != null) {
+                statusLabel.setText("Error: Unable to load the requested page."); // Show message on GUI
+                statusLabel.setStyle("-fx-text-fill: red;");
+            }
         }
     }
 
