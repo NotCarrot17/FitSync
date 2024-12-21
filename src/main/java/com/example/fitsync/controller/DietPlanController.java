@@ -61,7 +61,17 @@ public class DietPlanController {
     private double waterIntake = 0.25;
     private double waterTarget = 3;
 
+    @FXML
+    private void initialize() {
+        if (mealTypeComboBox == null) {
+            throw new NullPointerException("mealTypeComboBox is not initialized! Check FXML fx:id.");
+        }
 
+
+        mealTypeComboBox.getItems().addAll("Breakfast", "Lunch", "Dinner", "Snack");
+        updateWaterProgress();
+        loadInitialData();
+    }
 
     @FXML
     private void addWater() {
@@ -115,29 +125,29 @@ public class DietPlanController {
             }
 
             if (fxmlFile != null) {
-                URL resource = getClass().getResource(fxmlFile); // Use the ClassLoader to locate the resource
+                URL resource = getClass().getResource(fxmlFile);
                 if (resource == null) {
                     throw new IOException("FXML file not found: " + fxmlFile);
                 }
 
                 FXMLLoader loader = new FXMLLoader(resource);
-                Parent newPage = loader.load(); // Load the FXML file
-                Scene newScene = new Scene(newPage); // Create a new scene
-                Stage stage = (Stage) clickedButton.getScene().getWindow(); // Get the current stage
-                stage.setScene(newScene); // Set the new scene
-                stage.show(); // Display the stage
+                Parent newPage = loader.load();
+                Scene newScene = new Scene(newPage);
+                Stage stage = (Stage) clickedButton.getScene().getWindow();
+                stage.setScene(newScene);
+                stage.show();
             }
         } catch (NullPointerException e) {
             e.printStackTrace();
-            // Display a meaningful error log to help debug missing components
+
             if (statusLabel != null) {
                 statusLabel.setText("Error: Missing UI component. Please contact support.");
                 statusLabel.setStyle("-fx-text-fill: red;");
             }
         } catch (IOException e) {
-            e.printStackTrace(); // Print the error log
+            e.printStackTrace();
             if (statusLabel != null) {
-                statusLabel.setText("Error: Unable to load the requested page."); // Show message on GUI
+                statusLabel.setText("Error: Unable to load the requested page.");
                 statusLabel.setStyle("-fx-text-fill: red;");
             }
         }
